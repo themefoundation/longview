@@ -1,0 +1,256 @@
+.row {
+	clear: both;
+}
+
+.row > .wrap {
+	max-width: $row-max-width;
+	margin: 0 auto;
+	
+	@include desktop {
+		padding: 0 $double;
+	}
+}
+
+
+.content-only {
+
+}
+
+.content-full-width {
+	#main .primary {
+		max-width: 100%;
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.content-sidebar {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			width: 65%;
+			float: left;
+		}
+
+		.secondary {
+			width: 35%;
+			float: right;
+		}
+	}
+
+	@include desktop {
+		.primary {
+			padding-left: 0;
+		}
+
+		.secondary {
+			padding-right: 0;
+		}
+	}
+}
+
+.sidebar-content {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			float: right;
+			width: $two-column-primary-width;
+		}
+
+		.secondary {
+			float: left;
+			width: $two-column-secondary-width;
+		}
+	}
+
+	@include desktop {
+		.primary {
+			padding-right: 0;
+		}
+
+		.secondary {
+			padding-left: 0;
+		}
+	}
+}
+
+.content-sidebar-sidebar {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			float: left;
+			width: $two-column-primary-width;
+		}
+
+		.secondary,
+		.tertiary {
+			float: right;
+			width: $two-column-secondary-width;
+		}
+	}
+
+	@include desktop {
+		#main .wrap {
+			max-width: $three-column-wrap-width;
+		}
+
+		.primary {
+			padding-left: 0;
+			width: $three-column-primary-width;
+		}
+
+		.secondary {
+			float: left;
+			width: $three-column-secondary-width;
+		}
+
+		.tertiary {
+			float: right;
+			padding-right: 0;
+			width: $three-column-tertiary-width;
+		}
+	}
+}
+
+.sidebar-sidebar-content {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			float: right;
+			width: $two-column-primary-width;
+		}
+
+		.secondary,
+		.tertiary {
+			float: left;
+			width: $two-column-secondary-width;
+		}
+	}
+
+	@include desktop {
+		#main .wrap {
+			max-width: $three-column-wrap-width;
+		}
+
+		.primary {
+			padding-right: 0;
+			width: $three-column-primary-width;
+		}
+
+		.secondary {
+			float: left;
+			padding-left: 0;
+			width: $three-column-secondary-width;
+		}
+
+		.tertiary {
+			float: right;
+			width: $three-column-tertiary-width;
+		}
+	}
+}
+
+.sidebar-content-sidebar {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			float: left;
+			width: $two-column-primary-width;
+		}
+
+		.secondary,
+		.tertiary {
+			float: right;
+			width: $two-column-secondary-width;
+		}
+	}
+
+	@include desktop {
+		#main .wrap {
+			max-width: $three-column-wrap-width;
+		}
+
+		.primary {
+			float: left;
+			margin-left: 25%;
+			width: 50%;
+		}
+
+		.secondary {
+			float: left;
+			margin: 0 0 0 -75%;
+			padding-left: 0;
+			clear: none;
+			width: 25%;
+		}
+
+		 .tertiary {
+			float: right;
+			clear: none;
+			padding-right: 0;
+			width: 25%;
+		}
+	}
+}
+
+
+.secondary,
+.tertiary {
+	max-width: 350px;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+.secondary {
+	// margin-top: 4.125rem;
+}
+
+
+.secondary .widget,
+.tertiary .widget {
+}
+
+.primary {
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+
+/* =Page Templates
+-------------------------------------------------------------- */
+.page-template-full-width {
+	@include tablet {
+		#main .primary {
+			width: 100%;
+			float: none;
+			max-width: 100%;
+			padding: 0;
+		}
+	}
+}
+
+.page-template-no-sidebars {
+	@include tablet {
+		.primary {
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+		}
+	}
+}

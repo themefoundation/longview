@@ -1,0 +1,420 @@
+/*
+
+The mo.js stylesheet is heavily influenced by the
+scalable and modular architecture for CSS as described
+by Jonathan Snook at http://smacss.com
+
+*/
+
+/* =Variables
+-------------------------------------------------------------- */
+$background: #eee;
+$background-hover: #ddd;
+$border-color: #999;
+
+
+/* =Menu
+-------------------------------------------------------------- */
+.site-header,
+.site-footer {
+	.menu {
+		font-size: 0;
+
+		a {
+			font-size: 1rem;
+			line-height: $quadruple;
+
+			@include desktop {
+				line-height: 8.1875rem;
+			}
+		}
+
+		ul {
+			border-top: 1px solid transparent;
+		}
+
+		ul li a {
+			background: $background;
+			line-height: $double;
+			border-color: $border-light;
+
+			&:hover {
+				background-color: $background-light;
+			}
+		}
+
+		ul li:last-child a {
+			border-bottom-color: $border-light;
+		}
+
+		ul ul {
+			border-top: 0 solid;
+		}
+
+		@include desktop {
+			float: right;
+		}
+	}
+}
+
+
+.header-before {
+	height: $double;
+
+	.menu,
+	.widget_pages ul {
+		ul {
+			// margin-top: -1px;
+
+			ul {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+/* =Module Styles
+-------------------------------------------------------------- */
+
+/* Pill style links for mobile/tablet */
+
+.site-header .menu,
+.site-header .menu *,
+.site-header .widget_pages ul,
+.site-header .widget_pages ul *{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.site-header {
+
+	// The <ul> holding the menu.
+	.menu,
+	.widget_pages ul {
+		text-align: center;
+
+		// Javascript menu (hover disabled)
+		&.is-js-menu {
+			li:hover > ul{
+				display: none;
+			}
+
+			li.is-open-submenu > ul,
+			li.is-open-submenu:hover > ul {
+				display: block;
+			}
+		}
+
+		// Mobile menu
+		&.is-mobile-menu.menu-arrows {
+			text-align: left;
+
+			> li > a {
+				display: block;
+				margin: 0;
+			}
+
+			ul{
+				position: relative;
+				top: auto;
+				margin-top: 0;
+				padding: 0.75em;
+			}
+
+			ul ul{
+				position: relative;
+				left: 0;
+			}
+
+		}
+
+		// First level menu items
+		> li{
+			display: inline;
+
+			> a{
+				display: inline-block;
+			}
+		}
+
+		// All menu items
+		li {
+			position: relative;
+			white-space: nowrap;
+
+			// Drop down display
+			&:hover > ul{
+				display: block;
+			}
+		}
+
+		a {
+			position: relative;
+			padding: 0 0.5em;
+			line-height: $double;
+		}
+
+		// Drop down styles
+		ul{
+			position: absolute;
+			display: none;
+			/*top: 100%;*/
+			left: 0;
+			z-index: 1000;
+			/*margin-top: 0.90em;*/
+			text-align: left;
+
+			li,
+			li a{
+				display: block;
+				background: $background;
+				background: transparent;
+
+			}
+
+			ul{
+				top: 0;
+				left: 100%;
+			}
+		}
+
+		ul a {
+			border: 1px solid #ddd;
+			margin-top: -1px;
+			border-bottom: 0 solid;
+		}
+
+		@include desktop {
+
+			// Force following elements to clear.
+			&:after{
+				visibility: hidden;
+				display: block;
+				content: "";
+				clear: both;
+				height: 0;
+			}
+
+			li {
+				display: block;
+				float: left;
+			}
+
+			> li > a{
+				// margin: 0;
+
+			}
+
+			ul{
+				margin-top: 0;
+
+				li {
+					float: none;
+				}
+			}
+		}
+
+		/* =Lines
+		-------------------------------------------------------------- */
+
+		ul ul a {
+			margin-top: 0;
+		}
+
+		ul li:last-child a {
+			border-bottom: 1px solid #ddd;
+		}
+
+		ul ul {
+			margin-left: -1px;
+		}
+
+		&.is-mobile-menu {
+			ul a {
+				border: 0px solid #ddd;
+				border-top: 0 solid;
+			}
+
+			ul li:first-child a {
+				border-top: 0px solid #ddd;
+				margin-top: 0px;
+			}
+
+			ul ul {
+				margin-left: 0px;
+			}
+		}
+	}
+}
+
+
+
+
+
+/* =State Styles
+-------------------------------------------------------------- */
+
+/* Toggled Mobile Styles */
+
+.menu-toggle-button{
+	width: 1.5em;
+	cursor: pointer;
+	font-size: 2em;
+	text-align: center;
+	display: block;
+}
+
+.menu.is-mobile-menu.is-hidden-menu{
+	display: none;
+}
+
+
+/* =Arrow Styles
+-------------------------------------------------------------- */
+
+.menu.menu-arrows .has-submenu > a{
+	padding-right: 3.5em;
+}
+
+.menu.menu-arrows .toggle-submenu{
+	width: 1.5em;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/* Standard arrow styles */
+.menu.menu-arrows .toggle-submenu:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0.5em;
+	margin-top: -3px;
+	height: 0;
+	width: 0;
+
+	border: 5px solid transparent;
+	border-top-color: #000;
+}
+
+.menu.menu-arrows ul .toggle-submenu:after {
+	margin-top: -5px;
+	margin-right: -3px;
+
+	border-color: transparent;
+	border-left-color: #000;
+}
+
+.menu.menu-arrows .has-submenu > a{
+	padding-right: 2em;
+}
+
+/* Javascript menu arrow styles */
+
+.menu.is-js-menu.menu-arrows .toggle-submenu{
+	width: 2.5em;
+}
+
+.menu.is-js-menu.menu-arrows .has-submenu > a{
+	padding-right: 2.5em;
+}
+
+.menu.is-js-menu.menu-arrows .toggle-submenu:after {
+	right: 0.8em;
+}
+
+.menu.is-js-menu.menu-arrows ul .toggle-submenu:after {
+	right: 1.1em;
+}
+
+.menu.menu-arrows .is-open-submenu > ul{
+	display: block;
+}
+
+.menu.menu-arrows .is-open-submenu > a .toggle-submenu:after {
+	margin-top: -8px;
+
+	border-color: transparent;
+	border-bottom-color: #000;
+}
+
+.menu.menu-arrows ul .is-open-submenu > a .toggle-submenu:after {
+	margin-top: -5px;
+	margin-right: 3px;
+
+	border-color: transparent;
+	border-right-color: #000;
+}
+
+
+/* Javascript mobile menu arrow styles */
+.menu.menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after {
+	margin-top: -3px;
+	margin-right: -3px;
+
+	border-color: transparent;
+	border-top-color: #000;
+}
+
+/* Javascript mobile menu arrow styles */
+.menu.menu-arrows.is-mobile-menu.menu-arrows ul .is-open-submenu a .toggle-submenu:after {
+	margin-top: -8px;
+
+	border-color: transparent;
+	border-bottom-color: #000;
+}
+
+
+/* =Colors
+-------------------------------------------------------------- */
+
+.site-header .menu,
+.site-header .menu a,
+.site-header .menu li {
+	// background: #fff;
+	/*color: #fff;*/
+}
+
+.site-header .menu ul a {
+	/*background: rgba( 0, 0, 0, 0.1);*/
+	/*color: #fff;*/
+}
+
+/*.site-header .menu a:hover,
+.site-header .menu a:focus{
+	background: rgba( 0, 0, 0, 0.2);
+}
+
+.menu.is-mobile-menu.menu-arrows .toggle-submenu:hover{
+	background: rgba( 0, 0, 0, 0.2);
+}
+
+.menu.is-mobile-menu.menu-arrows ul,
+.menu.is-mobile-menu.menu-arrows ul a{
+	background: rgba( 0, 0, 0, 0.1);
+}
+
+.menu.is-mobile-menu.menu-arrows ul a:hover{
+	background: rgba( 0, 0, 0, 0.2);
+}
+
+.menu.is-mobile-menu.menu-arrows ul ul a:hover{
+	background: rgba( 0, 0, 0, 0.3);
+}
+
+.menu.is-mobile-menu.menu-arrows ul ul,
+.menu.is-mobile-menu.menu-arrows ul ul a{
+	background: rgba( 0, 0, 0, 0.2);
+}
+
+.menu.is-mobile-menu.menu-arrows .is-open-submenu > a .toggle-submenu{
+	background: rgba( 0, 0, 0, 0.1 );
+}
+*/
+

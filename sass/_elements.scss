@@ -1,0 +1,55 @@
+img,
+.wp-caption {
+	margin-bottom: 1.375rem;
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	margin: 0 auto;
+}
+
+.envira-gallery-wrap{
+	margin-top: -22px !important;
+}
+
+
+.wp-post-image {
+	display: block;
+}
+
+
+/* =Forms
+-------------------------------------------------------------- */
+input[type="text"],
+input[type="password"],
+textarea {
+	border: 1px solid #ddd;
+	background-color: $background;
+}
+
+button,
+input[type="submit"] {
+	background-color: #f6f6f6;
+	border: 1px solid #ddd;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}

@@ -1,0 +1,572 @@
+/*
+Theme Name: Longview
+Theme URI: http://themefoundation.com/
+Description: The Longview theme is a minimally styles WordPress theme designed to be easily extensible.
+Author: Theme Foundation
+Author URI: http://themefoundation.com/
+Version: 0.0.1
+License: GNU General Public License
+License URI: license.txt
+Tags: editor-style, threaded-comments
+*/
+
+// TODO: figure out what to do about heights/borders of before/after header widget areas (especially noticable for search widget)
+
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'structure';
+@import 'elements';
+@import 'components';
+@import 'mo';
+
+
+
+/* Wrap floats */
+.wrap:after,
+.widget:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+.site-header {
+	border-bottom: 1px solid $border;
+
+	> * {
+		// margin-top: -1px;
+	}
+}
+
+.menu-toggle-button {
+	// float: left;
+}
+
+#header .wrap:after {
+	// border-top: 1px solid $border;
+	width: 100%;
+	// display: block;
+	// height: -1px;
+	// content: '';
+}
+
+body.has-mobile-menu {
+	.header-before {
+		float: right;
+	}
+	.widget_pages {
+		display: none;
+	}
+}
+
+.site-header {
+
+	.site-title {
+		text-align: center;
+		margin-bottom: 0;
+		text-transform: uppercase;
+
+		a {
+			font-size: 2rem;
+			line-height: $quadruple;
+
+			@include desktop {
+				line-height: 8.1875rem;
+			}
+		}
+	}
+
+	.site-description {
+		text-align: center;
+		line-height: $single;
+		margin-bottom: 0;
+
+		@include desktop {
+			margin-left: 25px;
+			float: left;
+			line-height: 8.1875rem;
+		}
+	}
+
+	.widget {
+		margin-bottom: 0;
+		line-height: $double;
+
+	}
+
+	.widget-title {
+		display: none;
+		border: 0 solid;
+		font-size: 1rem;
+		margin-right: 0.5rem;
+	}
+
+	.textwidget {
+		margin-right: 0.5rem;
+	}
+
+	.widget_archive {
+
+		.widget-title {
+			display: inline;
+		}
+	}
+
+	.widget_text {
+		text-align: center;
+	}
+
+	.widget_text {
+
+		* {
+			display: inline;
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			display: none;
+		}
+	}
+
+	.widget_search {
+		margin: 0 auto;
+		display: block;
+		width: 300px;
+	}
+
+	@include tablet {
+		.widget {
+			float: none;
+		}
+	}
+
+	@include desktop {
+		p {
+			margin-bottom: 0;
+		}
+
+		.site-title {
+			float: left;
+		}
+
+		.site-title a {
+			display: block;
+			margin-bottom: 0;
+		}
+
+		#logo {
+			float: left;
+			margin-right: 25px;
+		}
+
+		.widget {
+			float: left;
+			margin-right: 1em;
+		}
+
+		.widget_search {
+			float: right;
+			margin-right: 0;
+		}
+	}
+}
+
+#header {
+	.widget {
+		line-height: $quadruple;
+		margin-bottom: 0;
+
+		@include desktop {
+			float: right;
+			line-height: 8.1875rem;
+		}
+	}
+
+	.widget_search {
+		@include desktop {
+			margin-top: $double;
+		}
+	}
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+%inside-header-menu {
+	@include desktop {
+		float: right;
+	}
+
+	> li > a {
+		line-height: $quadruple;
+
+		@include desktop {
+			line-height: 8.1875rem;
+		}
+
+		ul li a {
+			line-height: $double;
+		}
+	}
+} 
+
+#header .menu,
+#header .widget_archive ul:first-of-type,
+#header .widget_categories ul:first-of-type,
+#header .widget_meta ul:first-of-type,
+#header .widget_recent_entries ul:first-of-type,
+#header .widget_pages ul:first-of-type {
+	@extend %inside-header-menu;
+}
+
+%header-menu {
+	
+
+	a {
+		font-size: 1rem;
+	}
+
+	ul {
+		border: 1px solid $border;
+		min-width: 100%;
+
+		li {
+			float: none;
+		}
+	}
+
+	ul li a {
+		background: $background;
+		line-height: $double;
+		border-color: $border-light;
+
+		&:hover {
+			background-color: $background-light;
+		}
+	}
+
+	ul li:last-child a {
+		border-bottom-color: $border-light;
+	}
+
+	ul ul {
+		margin-top: -1px;
+	}
+}
+
+.site-header .menu,
+.site-header .widget_archive ul:first-of-type,
+.site-header .widget_categories ul:first-of-type,
+.site-header .widget_meta ul:first-of-type,
+.site-header .widget_recent_entries ul:first-of-type,
+.site-header .widget_pages ul:first-of-type {
+	@extend %header-menu;
+}
+
+
+.header-before {
+	// height: $double;
+
+	.menu,
+	.widget_pages ul {
+		ul {
+			// margin-top: -1px;
+
+			ul {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+
+
+
+/* =Feature Image
+-------------------------------------------------------------- */
+
+.featured-image .wrap {}
+
+/* =Main
+-------------------------------------------------------------- */
+
+#main > .wrap {
+	padding-top: $triple;
+}
+
+/* =Footer (mobile)
+-------------------------------------------------------------- */
+
+.site-footer .wrap {
+	padding: 1.375rem 25px; /* 22px 25px */
+	text-align: center;
+	font-size: 0.75em;
+
+	a {
+		color: #222;
+		text-decoration: none;
+	}
+}
+
+/* =Widgets (mobile)
+-------------------------------------------------------------- */
+
+.widget {
+	margin-bottom: 1.375rem;
+}
+
+.widget li {
+	margin: 0 0 1.375rem; /* 0 0 22px */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+.widget li li {
+	margin:1.375rem 0 0 1rem; /* 22px 0 0 16px */
+}
+
+
+.widget_search input[type="search"] {
+		float: left;
+		width: 70%;
+}
+
+.widget_search input[type="submit"] {
+		float: left;
+		width: 30%;
+}
+
+/* =Single posts
+-------------------------------------------------------------- */
+
+.single .entry-title {
+	padding-bottom: 1.375rem;
+}
+
+/* =Archive pages
+-------------------------------------------------------------- */
+
+
+
+/* =Forms (mobile)
+-------------------------------------------------------------- */
+
+input {
+	height: $double;
+	padding: 0 0.5rem;
+}
+
+/* =WordPress classes
+-------------------------------------------------------------- */
+
+.wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #dddddd;
+	margin-bottom: 1.375rem;
+}
+
+.wp-caption img {
+	margin-bottom: 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+
+.alignright {
+	float: right;
+	margin-left: 1rem;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1rem;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* =Appearance
+-------------------------------------------------------------- */
+
+.site-header a {
+	text-decoration: none;
+	color: #222;
+}
+
+.header-after {
+	border-top: 1px solid $border;
+	margin-top: -1px;
+}
+
+
+
+.menu-toggle-button {
+	line-height: $double;
+}
+
+#header,
+#main {
+	// border-top: 1px solid;
+	// margin-top: -1px;
+}
+
+.home #main {
+	border-top: 0 solid;
+	margin-top: 0;
+}
+
+.header-after input[type="search"] {
+	background: #fcfcfc;
+}
+
+.widget ol,
+.widget ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.widget li li {
+	margin: 1.375rem 0 0 1rem; /* 22px 0 0 16px */
+}
+
+.widget-title {
+	border-bottom: 1px solid #dddddd;
+	margin-top: -1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Open Sans', helvetica, sans-serif;
+	font-weight: normal;
+}
+
+.entry-title a {
+	text-decoration: none;
+}
+
+.post {
+	padding-bottom: $quadruple;
+}
+
+.entry-meta-top {
+	margin-bottom: 1.375rem;
+}
+
+
+/* =Syntax highlighter
+-------------------------------------------------------------- */
+
+#main .syntaxhighlighter {
+	width: 106% !important;
+	margin-left: -3% !important;
+	border: 1px solid #dddddd;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#main .line:first-child {
+	padding-top: 10px !important;
+}
+
+#main .line:last-child {
+	padding-bottom: 10px !important;
+}
+
+#main .syntaxhighlighter * {
+
+}
+
+#main .syntaxhighlighter .gutter .line {
+	border-right: 1px solid #dddddd !important;
+	background: #f6f6f6 !important;
+}
+
+	
+/* =Accessibility
+-------------------------------------------------------------- */
+
+.skip-link {
+	position: absolute;
+	top:-100px;
+
+	/* Styled to match the default WordPress screen reader text */
+	background-color: #f1f1f1;
+	-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,.6);
+	box-shadow:0 0 2px 2px rgba(0,0,0,.6);
+	color: #21759b;
+	display: block;
+	font-family: "Open Sans",sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	height: auto;
+	left:6px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+
+	-webkit-transition: top 1s ease-out;
+	transition: top 1s ease-out;
+}
+
+.skip-link:focus {
+	color: #21759b;
+	top: 7px;
+	clip: auto !important;
+	-webkit-transition: top 0s;
+	transition: top 0s;
+}
+
+/* =Blocks
+-------------------------------------------------------------- */
+
+.widget_search {
+
+	input {
+		border: 1px solid #dddddd;
+		margin-top: -1px;
+		display: block;
+		height: 45px;
+		float: left;
+		
+	}
+
+	input[type="search"] {
+		background-color: $background;
+	}
+
+	input[type="submit"] {
+		background-color: #f6f6f6;
+		border-left: 0 solid;
+	}
+}

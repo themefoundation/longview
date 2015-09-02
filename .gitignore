@@ -1,0 +1,7 @@
+# Lonview WordPress theme
+# Files that git should ignore
+
+.sass-cache/
+node_modules/
+sassdoc/
+notes.txt
