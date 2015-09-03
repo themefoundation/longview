@@ -1121,6 +1121,10 @@ body.has-mobile-menu .widget_pages {
 
 /* =Feature Image
 -------------------------------------------------------------- */
+.featured-image .wrap {
+  margin-top: 4.125rem;
+}
+
 /* =Main
 -------------------------------------------------------------- */
 #main > .wrap {

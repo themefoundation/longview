@@ -287,7 +287,9 @@ body.has-mobile-menu {
 /* =Feature Image
 -------------------------------------------------------------- */
 
-.featured-image .wrap {}
+.featured-image .wrap {
+	margin-top: $triple;
+}
 
 /* =Main
 -------------------------------------------------------------- */

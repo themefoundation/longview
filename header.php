@@ -46,7 +46,7 @@ add_action( 'thmfdn_header', 'thmfdn_header_widgets', 40 );
 add_action( 'thmfdn_header', 'thmfdn_header_close', 100 );
 
 add_action( 'thmfdn_header_after', 'thmfdn_after_header_widgets' );
-add_action( 'thmfdn_header_after', 'thmfdn_main_open' );
+add_action( 'thmfdn_header_after', 'thmfdn_main_open', 100 );
 
 /**
  *****************************************************************************

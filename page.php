@@ -16,10 +16,10 @@
  * @see http://codex.wordpress.org/Function_Reference/add_action
  * @since 1.0
  */
+add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 
-add_action( 'thmfdn_entry', 'thmfdn_page_featured_image' );
 add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
 add_action( 'thmfdn_entry', 'thmfdn_page_content' );
 
@@ -66,8 +66,13 @@ if ( !function_exists( 'thmfdn_page_featured_image' ) ) {
 	 * @since 1.0
 	 */
 	function thmfdn_page_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) );
-		echo "\n";
+		?>
+			<div class="row featured-image">
+				<div class="wrap">
+					<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+				</div>
+			</div>
+		<?php
 	}
 }
 

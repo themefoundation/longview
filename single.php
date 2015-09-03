@@ -18,7 +18,7 @@
  */
 
 // The thmfdn_header_after action hook is located in the header.php file.
-add_action( 'thmfdn_header_after', 'thmfdn_single_featured_image' );
+add_action( 'thmfdn_header_after', 'thmfdn_single_featured_image', 50 );
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 
