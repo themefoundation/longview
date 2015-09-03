@@ -64,20 +64,6 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 		<?php	}
 }
 
-if ( !function_exists( 'thmfdn_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-	}
-}
-
-
 if ( !function_exists( 'thmfdn_single_featured_image' ) ) {
 	/**
 	 * Featured image
@@ -91,6 +77,19 @@ if ( !function_exists( 'thmfdn_single_featured_image' ) ) {
 					<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
 				</div>
 			</div>
+		<?php
+	}
+}
+
+if ( !function_exists( 'thmfdn_post_open' ) ) {
+	/**
+	 * Open #post div
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_post_open() {
+		?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php
 	}
 }
