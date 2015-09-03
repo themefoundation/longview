@@ -75,6 +75,6 @@ function thmfdn_widget_count( $widget_area_id ) {
 	if( empty( $widget_areas[$widget_area_id] ) ) {
 		return false;
 	} else {
-		return $widget_areas[$widget_area_id];
+		return count( $widget_areas[$widget_area_id] );
 	}
 }

@@ -60,7 +60,7 @@ if ( !function_exists( 'thmfdn_footer_open' ) ) {
 	 * Opens the footer and wrapper.
 	 */
 	function thmfdn_footer_open() {
-		echo 	'<footer id="' . apply_filters( 'thmfdn_footer_id', 'footer' ) . '" class="' . apply_filters( 'thmfdn_footer_class', 'site-footer' ) . '">' . "\n";
+		echo 	'<footer id="' . apply_filters( 'thmfdn_footer_id', 'footer' ) . '" class="' . apply_filters( 'thmfdn_footer_class', 'site-footer row' ) . '">' . "\n";
 		echo '<div class="' . apply_filters( 'thmfdn_footer_wrap_class', 'wrap' ) . '">' . "\n";
 	}
 }

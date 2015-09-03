@@ -5,6 +5,7 @@
 .row > .wrap {
 	max-width: $row-max-width;
 	margin: 0 auto;
+	width: 90%;
 	
 	@include desktop {
 		padding: 0 $double;
@@ -251,6 +252,77 @@
 			margin-left: auto;
 			margin-right: auto;
 			float: none;
+		}
+	}
+}
+
+/* =Widget Area Columns
+-------------------------------------------------------------- */
+.widget-columns {
+
+	&.widget-count-1 .widget{
+		padding: 0 $single;
+	}
+
+	@include tablet {
+
+		&.widget-count-2 .widget,
+		&.widget-count-4 .widget,
+		&.widget-count-5 .widget,
+		&.widget-count-6 .widget {
+			float: left;
+			width: 50%;
+			padding: 0 $single;
+
+			&:nth-child(odd) {
+				clear: left;
+			}
+		}
+
+		&.widget-count-3 .widget{
+			float: left;
+			width: 33.333333333%;
+			padding: 0 $single;
+		}
+		
+		&.widget-count-5 .widget {
+			&:last-child {
+				margin-left: 25%;
+			}
+		}
+	}
+
+	@include desktop {
+		 
+		&.widget-count-4 .widget{
+			float: left;
+			width: 25%;
+			padding: 0 $single;
+
+			&:nth-child(odd) {
+				clear: none;
+			}
+		}
+		 
+		&.widget-count-5 .widget{
+			float: left;
+			width: 20%;
+			padding: 0 $single;
+
+			&:nth-child(odd) {
+				clear: none;
+				margin-left: 0;
+			}
+		}
+		 
+		&.widget-count-6 .widget{
+			float: left;
+			width: 16.666666667%;
+			padding: 0 $single;
+
+			&:nth-child(odd) {
+				clear: none;
+			}
 		}
 	}
 }
