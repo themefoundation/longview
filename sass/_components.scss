@@ -48,13 +48,48 @@
 	display: block;
 }
 
-/* =Archive Navigation
+/* =Single Post Navigation
 -------------------------------------------------------------- */
+.post-navigation {
+
+	.nav-previous {
+		float: left;
+
+		a:before {
+			display: inline-block;
+			content: "\00ab";
+			padding-right: $half;
+		}
+	}
+
+	.nav-next {
+		float: right;
+
+		a:after {
+			display: inline-block;
+			content: "\00bb";
+			padding-left: $half;
+		}
+	}
+
+	a {
+		line-height: $double;
+		background-color: $background-light;
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		margin-bottom: $single;
+		padding: 0 1rem;
+	}
+
+	a:hover {
+		background-color: $background-light-hover;
+	}
+}
 
 /* =Pagination Navigation
 -------------------------------------------------------------- */
-.nav-links {
-	display: inline-block;
+.pagination {
 
 	a,
 	span {

@@ -22,6 +22,7 @@ add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 
 add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
 add_action( 'thmfdn_entry', 'thmfdn_page_content' );
+add_action( 'thmfdn_entry', 'thmfdn_page_pagination' );
 
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
 
@@ -69,7 +70,9 @@ if ( !function_exists( 'thmfdn_page_featured_image' ) ) {
 		?>
 			<div class="row featured-image">
 				<div class="wrap">
-					<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+					<div>
+						<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+					</div>
 				</div>
 			</div>
 		<?php
@@ -103,6 +106,23 @@ if ( !function_exists( 'thmfdn_page_content' ) ) {
 		echo '<div class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-content' ) . '">' . "\n";
 		the_content();
 		echo '</div><!--.entry-content-->' . "\n";
+	}
+}
+
+if ( !function_exists( 'thmfdn_page_pagination' ) ) {
+	/**
+	 *  Single post/page navigation template part
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_page_pagination() {
+		// Useful if pagination needs to be wrapped in another element.
+		// $pagination_args = array(
+		// 	'before' => '<div class="single-navigation">',
+		// 	'after' => '</div>'
+		// );
+
+		wp_link_pages();
 	}
 }
 
@@ -151,7 +171,6 @@ if ( have_posts() ) {
 		do_action( 'thmfdn_entry' );
 		do_action( 'thmfdn_entry_bottom' );
 	}
-	get_template_part( 'template-parts/nav', 'single' );
 } else {
 	get_template_part( 'template-parts/404' );
 }

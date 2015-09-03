@@ -214,21 +214,3 @@ function thmfdn_after_footer_widgets() {
 		<?php
 	}
 }
-
-/**
- * Counts the number of widgets in a widget area
- *
- * @return integer The number of widgets present in the specified widget area.
- * @since 1.0
- */
-function thmfdn_count_widgets( $widget_area_id ) {
-	global $wp_registered_sidebars;
-	$widget_areas = wp_get_sidebars_widgets();
-
-	if( empty( $widget_areas[$widget_area_id] ) ) {
-		return false;
-	} else {
-		return $widget_areas[$widget_area_id];
-	}
-
-}

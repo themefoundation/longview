@@ -400,15 +400,41 @@ input[type="submit"]:hover {
   display: block;
 }
 
-/* =Archive Navigation
+/* =Single Post Navigation
 -------------------------------------------------------------- */
+.post-navigation .nav-previous {
+  float: left;
+}
+.post-navigation .nav-previous a:before {
+  display: inline-block;
+  content: "\00ab";
+  padding-right: 0.6875rem;
+}
+.post-navigation .nav-next {
+  float: right;
+}
+.post-navigation .nav-next a:after {
+  display: inline-block;
+  content: "\00bb";
+  padding-left: 0.6875rem;
+}
+.post-navigation a {
+  line-height: 2.75rem;
+  background-color: #f6f6f6;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 1.375rem;
+  padding: 0 1rem;
+}
+.post-navigation a:hover {
+  background-color: #eeeeee;
+}
+
 /* =Pagination Navigation
 -------------------------------------------------------------- */
-.nav-links {
-  display: inline-block;
-}
-.nav-links a,
-.nav-links span {
+.pagination a,
+.pagination span {
   line-height: 2.75rem;
   background-color: #f6f6f6;
   width: 2.75rem;
@@ -418,15 +444,15 @@ input[type="submit"]:hover {
   margin-right: 0.6875rem;
   text-decoration: none;
 }
-.nav-links a:hover {
+.pagination a:hover {
   background-color: #eeeeee;
 }
-.nav-links a.prev,
-.nav-links a.next {
+.pagination a.prev,
+.pagination a.next {
   width: auto;
   padding: 0 1rem;
 }
-.nav-links *:last-child {
+.pagination *:last-child {
   border-right: 0 solid;
 }
 
@@ -1123,6 +1149,13 @@ body.has-mobile-menu .widget_pages {
 -------------------------------------------------------------- */
 .featured-image .wrap {
   margin-top: 4.125rem;
+  text-align: center;
+}
+.featured-image .wrap div {
+  background-color: #f6f6f6;
+}
+.featured-image .wrap img {
+  margin: 0 auto;
 }
 
 /* =Main
@@ -1176,7 +1209,8 @@ body.has-mobile-menu .widget_pages {
 
 /* =Single posts
 -------------------------------------------------------------- */
-.single .entry-title {
+.single .entry-title,
+.single-navigation {
   padding-bottom: 1.375rem;
 }
 
@@ -1291,7 +1325,8 @@ h6 {
   padding-bottom: 5.5rem;
 }
 
-.entry-meta-top {
+.entry-meta-top,
+.entry-meta-bottom {
   margin-bottom: 1.375rem;
 }
 
