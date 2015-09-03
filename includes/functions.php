@@ -42,22 +42,15 @@ function thmfdn_editor_style() {
 add_action( 'admin_init', 'thmfdn_editor_style' );
 
 /**
- * Ensures that the title tag will never be empty
+ * Runs the theme initialization routine
  *
- * If for some reason the title tag is empty (this often happens on the home
- * page, if it is set to display the latest posts), it uses the site name and
- * description as the title.
+ * Theme setup process. Does things like add support for various features
+ * built into WordPress core.
  *
- * @return string Content to use in the title tag.
  * @since 1.0
  */
-function thmfdn_expand_title( $title ) {
-	if( empty( $title ) ) {
-		return get_bloginfo('name') . ' - ' . get_bloginfo( 'description' );
-	} else {
-		return $title;
-	}
+function thmfdn_init() {
+	add_theme_support( 'title-tag' );
 }
-add_filter( 'wp_title', 'thmfdn_expand_title' );
-
+add_action( 'after_setup_theme', 'thmfdn_init' );
 
