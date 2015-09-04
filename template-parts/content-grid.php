@@ -21,8 +21,8 @@ add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
 add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
 add_action( 'thmfdn_entry', 'thmfdn_archive_entry_title' );
 add_action( 'thmfdn_entry', 'thmfdn_archive_meta_top' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_content' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_meta_bottom' );
+// add_action( 'thmfdn_entry', 'thmfdn_archive_content' );
+// add_action( 'thmfdn_entry', 'thmfdn_archive_meta_bottom' );
 
 add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
 
@@ -58,7 +58,7 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 * @since 1.0
 	 */
 	function thmfdn_archive_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
+		the_post_thumbnail( apply_filters( 'thmfdn_grid_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
 		echo "\n";
 	}
 }

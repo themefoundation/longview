@@ -18,8 +18,24 @@
  */
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
+add_action( 'thmfdn_content_top', 'thmfdn_archive_title' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_pagination' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
+
+/**
+ *****************************************************************************
+ * Add filters
+ *****************************************************************************
+ *
+ * This section adds filters to their respective filter hooks.
+ *
+ * @see http://codex.wordpress.org/Function_Reference/add_filter
+ * @since 1.0
+ */
+
+// Overrides default template part used for post content.
+add_action( 'thmfdn_content_part', 'thmfdn_grid' );
+
 
 /**
  *****************************************************************************
@@ -50,92 +66,23 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 		<?php
 	}
 }
+
+if ( !function_exists( 'thmfdn_archive_title' ) ) {
+	/**
+	 * Archive title
+	 *
+	 * Displays the title for archive pages.
+	 *
+	 * @since 1.0
+	 * @see https://developer.wordpress.org/reference/functions/the_archive_title/
+	 */
+	function thmfdn_archive_title() {
 		
-
-if ( !function_exists( 'thmfdn_index_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_index_featured_image' ) ) {
-	/**
-	 * Featured image
-	 *
-	 * Displays the featured image (formerly called the post thumbnail).
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_index_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
-		echo "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_index_entry_title' ) ) {
-	/**
-	 * Entry title
-	 *
-	 * Displays the post title.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_entry_title() {
-		echo '<h2 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		echo '<a href="' . get_permalink() . '">';
-		the_title();
-		echo '</a>';
-		echo '</h2>' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_index_meta' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_meta() {
-		echo '<div class="' . apply_filters( 'thmfdn_entry_meta_class', 'entry-meta' ) . '">';
-		get_template_part( 'template-parts/entry', 'meta' );
-		echo '</div>' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_index_content' ) ) {
-	/**
-	 * Entry content
-	 *
-	 * Displays the post content.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_content() {
-		echo '<div class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-content' ) . '">' . "\n";
-		the_content();
-		echo '</div><!--.entry-content-->' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_index_post_close' ) ) {
-	/**
-	 * Close #post div
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_index_post_close() {
-		?>
-			</div><!-- #post-number -->
-		<?php
+		$thmfdn_archive_title = get_the_archive_title();
+		if ( 'Archives' != $thmfdn_archive_title ) {
+			echo '<h1 class="page-title">' . $thmfdn_archive_title . '</h1>';
+		}
+		the_archive_description( '<p class="page-description">', '</p>' );
 	}
 }
 
@@ -177,6 +124,30 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
 
 /**
  *****************************************************************************
+ * Define filters
+ *****************************************************************************
+ *
+ * This section defines the actions associated with each hook.
+ *
+ * @since 1.0
+ */
+if ( !function_exists( 'thmfdn_grid' ) ) {
+	/**
+	 * Grid template
+	 *
+	 * This function specifies which template part should be used.
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_grid() {
+		return 'grid';
+	}
+}
+
+
+
+/**
+ *****************************************************************************
  * Do actions
  *****************************************************************************
  *
@@ -197,7 +168,7 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/content' );
+		get_template_part( 'template-parts/content', apply_filters( 'thmfdn_content_part', '' ) );
 	}
 } else {
 	get_template_part( 'template-parts/404' );

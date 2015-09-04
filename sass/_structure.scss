@@ -260,7 +260,7 @@
 -------------------------------------------------------------- */
 .widget-columns {
 
-	&.widget-count-1 .widget{
+	.widget{
 		padding: 0 $single;
 	}
 
@@ -268,21 +268,23 @@
 
 		&.widget-count-2 .widget,
 		&.widget-count-4 .widget,
-		&.widget-count-5 .widget,
-		&.widget-count-6 .widget {
+		&.widget-count-5 .widget {
 			float: left;
 			width: 50%;
-			padding: 0 $single;
 
 			&:nth-child(odd) {
 				clear: left;
 			}
 		}
 
-		&.widget-count-3 .widget{
+		&.widget-count-3 .widget,
+		&.widget-count-6 .widget {
 			float: left;
 			width: 33.333333333%;
-			padding: 0 $single;
+
+			&:nth-child(3n+4) {
+				clear: left;
+			}
 		}
 		
 		&.widget-count-5 .widget {
@@ -297,7 +299,6 @@
 		&.widget-count-4 .widget{
 			float: left;
 			width: 25%;
-			padding: 0 $single;
 
 			&:nth-child(odd) {
 				clear: none;
@@ -307,7 +308,6 @@
 		&.widget-count-5 .widget{
 			float: left;
 			width: 20%;
-			padding: 0 $single;
 
 			&:nth-child(odd) {
 				clear: none;
@@ -318,9 +318,8 @@
 		&.widget-count-6 .widget{
 			float: left;
 			width: 16.666666667%;
-			padding: 0 $single;
 
-			&:nth-child(odd) {
+			&:nth-child(3n+4) {
 				clear: none;
 			}
 		}

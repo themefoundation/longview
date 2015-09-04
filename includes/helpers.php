@@ -71,7 +71,6 @@ function thmfdn_post_meta( $meta_args = array() ) {
  * @return integer The number of widgets present in the specified widget area.
  */
 function thmfdn_widget_count( $widget_area_id ) {
-	global $wp_registered_sidebars;
 	$widget_areas = wp_get_sidebars_widgets();
 
 	if( empty( $widget_areas[$widget_area_id] ) ) {

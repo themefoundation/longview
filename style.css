@@ -253,22 +253,23 @@ pre {
 
 /* =Widget Area Columns
 -------------------------------------------------------------- */
-.widget-columns.widget-count-1 .widget {
+.widget-columns .widget {
   padding: 0 1.375rem;
 }
 @media (min-width: 900px) {
-  .widget-columns.widget-count-2 .widget, .widget-columns.widget-count-4 .widget, .widget-columns.widget-count-5 .widget, .widget-columns.widget-count-6 .widget {
+  .widget-columns.widget-count-2 .widget, .widget-columns.widget-count-4 .widget, .widget-columns.widget-count-5 .widget {
     float: left;
     width: 50%;
-    padding: 0 1.375rem;
   }
-  .widget-columns.widget-count-2 .widget:nth-child(odd), .widget-columns.widget-count-4 .widget:nth-child(odd), .widget-columns.widget-count-5 .widget:nth-child(odd), .widget-columns.widget-count-6 .widget:nth-child(odd) {
+  .widget-columns.widget-count-2 .widget:nth-child(odd), .widget-columns.widget-count-4 .widget:nth-child(odd), .widget-columns.widget-count-5 .widget:nth-child(odd) {
     clear: left;
   }
-  .widget-columns.widget-count-3 .widget {
+  .widget-columns.widget-count-3 .widget, .widget-columns.widget-count-6 .widget {
     float: left;
     width: 33.333333333%;
-    padding: 0 1.375rem;
+  }
+  .widget-columns.widget-count-3 .widget:nth-child(3n+4), .widget-columns.widget-count-6 .widget:nth-child(3n+4) {
+    clear: left;
   }
   .widget-columns.widget-count-5 .widget:last-child {
     margin-left: 25%;
@@ -278,7 +279,6 @@ pre {
   .widget-columns.widget-count-4 .widget {
     float: left;
     width: 25%;
-    padding: 0 1.375rem;
   }
   .widget-columns.widget-count-4 .widget:nth-child(odd) {
     clear: none;
@@ -286,7 +286,6 @@ pre {
   .widget-columns.widget-count-5 .widget {
     float: left;
     width: 20%;
-    padding: 0 1.375rem;
   }
   .widget-columns.widget-count-5 .widget:nth-child(odd) {
     clear: none;
@@ -295,9 +294,8 @@ pre {
   .widget-columns.widget-count-6 .widget {
     float: left;
     width: 16.666666667%;
-    padding: 0 1.375rem;
   }
-  .widget-columns.widget-count-6 .widget:nth-child(odd) {
+  .widget-columns.widget-count-6 .widget:nth-child(3n+4) {
     clear: none;
   }
 }
@@ -1264,6 +1262,9 @@ input {
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 /* =Appearance
