@@ -22,14 +22,6 @@ Tags: editor-style, threaded-comments
 
 
 
-/* Wrap floats */
-.wrap:after,
-.widget:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 
 /* =Header
 -------------------------------------------------------------- */

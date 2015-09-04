@@ -50,6 +50,8 @@ pre {
   overflow-x: scroll;
 }
 
+/* =Row Defaults
+-------------------------------------------------------------- */
 .row {
   clear: both;
 }
@@ -65,12 +67,33 @@ pre {
   }
 }
 
+/* =Column Defaults
+-------------------------------------------------------------- */
+.primary {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.secondary,
+.tertiary {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/* =Content Only
+-------------------------------------------------------------- */
+/* =Full Width Content
+-------------------------------------------------------------- */
 .content-full-width #main .primary {
   max-width: 100%;
   width: 100%;
   margin: 0;
 }
 
+/* =Content/Sidebar
+-------------------------------------------------------------- */
 @media (min-width: 900px) {
   .content-sidebar #main .wrap {
     max-width: 1000px;
@@ -93,6 +116,8 @@ pre {
   }
 }
 
+/* =Sidebar/Content
+-------------------------------------------------------------- */
 @media (min-width: 900px) {
   .sidebar-content #main .wrap {
     max-width: 1000px;
@@ -115,6 +140,8 @@ pre {
   }
 }
 
+/* =Content/Sidebar/Sidebar
+-------------------------------------------------------------- */
 @media (min-width: 900px) {
   .content-sidebar-sidebar #main .wrap {
     max-width: 1000px;
@@ -148,6 +175,8 @@ pre {
   }
 }
 
+/* =Sidebar/Sidebar/Content
+-------------------------------------------------------------- */
 @media (min-width: 900px) {
   .sidebar-sidebar-content #main .wrap {
     max-width: 1000px;
@@ -181,6 +210,8 @@ pre {
   }
 }
 
+/* =Sidebar/Content/Sidebar
+-------------------------------------------------------------- */
 @media (min-width: 900px) {
   .sidebar-content-sidebar #main .wrap {
     max-width: 1000px;
@@ -217,19 +248,6 @@ pre {
     padding-right: 0;
     width: 25%;
   }
-}
-
-.secondary,
-.tertiary {
-  max-width: 350px;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-.primary {
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 0 25px;
 }
 
 /* =Page Templates
@@ -298,6 +316,15 @@ pre {
   .widget-columns.widget-count-6 .widget:nth-child(3n+4) {
     clear: none;
   }
+}
+
+/* =Float Clearing
+-------------------------------------------------------------- */
+.wrap:after,
+.widget:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 img,
@@ -911,14 +938,6 @@ by Jonathan Snook at http://smacss.com
 
 /* =Applied placeholders
 -------------------------------------------------------------- */
-/* Wrap floats */
-.wrap:after,
-.widget:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 /* =Header
 -------------------------------------------------------------- */
 .site-header {

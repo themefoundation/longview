@@ -1,3 +1,5 @@
+/* =Row Defaults
+-------------------------------------------------------------- */
 .row {
 	clear: both;
 }
@@ -12,11 +14,27 @@
 	}
 }
 
-
-.content-only {
-
+/* =Column Defaults
+-------------------------------------------------------------- */
+.primary {
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 25px;
 }
 
+.secondary,
+.tertiary {
+	max-width: 350px;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+/* =Content Only
+-------------------------------------------------------------- */
+.content-only {}
+
+/* =Full Width Content
+-------------------------------------------------------------- */
 .content-full-width {
 	#main .primary {
 		max-width: 100%;
@@ -25,6 +43,8 @@
 	}
 }
 
+/* =Content/Sidebar
+-------------------------------------------------------------- */
 .content-sidebar {
 	@include tablet {
 		#main .wrap {
@@ -53,6 +73,8 @@
 	}
 }
 
+/* =Sidebar/Content
+-------------------------------------------------------------- */
 .sidebar-content {
 	@include tablet {
 		#main .wrap {
@@ -81,6 +103,8 @@
 	}
 }
 
+/* =Content/Sidebar/Sidebar
+-------------------------------------------------------------- */
 .content-sidebar-sidebar {
 	@include tablet {
 		#main .wrap {
@@ -122,6 +146,8 @@
 	}
 }
 
+/* =Sidebar/Sidebar/Content
+-------------------------------------------------------------- */
 .sidebar-sidebar-content {
 	@include tablet {
 		#main .wrap {
@@ -163,6 +189,8 @@
 	}
 }
 
+/* =Sidebar/Content/Sidebar
+-------------------------------------------------------------- */
 .sidebar-content-sidebar {
 	@include tablet {
 		#main .wrap {
@@ -208,30 +236,6 @@
 		}
 	}
 }
-
-
-.secondary,
-.tertiary {
-	max-width: 350px;
-	margin: 0 auto;
-	padding: 0 25px;
-}
-
-.secondary {
-	// margin-top: 4.125rem;
-}
-
-
-.secondary .widget,
-.tertiary .widget {
-}
-
-.primary {
-	max-width: 650px;
-	margin: 0 auto;
-	padding: 0 25px;
-}
-
 
 /* =Page Templates
 -------------------------------------------------------------- */
@@ -324,4 +328,13 @@
 			}
 		}
 	}
+}
+
+/* =Float Clearing
+-------------------------------------------------------------- */
+.wrap:after,
+.widget:after {
+	content: "";
+	display: table;
+	clear: both;
 }
