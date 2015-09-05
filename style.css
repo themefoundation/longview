@@ -15,8 +15,8 @@ Tags: editor-style, threaded-comments
 -------------------------------------------------------------- */
 /* =Standard measurements
 -------------------------------------------------------------- */
-/* 11px */
 /* 22px */
+/* 11px */
 /* 33px */
 /* 44px */
 /* 44px */
@@ -86,7 +86,7 @@ pre {
 -------------------------------------------------------------- */
 /* =Full Width Content
 -------------------------------------------------------------- */
-.content-full-width #main .primary {
+.content-full-width .primary {
   max-width: 100%;
   width: 100%;
   margin: 0;
@@ -376,6 +376,37 @@ input[type="submit"]:hover {
   cursor: pointer;
 }
 
+/* =Grid
+-------------------------------------------------------------- */
+#main .grid {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+#main .grid > * {
+  text-align: left;
+}
+#main .grid .post .wp-post-image {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 900px) {
+  #main .grid .post {
+    width: 30%;
+    float: left;
+  }
+  #main .grid .post:nth-of-type(3n+4) {
+    clear: left;
+  }
+  #main .grid .post:nth-of-type(3n+2) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
 /* =Gallery
 -------------------------------------------------------------- */
 .gallery {
@@ -458,6 +489,9 @@ input[type="submit"]:hover {
 
 /* =Pagination Navigation
 -------------------------------------------------------------- */
+.pagination {
+  clear: both;
+}
 .pagination a,
 .pagination span {
   line-height: 2.75rem;
@@ -551,7 +585,7 @@ input[type="submit"]:hover {
   display: none;
 }
 #comments .comment-list .comment-body .comment-metadata {
-  margin-top: -3.4375rem;
+  margin-top: -1.375rem;
   margin-left: 5.5rem;
   line-height: 2.0625rem;
   float: left;
@@ -579,7 +613,7 @@ input[type="submit"]:hover {
 The mo.js stylesheet is heavily influenced by the
 scalable and modular architecture for CSS as described
 by Jonathan Snook at http://smacss.com
-
+ 
 */
 /* =Variables
 -------------------------------------------------------------- */

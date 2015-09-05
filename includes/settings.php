@@ -33,6 +33,9 @@ function thmfdn_defaults() {
 	);
 	add_theme_support( 'html5', $html5_support );
 
+	// Sets additional image sizes
+	add_image_size( 'grid', 300, 200, true );
+
 }
 add_action( 'init', 'thmfdn_defaults' );
 
@@ -49,6 +52,7 @@ add_action( 'init', 'thmfdn_defaults' );
  * - sidebar-content-sidebar (First sidebar on the left, content in the center, and second sidebar on the iis_get_server_rights(server_instance, virtual_path))
  *
  * @since 1.0
+ * @return string Layout class name.
  */
 function get_thmfdn_layout() {
 
@@ -65,11 +69,20 @@ function get_thmfdn_layout() {
 		$layout_class = 'sidebar-content';
 	}
 
+	// Overrides default layout for archives.
+	if ( is_archive() ) {
+		$layout_class = 'content-full-width';
+	}
+
+
 	return apply_filters( 'thmfdn_layout_class', $layout_class );
 }
 
 /**
  * Adds layout class to body element
+ *
+ * @param array $classes Array of class names used for the <body> tag.
+ * @return array $classes Updated array of class names used for the <body> tag.
  */
 function thmfdn_body_class_layout( $classes ) {
 
@@ -82,6 +95,58 @@ function thmfdn_body_class_layout( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'thmfdn_body_class_layout' );
+
+/**
+ * Sets content format defaults
+ *
+ * Content formats define the layout/format of the content portion the page.
+ * Simply put, this controls the format of the primary column. While this
+ * could be put into use on any type of page, it is primarily used on
+ * archive pages.
+ *
+ * These are the supported content formats:
+ * - content (Standard blog format, single column of posts)
+ * - grid (Rows of content, multiple columns)
+ *
+ * @since 1.0
+ * @return string Layout class name.
+ */
+function get_thmfdn_content_format() {
+
+	// Default layout
+	$format_class = get_post_format();
+
+	// Overrides default layout for single posts.
+	if ( is_archive() ) {
+		$format_class = 'grid';
+	} 
+
+	// Overrides default layout for pages.
+	if ( is_page() ) {
+		$format_class = 'grid';
+	}
+
+	return apply_filters( 'thmfdn_content_format_class', $format_class );
+}
+add_filter( 'thmfdn_template_part_name', 'get_thmfdn_content_format' );
+
+/**
+ * Adds format class to .primary column
+ *
+ * @param string $classes String of class names used for the .primary column.
+ * @return string $classes Updated string of class names used for the .primary column.
+ */
+function thmfdn_content_class_format( $classes ) {
+
+	// Gets the layout class.
+	$format_class = get_thmfdn_content_format();
+
+	// Adds the layout class to the existing string of classes.
+	$classes .= ' ' . $format_class;
+
+	return $classes;
+}
+add_filter( 'thmfdn_content_class', 'thmfdn_content_class_format' );
 
 /**
  * Sets the default thumbnail size.
@@ -98,11 +163,10 @@ add_filter( 'body_class', 'thmfdn_body_class_layout' );
  * - any custom image size introduced by the theme or a plugin
  *
  * @since 1.0
+ * @param string $thumbnail_size Existing image size.
+ * @return string $thumbnail_size Image size to use.
  */
-function thmfdn_thumbnail_size() {
-
-	// Default thumbnail size
-	$thumbnail_size = 'medium';
+function thmfdn_thumbnail_size( $thumbnail_size ) {
 
 	// Overrides default layout for single posts.
 	if ( is_single () ) {

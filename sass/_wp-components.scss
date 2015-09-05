@@ -1,0 +1,241 @@
+/* =Gallery
+-------------------------------------------------------------- */
+// Used _s as a starting point: https://github.com/Automattic/_s/blob/master/style.css
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/* =Single Post Navigation
+-------------------------------------------------------------- */
+.post-navigation {
+
+	.nav-previous {
+		float: left;
+
+		a:before {
+			display: inline-block;
+			content: "\00ab";
+			padding-right: ($line * 0.5) + $unit;
+		}
+	}
+
+	.nav-next {
+		float: right;
+
+		a:after {
+			display: inline-block;
+			content: "\00bb";
+			padding-left: ($line * 0.5) + $unit;
+		}
+	}
+
+	a {
+		line-height: ($line * 2) + $unit;
+		background-color: $background-light;
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		margin-bottom: $line + $unit;
+		padding: 0 1rem;
+	}
+
+	a:hover {
+		background-color: $background-light-hover;
+	}
+}
+
+/* =Pagination Navigation
+-------------------------------------------------------------- */
+.pagination {
+	clear: both;
+
+	a,
+	span {
+		line-height: ($line * 2) + $unit;
+		background-color: $background-light;
+		width: ($line * 2) + $unit;
+		text-align: center;
+		display: block;
+		float: left;
+		margin-right: ($line * 0.5) + $unit;
+		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: $background-light-hover;
+	}
+
+	a.prev,
+	a.next {
+		width: auto;
+		padding: 0 1rem;
+	}
+
+	*:last-child {
+		border-right: 0 solid;
+	}
+}
+
+/* =RSS Widget
+-------------------------------------------------------------- */
+.widget_rss {
+	.widget-title img {
+		display: block;
+		float: left;
+		margin: 1rem 1rem 0 0;
+		line-height: ($line * 2) + $unit;
+	}
+}
+
+/* =Post password
+-------------------------------------------------------------- */
+.post-password-form {
+	border: 1px solid $border-light;
+	padding: ($line * 2) + $unit;
+	margin-bottom: $line + $unit;
+
+	p {
+		margin-bottom: 0;
+
+		&:last-child {
+			@include tablet {
+				margin-bottom: ($line * 2) + $unit;
+			}
+		}
+	}
+
+	label {
+		font-size: 0;
+	}
+
+	input {
+		width: 100%;
+		font-size: 1rem;
+		display: block;
+
+		&[type="submit"] {
+			margin-top: $line + $unit;
+		}
+
+		@include tablet {
+			float: left;
+
+			&[type="password"] {
+				margin-top: $line + $unit;
+				width: 75%;
+				border-right: 0 solid;
+			}
+
+			&[type="submit"] {
+				width: 25%;
+			}
+		}
+	}
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+
+#comments {
+	.comment-list {
+		list-style: none;
+		margin-left: 0;
+
+		li {
+			padding: $line + $unit 0;
+		}
+
+		.comment-body {
+
+			.avatar {
+				float: left;
+				margin-right: $line + $unit;
+			}
+
+			.comment-author a {
+				float: left;
+				line-height: ($line * 1.5) + $unit;
+				// background-color:#444;
+			}
+
+			.says {
+				display: none;
+			}
+
+			.comment-metadata {
+				margin-top: -$line + $unit;
+				margin-left: ($line * 4) + $unit;
+				// background-color: #ccc;
+				line-height: ($line * 1.5) + $unit;
+				float: left;
+				clear: left;
+			}
+
+			.comment-content {
+				clear: both;
+			}
+		}
+
+		.children {
+			list-style: none;
+			margin-left: 0;
+			border-left: 1px solid;
+			padding-left: ($line * 0.5) + $unit;
+		}
+	}
+
+}
+
+
+/* =Comment Form
+-------------------------------------------------------------- */
+
+#respond {
+	input,
+	textarea {
+		width: 100%;
+	}
+}

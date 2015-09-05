@@ -58,7 +58,7 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 * @since 1.0
 	 */
 	function thmfdn_archive_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_grid_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
+		the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'grid' ) );
 		echo "\n";
 	}
 }

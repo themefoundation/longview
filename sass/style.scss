@@ -18,10 +18,8 @@ Tags: editor-style, threaded-comments
 @import 'structure';
 @import 'elements';
 @import 'components';
+@import 'wp-components';
 @import 'mo';
-
-
-
 
 /* =Header
 -------------------------------------------------------------- */
@@ -63,7 +61,7 @@ body.has-mobile-menu {
 
 		a {
 			font-size: 2rem;
-			line-height: $quadruple;
+			line-height: ($line * 4) + $unit;
 
 			@include desktop {
 				line-height: 8.1875rem;
@@ -168,7 +166,7 @@ body.has-mobile-menu {
 
 #header {
 	.widget {
-		line-height: $quadruple;
+		line-height: ($line * 4) + $unit;
 		margin-bottom: 0;
 
 		@include desktop {
@@ -192,7 +190,7 @@ body.has-mobile-menu {
 	}
 
 	> li > a {
-		line-height: $quadruple;
+		line-height: ($line * 4) + $unit;
 
 		@include desktop {
 			line-height: 8.1875rem;
@@ -481,7 +479,7 @@ h6 {
 }
 
 .post {
-	padding-bottom: $quadruple;
+	padding-bottom: ($line * 4) + $unit;
 }
 
 .entry-meta-top,

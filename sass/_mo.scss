@@ -3,7 +3,7 @@
 The mo.js stylesheet is heavily influenced by the
 scalable and modular architecture for CSS as described
 by Jonathan Snook at http://smacss.com
-
+ 
 */
 
 @import 'mixins';
@@ -12,52 +12,52 @@ by Jonathan Snook at http://smacss.com
 -------------------------------------------------------------- */
 
 /// Default menu font size.
-$font-size: 1;
+$mo-font-size: 1;
 
 /// Line height determines the height of clickable menu items.
-$line-height: 2.75;
+$mo-line-height: 2.75;
 
 /// Default menu unit of measurement. Possible values: rem, em, px.
-$unit: rem;
+$mo-unit: rem;
 
 /// Breakpoint for applying tablet styles.
-$breakpoint-tablet: 900px;
+$mo-breakpoint-tablet: 900px;
 
 /// Breakpoint for applying desktop styles.
-$breakpoint-desktop: 1140px;
+$mo-breakpoint-desktop: 1140px;
 
 /// Background color for default menu.
-$default-background-color: #ffffff;
+$mo-default-background-color: #ffffff;
 
 /// Background color for default hovered menu items.
-$default-background-color-hover: #eeeeee;
+$mo-default-background-color-hover: #eeeeee;
 
 /// Border color for default menu items. Only used if the %border-style placeholder is in use.
-$default-border-color: #68a;
+$mo-default-border-color: #68a;
 
 /// Font color for default menu items.
-$default-font-color: #224466;
+$mo-default-font-color: #224466;
 
 /// Background color for mobile menu.
-$mobile-background-color: #eee;
+$mo-mobile-background-color: #eee;
 
 /// Background color for hovered mobile menu items.
-$mobile-background-color-hover: #ddd;
+$mo-mobile-background-color-hover: #ddd;
 
 /// Border color for mobile menu items. Only used if the %border-style placeholder is in use.
-$mobile-border-color: #68a;
+$mo-mobile-border-color: #68a;
 
 /// Font color for mobile menu items.
-$mobile-font-color: #000000; // Menu font color.
+$mo-mobile-font-color: #000000; // Menu font color.
 
 /// Class name. Should match classJS variable from mo.js file.
-$class-js: is-js-menu;
+$mo-class-js: is-js-menu;
 
 /// Class name. Should match classArrows variable from mo.js file.
-$class-arrows: menu-arrows; // Should match classArrows from mo.js file.
+$mo-class-arrows: menu-arrows; // Should match classArrows from mo.js file.
 
 /// Class name. Should match classHideMobile variable from mo.js file.
-$class-hidden: is-hidden-menu;
+$mo-class-hidden: is-hidden-menu;
 
 
 /* =Reset
@@ -81,15 +81,15 @@ $class-hidden: is-hidden-menu;
 
 	@extend %mo-reset; 
 
-	&.#{$class-js} {
+	&.#{$mo-class-js} {
 		@extend %is-js-menu;
 	}
 
-	&.#{$class-arrows} {
+	&.#{$mo-class-arrows} {
 		@extend %arrow-style-dropdown;
 	}
 
-	&.#{$class-hidden} {
+	&.#{$mo-class-hidden} {
 		display: none;
 	}
 
@@ -121,9 +121,9 @@ $class-hidden: is-hidden-menu;
 
 	a {
 		position: relative;
-		padding: 0 $font-size + $unit;
-		line-height: $line-height + $unit;
-		color: $default-font-color;
+		padding: 0 $mo-font-size + $mo-unit;
+		line-height: $mo-line-height + $mo-unit;
+		color: $mo-default-font-color;
 	}
 
 	// Drop downs (first level)
@@ -177,12 +177,12 @@ $class-hidden: is-hidden-menu;
 %block-style {
 	a:hover,
 	a:focus {
-		background: $default-background-color-hover;
+		background: $mo-default-background-color-hover;
 		outline: none;
 	}
 
 	ul a {
-		background: $default-background-color;
+		background: $mo-default-background-color;
 	}
 }
 
@@ -197,15 +197,15 @@ $class-hidden: is-hidden-menu;
 			margin-top: -1px;
 
 			a {
-				border: 1px solid $default-border-color;
-				height: $line-height + $unit;
+				border: 1px solid $mo-default-border-color;
+				height: $mo-line-height + $mo-unit;
 				// margin-top: -1px;
 				border-bottom: 0 solid;
 				outline: none;
 			}
 
 			li:last-child {
-				border-bottom: 1px solid $default-border-color;
+				border-bottom: 1px solid $mo-default-border-color;
 				height: auto;
 			}
 
@@ -224,7 +224,7 @@ $class-hidden: is-hidden-menu;
 %arrow-style-dropdown {
 
 	.toggle-submenu{
-		width: $line-height + $unit;
+		width: $mo-line-height + $mo-unit;
 		display: inline-block;
 		position: absolute;
 		top: 0;
@@ -253,7 +253,7 @@ $class-hidden: is-hidden-menu;
 	}
 
 	.has-submenu > a {
-		padding-right: $line-height + $unit;
+		padding-right: $mo-line-height + $mo-unit;
 	}
 }
 
@@ -309,13 +309,13 @@ $class-hidden: is-hidden-menu;
 -------------------------------------------------------------- */
 /// Menu toggle button styles.   
 %menu-toggle-button{
-	line-height: $line-height + $unit;
+	line-height: $mo-line-height + $mo-unit;
 	cursor: pointer;
 	text-align: left;
 	text-transform: uppercase;
 	background-color: #444;
 	color: #ffffff;
-	padding: 0 $font-size + $unit;
+	padding: 0 $mo-font-size + $mo-unit;
 	display: inline-block;
 }
 
@@ -324,18 +324,18 @@ $class-hidden: is-hidden-menu;
 /// Mobile menu styles.
 %is-mobile-menu {
 	text-align: left;
-	background-color: $mobile-background-color;
+	background-color: $mo-mobile-background-color;
 
 	li {
 		display: block;
 
 		a {
 			display: block;
-			background-color: $mobile-background-color;
-			color: $mobile-font-color;
+			background-color: $mo-mobile-background-color;
+			color: $mo-mobile-font-color;
 
 			&:hover {
-				background-color: $mobile-background-color-hover;
+				background-color: $mo-mobile-background-color-hover;
 			}
 		}
 	}
@@ -346,7 +346,7 @@ $class-hidden: is-hidden-menu;
 		margin-top: 0;
 
 		li {
-			margin: 0 $font-size + $unit;
+			margin: 0 $mo-font-size + $mo-unit;
 		}
 
 		ul {

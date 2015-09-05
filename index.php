@@ -6,6 +6,12 @@
  * @since 1.0
  */
 
+// TODO: figure out a way to easily change the template part AND add a class name
+//       to either then content wrapper or body tag so styles can be applied
+//       across all elements inside wrapper. Possibly unneeded if same thing can
+//       be accomplished by giving each template part element a specific class
+//       name. Also, should be controllable from settings, just like layout.
+
 /**
  *****************************************************************************
  * Add actions
@@ -32,10 +38,6 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
  * @see http://codex.wordpress.org/Function_Reference/add_filter
  * @since 1.0
  */
-
-// Overrides default template part used for post content.
-add_action( 'thmfdn_content_part', 'thmfdn_grid' );
-
 
 /**
  *****************************************************************************
@@ -124,30 +126,6 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
 
 /**
  *****************************************************************************
- * Define filters
- *****************************************************************************
- *
- * This section defines the actions associated with each hook.
- *
- * @since 1.0
- */
-if ( !function_exists( 'thmfdn_grid' ) ) {
-	/**
-	 * Grid template
-	 *
-	 * This function specifies which template part should be used.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_grid() {
-		return 'grid';
-	}
-}
-
-
-
-/**
- *****************************************************************************
  * Do actions
  *****************************************************************************
  *
@@ -168,10 +146,10 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/content', apply_filters( 'thmfdn_content_part', '' ) );
+		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', '' ) );
 	}
 } else {
-	get_template_part( 'template-parts/404' );
+	get_template_part( apply_filters( 'thmfdn_404_template_part_slug', 'template-parts/404' ), apply_filters( 'thmfdn_404_template_part_name', '' ) );
 }
 
 do_action( 'thmfdn_content_bottom' );
