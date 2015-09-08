@@ -24,7 +24,18 @@
 
 /* =Content Only
 -------------------------------------------------------------- */
-.content-only {}
+.content-only {
+	@include tablet {
+		#main .wrap {
+			max-width: $two-column-wrap-width;
+		}
+
+		.primary {
+			@include span-columns(8);
+			@include shift(2);
+		}
+	}
+}
 
 /* =Full Width Content
 -------------------------------------------------------------- */
@@ -197,53 +208,33 @@
 
 		.tertiary {
 			@include span-columns(3);
-			// @include shift(0);
 		}
-		// .primary {
-		// 	float: left;
-		// 	margin-left: 25%;
-		// 	width: 50%;
-		// }
 
-		// .secondary {
-		// 	float: left;
-		// 	margin: 0 0 0 -75%;
-		// 	padding-left: 0;
-		// 	clear: none;
-		// 	width: 25%;
-		// }
-
-		//  .tertiary {
-		// 	float: right;
-		// 	clear: none;
-		// 	padding-right: 0;
-		// 	width: 25%;
-		// }
 	}
 }
 
 /* =Page Templates
 -------------------------------------------------------------- */
-.page-template-full-width {
-	@include tablet {
-		#main .primary {
-			width: 100%;
-			float: none;
-			max-width: 100%;
-			padding: 0;
-		}
-	}
-}
+// .page-template-full-width {
+// 	@include tablet {
+// 		#main .primary {
+// 			width: 100%;
+// 			float: none;
+// 			max-width: 100%;
+// 			padding: 0;
+// 		}
+// 	}
+// }
 
-.page-template-no-sidebars {
-	@include tablet {
-		.primary {
-			margin-left: auto;
-			margin-right: auto;
-			float: none;
-		}
-	}
-}
+// .page-template-no-sidebars {
+// 	@include tablet {
+// 		.primary {
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			float: none;
+// 		}
+// 	}
+// }
 
 /* =Widget Area Columns
 -------------------------------------------------------------- */

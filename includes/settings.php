@@ -123,7 +123,7 @@ function get_thmfdn_content_format() {
 
 	// Overrides default layout for pages.
 	if ( is_page() ) {
-		$format_class = 'grid';
+		// $format_class = 'grid';
 	}
 
 	return apply_filters( 'thmfdn_content_format_class', $format_class );

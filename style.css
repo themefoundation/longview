@@ -86,6 +86,22 @@ pre {
 
 /* =Content Only
 -------------------------------------------------------------- */
+@media (min-width: 900px) {
+  .content-only #main .wrap {
+    max-width: 1000px;
+  }
+  .content-only .primary {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
+  }
+  .content-only .primary:last-child {
+    margin-right: 0;
+  }
+}
+
 /* =Full Width Content
 -------------------------------------------------------------- */
 .content-full-width .primary {
@@ -332,23 +348,6 @@ pre {
 
 /* =Page Templates
 -------------------------------------------------------------- */
-@media (min-width: 900px) {
-  .page-template-full-width #main .primary {
-    width: 100%;
-    float: none;
-    max-width: 100%;
-    padding: 0;
-  }
-}
-
-@media (min-width: 900px) {
-  .page-template-no-sidebars .primary {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-  }
-}
-
 /* =Widget Area Columns
 -------------------------------------------------------------- */
 .widget-columns .widget {
@@ -403,7 +402,6 @@ pre {
 /* =Header
 -------------------------------------------------------------- */
 .site-header {
-  border-bottom: 1px solid #dddddd;
   padding: 0 1.618em;
 }
 
@@ -411,6 +409,54 @@ pre {
   width: 100%;
 }
 
+.site-header.header-before {
+  background-color: #333333;
+  color: #ffffff;
+}
+.site-header.header-before a,
+.site-header.header-before ul li a {
+  background-color: #333333;
+  color: #ffffff;
+  text-decoration: none;
+}
+.site-header.header-before a:hover,
+.site-header.header-before a:active,
+.site-header.header-before ul li a:hover,
+.site-header.header-before ul li a:active {
+  background-color: #222222;
+}
+.site-header#header {
+  background-color: #444444;
+  color: #ffffff;
+}
+.site-header#header a,
+.site-header#header ul li a {
+  background-color: #444444;
+  color: #ffffff;
+  text-decoration: none;
+}
+.site-header#header a:hover,
+.site-header#header a:active,
+.site-header#header ul li a:hover,
+.site-header#header ul li a:active {
+  background-color: #333333;
+}
+.site-header.header-after {
+  background-color: #eeeeee;
+  color: #222222;
+}
+.site-header.header-after a,
+.site-header.header-after ul li a {
+  background-color: #eeeeee;
+  color: #222222;
+  text-decoration: none;
+}
+.site-header.header-after a:hover,
+.site-header.header-after a:active,
+.site-header.header-after ul li a:hover,
+.site-header.header-after ul li a:active {
+  background-color: #dddddd;
+}
 .site-header .site-title {
   text-align: center;
   margin-bottom: 0;
@@ -422,19 +468,20 @@ pre {
 }
 @media (min-width: 1140px) {
   .site-header .site-title a {
-    line-height: 8.1875rem;
+    line-height: 8.25rem;
   }
 }
 .site-header .site-description {
   text-align: center;
   line-height: 1.375rem;
   margin-bottom: 0;
+  line-height: 5.5rem;
 }
 @media (min-width: 1140px) {
   .site-header .site-description {
     margin-left: 25px;
     float: left;
-    line-height: 8.1875rem;
+    line-height: 8.25rem;
   }
 }
 .site-header .widget {
@@ -505,7 +552,7 @@ pre {
 @media (min-width: 1140px) {
   #header .widget {
     float: right;
-    line-height: 8.1875rem;
+    line-height: 8.25rem;
   }
 }
 @media (min-width: 1140px) {
@@ -541,7 +588,7 @@ pre {
   #header .widget_meta ul:first-of-type > li > a,
   #header .widget_recent_entries ul:first-of-type > li > a,
   #header .widget_pages ul:first-of-type > li > a {
-    line-height: 8.1875rem;
+    line-height: 8.25rem;
   }
 }
 #header .menu > li > a ul li a,
@@ -567,7 +614,6 @@ pre {
 .site-header .widget_meta ul:first-of-type ul,
 .site-header .widget_recent_entries ul:first-of-type ul,
 .site-header .widget_pages ul:first-of-type ul {
-  border: 1px solid #dddddd;
   min-width: 100%;
 }
 .site-header .menu ul li,
@@ -584,33 +630,8 @@ pre {
 .site-header .widget_meta ul:first-of-type ul li a,
 .site-header .widget_recent_entries ul:first-of-type ul li a,
 .site-header .widget_pages ul:first-of-type ul li a {
-  background: #ffffff;
   line-height: 2.75rem;
   border-color: #eeeeee;
-}
-.site-header .menu ul li a:hover,
-.site-header .widget_archive ul:first-of-type ul li a:hover,
-.site-header .widget_categories ul:first-of-type ul li a:hover,
-.site-header .widget_meta ul:first-of-type ul li a:hover,
-.site-header .widget_recent_entries ul:first-of-type ul li a:hover,
-.site-header .widget_pages ul:first-of-type ul li a:hover {
-  background-color: #f6f6f6;
-}
-.site-header .menu ul li:last-child a,
-.site-header .widget_archive ul:first-of-type ul li:last-child a,
-.site-header .widget_categories ul:first-of-type ul li:last-child a,
-.site-header .widget_meta ul:first-of-type ul li:last-child a,
-.site-header .widget_recent_entries ul:first-of-type ul li:last-child a,
-.site-header .widget_pages ul:first-of-type ul li:last-child a {
-  border-bottom-color: #eeeeee;
-}
-.site-header .menu ul ul,
-.site-header .widget_archive ul:first-of-type ul ul,
-.site-header .widget_categories ul:first-of-type ul ul,
-.site-header .widget_meta ul:first-of-type ul ul,
-.site-header .widget_recent_entries ul:first-of-type ul ul,
-.site-header .widget_pages ul:first-of-type ul ul {
-  margin-top: -1px;
 }
 
 .header-before .menu ul ul,
@@ -1002,7 +1023,7 @@ by Jonathan Snook at http://smacss.com
   position: relative;
   padding: 0 1rem;
   line-height: 2.75rem;
-  color: #224466;
+  color: #000000;
 }
 .site-header .menu ul,
 .site-header .widget_archive ul ul,
@@ -1075,30 +1096,6 @@ by Jonathan Snook at http://smacss.com
 
 /* =Block style
 -------------------------------------------------------------- */
-.site-header .menu a:hover,
-.site-header .widget_archive ul a:hover,
-.site-header .widget_categories ul a:hover,
-.site-header .widget_meta ul a:hover,
-.site-header .widget_recent_entries ul a:hover,
-.site-header .widget_pages ul a:hover,
-.site-header .menu a:focus,
-.site-header .widget_archive ul a:focus,
-.site-header .widget_categories ul a:focus,
-.site-header .widget_meta ul a:focus,
-.site-header .widget_recent_entries ul a:focus,
-.site-header .widget_pages ul a:focus {
-  background: #eeeeee;
-  outline: none;
-}
-.site-header .menu ul a,
-.site-header .widget_archive ul ul a,
-.site-header .widget_categories ul ul a,
-.site-header .widget_meta ul ul a,
-.site-header .widget_recent_entries ul ul a,
-.site-header .widget_pages ul ul a {
-  background: #ffffff;
-}
-
 /* =Border style
 -------------------------------------------------------------- */
 /* =Arrows
@@ -1235,18 +1232,18 @@ by Jonathan Snook at http://smacss.com
 -------------------------------------------------------------- */
 .is-mobile-menu {
   text-align: left;
-  background-color: #eee;
+  background-color: #eeeeee;
 }
 .is-mobile-menu li {
   display: block;
 }
 .is-mobile-menu li a {
   display: block;
-  background-color: #eee;
+  background-color: #eeeeee;
   color: #000000;
 }
 .is-mobile-menu li a:hover {
-  background-color: #ddd;
+  background-color: #dddddd;
 }
 .is-mobile-menu ul {
   position: relative;
@@ -1391,16 +1388,6 @@ input {
 
 /* =Appearance
 -------------------------------------------------------------- */
-.site-header a {
-  text-decoration: none;
-  color: #222;
-}
-
-.header-after {
-  border-top: 1px solid #dddddd;
-  margin-top: -1px;
-}
-
 .menu-toggle-button {
   line-height: 2.75rem;
 }

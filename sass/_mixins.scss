@@ -9,3 +9,23 @@
 		@content;
 	}
 }
+
+
+@mixin header-row($background-color, $background-color-hover, $color ) {
+	background-color: $background-color;
+	color: $color;
+
+	a,
+	ul li a {
+		background-color: $background-color;
+		color: $color;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:active,
+	ul li a:hover,
+	ul li a:active {
+		background-color: $background-color-hover;
+	}
+}

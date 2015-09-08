@@ -33,19 +33,19 @@ $mo-default-background-color: #ffffff;
 $mo-default-background-color-hover: #eeeeee;
 
 /// Border color for default menu items. Only used if the %border-style placeholder is in use.
-$mo-default-border-color: #68a;
+$mo-default-border-color: #dddddd;
 
 /// Font color for default menu items.
-$mo-default-font-color: #224466;
+$mo-default-font-color: #000000;
 
 /// Background color for mobile menu.
-$mo-mobile-background-color: #eee;
+$mo-mobile-background-color: #eeeeee;
 
 /// Background color for hovered mobile menu items.
-$mo-mobile-background-color-hover: #ddd;
+$mo-mobile-background-color-hover: #dddddd;
 
 /// Border color for mobile menu items. Only used if the %border-style placeholder is in use.
-$mo-mobile-border-color: #68a;
+$mo-mobile-border-color: #dddddd;
 
 /// Font color for mobile menu items.
 $mo-mobile-font-color: #000000; // Menu font color.
@@ -197,7 +197,7 @@ $mo-class-hidden: is-hidden-menu;
 			margin-top: -1px;
 
 			a {
-				border: 1px solid $mo-default-border-color;
+				// border: 1px solid $mo-default-border-color;
 				height: $mo-line-height + $mo-unit;
 				// margin-top: -1px;
 				border-bottom: 0 solid;
@@ -205,7 +205,7 @@ $mo-class-hidden: is-hidden-menu;
 			}
 
 			li:last-child {
-				border-bottom: 1px solid $mo-default-border-color;
+				// border-bottom: 1px solid $mo-default-border-color;
 				height: auto;
 			}
 
@@ -374,7 +374,7 @@ $mo-class-hidden: is-hidden-menu;
 .site-header .widget_meta ul,
 .site-header .widget_recent_entries ul,
 .site-header .widget_pages ul {
-	@extend %block-style;
+	// @extend %block-style;
 }
 
 .menu-toggle-button {

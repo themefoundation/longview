@@ -1,7 +1,7 @@
 /* =Header
 -------------------------------------------------------------- */
 .site-header {
-	border-bottom: 1px solid $border;
+	// border-bottom: 1px solid $border;
 	padding: 0 $gutter;
 
 	> * {
@@ -32,6 +32,18 @@
 // }
 
 .site-header {
+	&.header-before {
+		@include header-row( #333333, #222222, #ffffff );
+	}
+
+	&#header {
+		@include header-row( #444444, #333333, #ffffff );
+	}
+
+	&.header-after {
+		@include header-row( #eeeeee, #dddddd, #222222 );
+	}
+
 
 	.site-title {
 		text-align: center;
@@ -43,7 +55,7 @@
 			line-height: ($line * 4) + $unit;
 
 			@include desktop {
-				line-height: 8.1875rem;
+				line-height: ($line * 6) + $unit;
 			}
 		}
 	}
@@ -52,11 +64,12 @@
 		text-align: center;
 		line-height: $single;
 		margin-bottom: 0;
+		line-height: ($line * 4) + $unit;
 
 		@include desktop {
 			margin-left: 25px;
 			float: left;
-			line-height: 8.1875rem;
+			line-height: ($line * 6) + $unit;
 		}
 	}
 
@@ -150,7 +163,7 @@
 
 		@include desktop {
 			float: right;
-			line-height: 8.1875rem;
+			line-height: ($line * 6) + $unit;
 		}
 	}
 
@@ -172,7 +185,7 @@
 		line-height: ($line * 4) + $unit;
 
 		@include desktop {
-			line-height: 8.1875rem;
+			line-height: ($line * 6) + $unit;
 		}
 
 		ul li a {
@@ -198,7 +211,7 @@
 	}
 
 	ul {
-		border: 1px solid $border;
+		// border: 1px solid $border;
 		min-width: 100%;
 
 		li {
@@ -207,21 +220,21 @@
 	}
 
 	ul li a {
-		background: $background;
+		// background: $background;
 		line-height: $double;
 		border-color: $border-light;
 
 		&:hover {
-			background-color: $background-light;
+			// background-color: $background-light;
 		}
 	}
 
 	ul li:last-child a {
-		border-bottom-color: $border-light;
+		// border-bottom-color: $border-light;
 	}
 
 	ul ul {
-		margin-top: -1px;
+		// margin-top: -1px;
 	}
 }
 
