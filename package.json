@@ -8,6 +8,7 @@
     "grunt": "latest",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-sass": "^1.0.0",
     "grunt-sassdoc": "^2.0.1"
   }
 }

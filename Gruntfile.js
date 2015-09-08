@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 
 		sass: {
 	        options: {
-	            style: 'expanded'
+	            style: 'expanded',
+	            sourceMap: true
 	        },
 	        dist: {
 	            files: {
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
 	});
 
 	// grunt.registerTask( 'default', ['watch'] );
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sassdoc');
 	grunt.registerTask('default', ['watch']);

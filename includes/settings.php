@@ -66,7 +66,7 @@ function get_thmfdn_layout() {
 
 	// Overrides default layout for pages.
 	if ( is_page() ) {
-		$layout_class = 'sidebar-content';
+		$layout_class = 'content-only';
 	}
 
 	// Overrides default layout for archives.
