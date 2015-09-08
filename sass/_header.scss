@@ -1,0 +1,251 @@
+/* =Header
+-------------------------------------------------------------- */
+.site-header {
+	border-bottom: 1px solid $border;
+	padding: 0 $gutter;
+
+	> * {
+		// margin-top: -1px;
+	}
+}
+
+.menu-toggle-button {
+	// float: left;
+}
+
+#header .wrap:after {
+	// border-top: 1px solid $border;
+	width: 100%;
+	// display: block;
+	// height: -1px;
+	// content: '';
+}
+
+// body.has-mobile-menu {
+// 	.header-before {
+// 		float: right;
+// 	}
+	// This mistakenly applies to all page widgets, not just the ones in the mobile menu
+// 	.widget_pages {
+// 		display: none;
+// 	}
+// }
+
+.site-header {
+
+	.site-title {
+		text-align: center;
+		margin-bottom: 0;
+		text-transform: uppercase;
+
+		a {
+			font-size: 2rem;
+			line-height: ($line * 4) + $unit;
+
+			@include desktop {
+				line-height: 8.1875rem;
+			}
+		}
+	}
+
+	.site-description {
+		text-align: center;
+		line-height: $single;
+		margin-bottom: 0;
+
+		@include desktop {
+			margin-left: 25px;
+			float: left;
+			line-height: 8.1875rem;
+		}
+	}
+
+	.widget {
+		margin-bottom: 0;
+		line-height: $double;
+
+	}
+
+	.widget-title {
+		display: none;
+		border: 0 solid;
+		font-size: 1rem;
+		margin-right: 0.5rem;
+	}
+
+	.textwidget {
+		margin-right: 0.5rem;
+	}
+
+	.widget_archive {
+
+		.widget-title {
+			display: inline;
+		}
+	}
+
+	.widget_text {
+		text-align: center;
+	}
+
+	.widget_text {
+
+		* {
+			display: inline;
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			display: none;
+		}
+	}
+
+	.widget_search {
+		margin: 0 auto;
+		display: block;
+		width: 300px;
+	}
+
+	@include tablet {
+		.widget {
+			float: none;
+		}
+	}
+
+	@include desktop {
+		p {
+			margin-bottom: 0;
+		}
+
+		.site-title {
+			float: left;
+		}
+
+		.site-title a {
+			display: block;
+			margin-bottom: 0;
+		}
+
+		#logo {
+			float: left;
+			margin-right: 25px;
+		}
+
+		.widget {
+			float: left;
+			margin-right: 1em;
+		}
+
+		.widget_search {
+			float: right;
+			margin-right: 0;
+		}
+	}
+}
+
+#header {
+	.widget {
+		line-height: ($line * 4) + $unit;
+		margin-bottom: 0;
+
+		@include desktop {
+			float: right;
+			line-height: 8.1875rem;
+		}
+	}
+
+	.widget_search {
+		@include desktop {
+			margin-top: $double;
+		}
+	}
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+%inside-header-menu {
+	@include desktop {
+		float: right;
+	}
+
+	> li > a {
+		line-height: ($line * 4) + $unit;
+
+		@include desktop {
+			line-height: 8.1875rem;
+		}
+
+		ul li a {
+			line-height: $double;
+		}
+	}
+} 
+
+#header .menu,
+#header .widget_archive ul:first-of-type,
+#header .widget_categories ul:first-of-type,
+#header .widget_meta ul:first-of-type,
+#header .widget_recent_entries ul:first-of-type,
+#header .widget_pages ul:first-of-type {
+	@extend %inside-header-menu;
+}
+
+%header-menu {
+	
+
+	a {
+		font-size: 1rem;
+	}
+
+	ul {
+		border: 1px solid $border;
+		min-width: 100%;
+
+		li {
+			float: none;
+		}
+	}
+
+	ul li a {
+		background: $background;
+		line-height: $double;
+		border-color: $border-light;
+
+		&:hover {
+			background-color: $background-light;
+		}
+	}
+
+	ul li:last-child a {
+		border-bottom-color: $border-light;
+	}
+
+	ul ul {
+		margin-top: -1px;
+	}
+}
+
+.site-header .menu,
+.site-header .widget_archive ul:first-of-type,
+.site-header .widget_categories ul:first-of-type,
+.site-header .widget_meta ul:first-of-type,
+.site-header .widget_recent_entries ul:first-of-type,
+.site-header .widget_pages ul:first-of-type {
+	@extend %header-menu;
+}
+
+
+.header-before {
+	// height: $double;
+
+	.menu,
+	.widget_pages ul {
+		ul {
+			// margin-top: -1px;
+
+			ul {
+				margin-top: 0;
+			}
+		}
+	}
+}

@@ -1,32 +1,25 @@
 /* =Row Defaults
 -------------------------------------------------------------- */
-.row {
-	clear: both;
-}
-
 .row > .wrap {
-	max-width: $row-max-width;
-	margin: 0 auto;
+	@include outer-container;
+	// max-width: $row-max-width;
+	// margin: 0 auto;
 	width: 90%;
 	
-	@include desktop {
-		padding: 0 ($line * 2) + $unit;
-	}
+	// @include desktop {
+	// 	padding: 0 ($line * 2) + $unit;
+	// }
 }
 
 /* =Column Defaults
 -------------------------------------------------------------- */
-.primary {
-	max-width: 650px;
-	margin: 0 auto;
-	padding: 0 25px;
-}
-
+.primary,
 .secondary,
-.tertiary {
-	max-width: 350px;
-	margin: 0 auto;
-	padding: 0 25px;
+.tertiary  {
+	// max-width: 650px;
+	margin: 0 auto $gutter;
+	padding: 0 25px $gutter;
+	background: #eee;
 }
 
 /* =Content Only
@@ -52,23 +45,11 @@
 		}
 
 		.primary {
-			width: 65%;
-			float: left;
+			@include span-columns(8);
 		}
 
 		.secondary {
-			width: 35%;
-			float: right;
-		}
-	}
-
-	@include desktop {
-		.primary {
-			padding-left: 0;
-		}
-
-		.secondary {
-			padding-right: 0;
+			@include span-columns(4);
 		}
 	}
 }
@@ -81,24 +62,14 @@
 			max-width: $two-column-wrap-width;
 		}
 
-		.primary {
-			float: right;
-			width: $two-column-primary-width;
-		}
+		@include direction-context(right-to-left) {
+			.primary {
+				@include span-columns(8);
+			}
 
-		.secondary {
-			float: left;
-			width: $two-column-secondary-width;
-		}
-	}
-
-	@include desktop {
-		.primary {
-			padding-right: 0;
-		}
-
-		.secondary {
-			padding-left: 0;
+			.secondary {
+				@include span-columns(4);
+			}
 		}
 	}
 }
@@ -112,14 +83,16 @@
 		}
 
 		.primary {
-			float: left;
-			width: $two-column-primary-width;
+			@include span-columns(8);
 		}
 
 		.secondary,
 		.tertiary {
+			@include span-columns(4);
+
+			clear: right;
 			float: right;
-			width: $two-column-secondary-width;
+			margin-right: 0;
 		}
 	}
 
@@ -129,19 +102,15 @@
 		}
 
 		.primary {
-			padding-left: 0;
-			width: $three-column-primary-width;
+			@include span-columns(6);
 		}
 
 		.secondary {
-			float: left;
-			width: $three-column-secondary-width;
+			@include span-columns(3);
 		}
 
 		.tertiary {
-			float: right;
-			padding-right: 0;
-			width: $three-column-tertiary-width;
+			@include span-columns(3);
 		}
 	}
 }
@@ -154,15 +123,19 @@
 			max-width: $two-column-wrap-width;
 		}
 
-		.primary {
-			float: right;
-			width: $two-column-primary-width;
-		}
+		@include direction-context(right-to-left) {
+			.primary {
+				@include span-columns(8);
+			}
 
-		.secondary,
-		.tertiary {
-			float: left;
-			width: $two-column-secondary-width;
+			.secondary,
+			.tertiary {
+				@include span-columns(4);
+
+				float: left;
+				clear: left;
+				margin-left: 0;
+			}
 		}
 	}
 
@@ -171,20 +144,16 @@
 			max-width: $three-column-wrap-width;
 		}
 
-		.primary {
-			padding-right: 0;
-			width: $three-column-primary-width;
-		}
+		@include direction-context(right-to-left) {
 
-		.secondary {
-			float: left;
-			padding-left: 0;
-			width: $three-column-secondary-width;
-		}
+			.primary {
+				@include span-columns(6);
+			}
 
-		.tertiary {
-			float: right;
-			width: $three-column-tertiary-width;
+			.secondary,
+			.tertiary {
+				@include span-columns(3);
+			}
 		}
 	}
 }
@@ -198,14 +167,16 @@
 		}
 
 		.primary {
-			float: left;
-			width: $two-column-primary-width;
+			@include span-columns(8);
 		}
 
 		.secondary,
 		.tertiary {
+			@include span-columns(4);
+
+			clear: right;
 			float: right;
-			width: $two-column-secondary-width;
+			margin-right: 0;
 		}
 	}
 
@@ -215,25 +186,39 @@
 		}
 
 		.primary {
-			float: left;
-			margin-left: 25%;
-			width: 50%;
+			@include span-columns(6);
+			@include shift(3);
 		}
 
 		.secondary {
-			float: left;
-			margin: 0 0 0 -75%;
-			padding-left: 0;
-			clear: none;
-			width: 25%;
+			@include span-columns(3);
+			@include shift(-9);
 		}
 
-		 .tertiary {
-			float: right;
-			clear: none;
-			padding-right: 0;
-			width: 25%;
+		.tertiary {
+			@include span-columns(3);
+			// @include shift(0);
 		}
+		// .primary {
+		// 	float: left;
+		// 	margin-left: 25%;
+		// 	width: 50%;
+		// }
+
+		// .secondary {
+		// 	float: left;
+		// 	margin: 0 0 0 -75%;
+		// 	padding-left: 0;
+		// 	clear: none;
+		// 	width: 25%;
+		// }
+
+		//  .tertiary {
+		// 	float: right;
+		// 	clear: none;
+		// 	padding-right: 0;
+		// 	width: 25%;
+		// }
 	}
 }
 
@@ -332,9 +317,9 @@
 
 /* =Float Clearing
 -------------------------------------------------------------- */
-.wrap:after,
-.widget:after {
-	content: "";
-	display: table;
-	clear: both;
-}
+// .wrap:after,
+// .widget:after {
+// 	content: "";
+// 	display: table;
+// 	clear: both;
+// }

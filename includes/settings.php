@@ -57,11 +57,11 @@ add_action( 'init', 'thmfdn_defaults' );
 function get_thmfdn_layout() {
 
 	// Default layout
-	$layout_class = 'content-sidebar';
+	$layout_class = 'content-sidebar-sidebar';
 
 	// Overrides default layout for single posts.
 	if ( is_single () ) {
-		$layout_class = 'content-sidebar';
+		$layout_class = 'sidebar-sidebar-content';
 	} 
 
 	// Overrides default layout for pages.
