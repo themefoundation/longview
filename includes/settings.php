@@ -35,6 +35,7 @@ function thmfdn_defaults() {
 
 	// Sets additional image sizes
 	add_image_size( 'grid', 300, 200, true );
+	add_image_size( 'gallery', 400, 200, true );
 
 }
 add_action( 'init', 'thmfdn_defaults' );
@@ -73,6 +74,12 @@ function get_thmfdn_layout() {
 	if ( is_archive() ) {
 		$layout_class = 'content-full-width';
 	}
+
+	// Overrides default layout for archives.
+	if ( is_post_type_archive( 'portfolio' ) ) {
+		$layout_class = 'content-full-width';
+	}
+
 
 
 	return apply_filters( 'thmfdn_layout_class', $layout_class );
@@ -116,12 +123,12 @@ function get_thmfdn_content_format() {
 	// Default layout
 	$format_class = get_post_format();
 
-	// Overrides default layout for single posts.
-	if ( is_archive() ) {
-		$format_class = 'grid';
-	} 
+	// Overrides default content format for portfolio archives.
+	if ( is_post_type_archive( 'portfolio' ) ) {
+		$format_class = 'gallery';
+	}
 
-	// Overrides default layout for pages.
+	// Overrides default content format for pages.
 	if ( is_page() ) {
 		// $format_class = 'grid';
 	}
@@ -142,7 +149,7 @@ function thmfdn_content_class_format( $classes ) {
 	$format_class = get_thmfdn_content_format();
 
 	// Adds the layout class to the existing string of classes.
-	$classes .= ' ' . $format_class;
+	$classes .= ' ' . 'thmfdn-' . $format_class;
 
 	return $classes;
 }

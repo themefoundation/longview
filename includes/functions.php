@@ -16,7 +16,6 @@
 function thmfdn_enqueue() {
 
 	wp_enqueue_style( 'open_sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' );
-	wp_enqueue_style( 'thmfdn_typography', get_template_directory_uri() . '/css/typography.css' );
 	wp_enqueue_style( 'thmfdn_stylesheet', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery' );
@@ -37,7 +36,7 @@ add_filter( 'wp_enqueue_scripts', 'thmfdn_enqueue' );
  * @since			1.0
  */
 function thmfdn_editor_style() {
-	add_editor_style( 'css/editor-style.css' );
+	add_editor_style();
 }
 add_action( 'admin_init', 'thmfdn_editor_style' );
 

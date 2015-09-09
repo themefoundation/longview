@@ -23,9 +23,9 @@
 	}
 
 	a:hover,
-	a:active,
+	a:focus,
 	ul li a:hover,
-	ul li a:active {
+	ul li a:focus {
 		background-color: $background-color-hover;
 	}
 }

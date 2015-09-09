@@ -1,0 +1,13 @@
+/**
+ * Styles for the WordPress editor
+ */
+
+@import 'variables';
+@import 'reset';
+@import 'cadence';
+@import 'elements';
+
+.content {
+	max-width: 650px;
+	margin: 0 auto;
+}

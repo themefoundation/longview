@@ -1,6 +1,6 @@
 /* =Grid
 -------------------------------------------------------------- */
-#main .grid {
+#main .thmfdn-grid {
 	padding-left: 0;
 	padding-right: 0;
 	text-align: center;
@@ -34,4 +34,22 @@
 			}
 		}
 	}
+}
+
+#main .thmfdn-gallery {
+	img {
+		margin-bottom: $gutter;
+	}
+
+	// @include tablet {
+	// 	@extend %two-columns;
+	// }
+
+	@include desktop {
+		@extend %four-columns;
+		
+	}
+
+
+
 }

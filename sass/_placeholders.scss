@@ -1,0 +1,45 @@
+
+
+%two-columns {
+	> div {
+		@include span-columns(6);
+
+		&:nth-of-type(2n+2) {
+			// margin-right: 0;
+		}
+
+		&:nth-of-type(2n+3) {
+			// clear: left;
+		}
+	}
+}
+
+%three-columns {
+	> div {
+		@include span-columns(4);
+
+		&:nth-of-type(3n+3) {
+			margin-right: 0;
+		}
+
+		&:nth-of-type(3n+4) {
+			// clear: left;
+		}
+	}
+}
+
+%four-columns {
+	> div {
+		@include span-columns(3 of 12);
+		@include omega(5n);
+
+
+		// &:nth-of-type(4n+4) {
+		// 	margin-right: 0;
+		// }
+
+		// &:nth-of-type(4n+5) {
+		// 	clear: left;
+		// }
+	}
+}

@@ -36,6 +36,18 @@ html {
 /* 132px */
 /* =Layout widths
 -------------------------------------------------------------- */
+#main .thmfdn-gallery > div {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
+  #main .thmfdn-gallery > div:last-child {
+    margin-right: 0; }
+  #main .thmfdn-gallery > div:nth-child(5n) {
+    margin-right: 0; }
+  #main .thmfdn-gallery > div:nth-child(5n+1) {
+    clear: left; }
+
 /* =Reset
 -------------------------------------------------------------- */
 * {
@@ -55,6 +67,116 @@ body {
 
 pre {
   overflow-x: scroll; }
+
+/* =Typography
+-------------------------------------------------------------- */
+* {
+  font-size: 100%;
+  /* 16px */
+  line-height: 1.375rem;
+  /* 22px */ }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+table,
+blockquote,
+pre {
+  margin-bottom: 1.375rem;
+  /* 22px */ }
+
+h1 {
+  font-size: 2.5rem;
+  /* 40px */
+  line-height: 2.75rem;
+  /* 44px */ }
+
+h2 {
+  font-size: 2rem;
+  /* 32px */
+  line-height: 2.75rem;
+  /* 44px */ }
+
+h3 {
+  font-size: 1.5rem;
+  /* 24px */
+  line-height: 2.75rem;
+  /* 44px */ }
+
+h4 {
+  font-size: 1.125rem;
+  /* 18px */
+  line-height: 2.75rem;
+  /* 44px */ }
+
+h5 {
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.375rem;
+  /* 22px */ }
+
+h6 {
+  font-size: 0.875rem;
+  /* 14px */
+  line-height: 1.375rem;
+  /* 22px */ }
+
+blockquote {
+  padding: 1.375rem 1.5rem 0 1.5rem;
+  /* 22px 24px 0 24px */ }
+
+blockquote p {
+  margin-bottom: 0;
+  padding-bottom: 1.375rem;
+  /* 22px */ }
+
+blockquote cite {
+  display: block;
+  margin-top: 1.375rem;
+  /* 22px */
+  text-align: right; }
+
+table {
+  border-collapse: collapse; }
+
+th {
+  line-height: 2.75rem;
+  /* 44px */
+  padding: 0 0.625rem;
+  /* 0 10px */ }
+
+td {
+  padding: 0 0.625rem;
+  /* 0 10px */ }
+
+ol,
+ul {
+  margin-left: 1.5rem;
+  /* 24px */ }
+
+sub {
+  font-size: 0.625em;
+  /* 10px */
+  vertical-align: bottom; }
+
+sup {
+  font-size: 0.625em;
+  /* 10px */
+  vertical-align: top; }
+
+em,
+var,
+kbd,
+strong,
+code {
+  line-height: 1rem;
+  /* 16px */ }
 
 /* =Row Defaults
 -------------------------------------------------------------- */
@@ -666,9 +788,9 @@ by Jonathan Snook at http://smacss.com
       color: #ffffff;
       text-decoration: none; }
     .site-header.header-before a:hover,
-    .site-header.header-before a:active,
+    .site-header.header-before a:focus,
     .site-header.header-before ul li a:hover,
-    .site-header.header-before ul li a:active {
+    .site-header.header-before ul li a:focus {
       background-color: #222222; }
   .site-header#header {
     background-color: #444444;
@@ -679,9 +801,9 @@ by Jonathan Snook at http://smacss.com
       color: #ffffff;
       text-decoration: none; }
     .site-header#header a:hover,
-    .site-header#header a:active,
+    .site-header#header a:focus,
     .site-header#header ul li a:hover,
-    .site-header#header ul li a:active {
+    .site-header#header ul li a:focus {
       background-color: #333333; }
   .site-header.header-after {
     background-color: #eeeeee;
@@ -692,9 +814,9 @@ by Jonathan Snook at http://smacss.com
       color: #222222;
       text-decoration: none; }
     .site-header.header-after a:hover,
-    .site-header.header-after a:active,
+    .site-header.header-after a:focus,
     .site-header.header-after ul li a:hover,
-    .site-header.header-after ul li a:active {
+    .site-header.header-after ul li a:focus {
       background-color: #dddddd; }
   .site-header .site-title {
     text-align: center;
@@ -962,27 +1084,30 @@ input[type="submit"]:hover {
 
 /* =Grid
 -------------------------------------------------------------- */
-#main .grid {
+#main .thmfdn-grid {
   padding-left: 0;
   padding-right: 0;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 1000px; }
-  #main .grid > * {
+  #main .thmfdn-grid > * {
     text-align: left; }
-  #main .grid .post .wp-post-image {
+  #main .thmfdn-grid .post .wp-post-image {
     margin-left: auto;
     margin-right: auto; }
   @media (min-width: 900px) {
-    #main .grid .post {
+    #main .thmfdn-grid .post {
       width: 30%;
       float: left; }
-      #main .grid .post:nth-of-type(3n+4) {
+      #main .thmfdn-grid .post:nth-of-type(3n+4) {
         clear: left; }
-      #main .grid .post:nth-of-type(3n+2) {
+      #main .thmfdn-grid .post:nth-of-type(3n+2) {
         margin-left: 5%;
         margin-right: 5%; } }
+
+#main .thmfdn-gallery img {
+  margin-bottom: 1.618em; }
 
 /* =Gallery
 -------------------------------------------------------------- */
