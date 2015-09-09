@@ -1,14 +1,12 @@
 /* =Row Defaults
 -------------------------------------------------------------- */
+.row {
+	clear: both;
+}
+
 .row > .wrap {
 	@include outer-container;
-	// max-width: $row-max-width;
-	// margin: 0 auto;
 	width: 90%;
-	
-	// @include desktop {
-	// 	padding: 0 ($line * 2) + $unit;
-	// }
 }
 
 /* =Column Defaults
@@ -16,9 +14,7 @@
 .primary,
 .secondary,
 .tertiary  {
-	// max-width: 650px;
 	margin: 0 auto $gutter;
-	padding: 0 25px $gutter;
 }
 
 /* =Content Only
@@ -211,29 +207,6 @@
 
 	}
 }
-
-/* =Page Templates
--------------------------------------------------------------- */
-// .page-template-full-width {
-// 	@include tablet {
-// 		#main .primary {
-// 			width: 100%;
-// 			float: none;
-// 			max-width: 100%;
-// 			padding: 0;
-// 		}
-// 	}
-// }
-
-// .page-template-no-sidebars {
-// 	@include tablet {
-// 		.primary {
-// 			margin-left: auto;
-// 			margin-right: auto;
-// 			float: none;
-// 		}
-// 	}
-// }
 
 /* =Widget Area Columns
 -------------------------------------------------------------- */

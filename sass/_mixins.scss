@@ -29,3 +29,17 @@
 		background-color: $background-color-hover;
 	}
 }
+
+@mixin footer-row($background-color, $background-color-hover, $color ) {
+	background-color: $background-color;
+	color: $color;
+
+	a {
+		color: $color;
+		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: $background-color-hover;
+	}
+}

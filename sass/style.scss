@@ -18,11 +18,13 @@ Tags: editor-style, threaded-comments
 @import 'mixins';
 @import 'reset';
 @import 'structure';
+@import 'mo';
 @import 'header';
+@import 'footer';
+@import 'widgets';
 @import 'elements';
 @import 'components';
 @import 'wp-components';
-@import 'mo';
 
 
 
@@ -59,44 +61,16 @@ Tags: editor-style, threaded-comments
 
 .site-footer .wrap {
 	padding: 1.375rem 25px; /* 22px 25px */
-	text-align: center;
-	font-size: 0.75em;
+	// text-align: center;
+	// font-size: 0.75em;
 
-	a {
-		color: #222;
-		text-decoration: none;
-	}
-}
-
-/* =Widgets (mobile)
--------------------------------------------------------------- */
-
-.widget {
-	margin-bottom: 1.375rem;
-}
-
-.widget li {
-	margin: 0 0 1.375rem; /* 0 0 22px */
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-.widget li li {
-	margin:1.375rem 0 0 1rem; /* 22px 0 0 16px */
+	// a {
+	// 	color: #222;
+	// 	text-decoration: none;
+	// }
 }
 
 
-.widget_search input[type="search"] {
-		float: left;
-		width: 70%;
-}
-
-.widget_search input[type="submit"] {
-		float: left;
-		width: 30%;
-}
 
 /* =Single posts
 -------------------------------------------------------------- */

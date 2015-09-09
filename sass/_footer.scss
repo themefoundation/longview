@@ -1,0 +1,47 @@
+/* =Footer
+-------------------------------------------------------------- */
+.site-footer {
+	&.footer-before {
+		@include footer-row( #333333, #222222, #ffffff );
+	}
+
+	&#footer {
+		@include footer-row( #444444, #333333, #ffffff );
+	}
+	
+	&.footer-after {
+		@include footer-row( #eeeeee, #dddddd, #222222 );
+	}
+
+	&.widget-count-1,
+	.widget-count-1 {
+		text-align: center;
+
+		.widget {
+			margin-bottom: 0;
+		}
+
+		
+		ul {
+			display: block;
+			margin: 0;
+
+			ul {
+				display: inline;
+			}
+		}
+
+		li {
+			display: inline-block;
+			margin: 0;
+		}
+
+		a {
+			color: #ffffff;
+			display: inline-block;
+			line-height: ($line * 2 ) + $unit;
+			padding: 0 1rem;
+		}
+	}
+
+}
