@@ -7,6 +7,13 @@
  * @package THMFDN
  */
 
+
+function theme_default_image_size() {
+    return 'large';
+}
+add_filter( 'pre_option_image_default_size', 'theme_default_image_size' );
+
+
 /**
  * Configures default settings.
  *
@@ -72,6 +79,11 @@ function get_thmfdn_layout() {
 
 	// Overrides default layout for tag archives.
 	if ( is_tag() ) {
+		$layout_class = 'content-full-width';
+	}
+
+	// Overrides default layout for attachment pages.
+	if ( is_attachment() ) {
 		$layout_class = 'content-full-width';
 	}
 
