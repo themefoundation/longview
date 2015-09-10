@@ -6,6 +6,7 @@
 
 .menu-toggle-button {
 	border-right: 1px solid #444444;
+	line-height: (($line * 2) + $unit);
 }
 
 .menu-toggle-button:hover {
@@ -13,7 +14,9 @@
 }
 
 .site-header {
-	padding: 0 $gutter;
+	.wrap {
+		padding: 0 ($line + $unit);
+	}
 
 	&.header-before {
 		@include header-row( #333333, #222222, #ffffff );

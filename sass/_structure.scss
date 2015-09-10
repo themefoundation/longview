@@ -15,9 +15,9 @@
 .primary,
 .secondary,
 .tertiary  {
-	margin: 0 auto $gutter;
-	padding-left: 25px;
-	padding-right: 25px;
+	margin: 0 auto $line + $unit;
+	padding-left: $line + $unit;
+	padding-right: $line + $unit;
 }
 
 /* =Content Only
@@ -211,143 +211,11 @@
 	}
 }
 
-/* =Widget Area Columns
+/* =Clearfix
 -------------------------------------------------------------- */
-.widget-columns {
-	&.widget-count-2 .wrap {
-		@extend %two-columns;
-	}
-
-	&.widget-count-3 .wrap {
-		@extend %three-columns;
-	}
-
-	&.widget-count-4 .wrap {
-		@extend %four-columns;
-	}
-
-	&.widget-count-5 .wrap {
-		@extend %five-columns;
-	}
-
-	&.widget-count-6 .wrap {
-		@extend %six-columns;
-	}
-
-	@include breakpoint-medium {
-
-		&.widget-count-2 .widget {
-			@include span-columns(6);
-			@include omega(2n);
-		}
-
-		&.widget-count-3 .widget,
-		&.widget-count-6 .widget {
-			@include span-columns(4);
-			@include omega(3n);
-		}
-	}
-
-	@include breakpoint-large {
-		 
-		// &.widget-count-4 .widget{
-		// 	@include omega-reset(2n);
-		// 	@include span-columns(3);
-		// 	@include omega(4n);
-		// }
-		 
-		// &.widget-count-5 .widget{
-		// 	@include omega-reset(2n);
-		// 	@include span-columns(2);
-		// 	@include omega(5n);
-
-		// 	&:first-child {
-		// 		@include shift(1);
-		// 	}
-		// }
-		 
-		&.widget-count-6 .widget{
-			@include omega-reset(3n);
-			@include span-columns(2);
-			@include omega(6n);
-		}
-	}
+.wrap:after,
+.widget:after {
+	content: "";
+	display: table;
+	clear: both;
 }
-
-/* This was built before adding the Neat grid... */
-// .widget-columns {
-
-// 	.widget{
-// 		padding: 0 $line + $unit;
-// 	}
-
-// 	@include breakpoint-medium {
-
-// 		&.widget-count-2 .widget,
-// 		&.widget-count-4 .widget,
-// 		&.widget-count-5 .widget {
-// 			float: left;
-// 			width: 50%;
-
-// 			&:nth-child(odd) {
-// 				clear: left;
-// 			}
-// 		}
-
-// 		&.widget-count-3 .widget,
-// 		&.widget-count-6 .widget {
-// 			float: left;
-// 			width: 33.333333333%;
-
-// 			&:nth-child(3n+4) {
-// 				clear: left;
-// 			}
-// 		}
-		
-// 		&.widget-count-5 .widget {
-// 			&:last-child {
-// 				margin-left: 25%;
-// 			}
-// 		}
-// 	}
-
-// 	@include breakpoint-large {
-		 
-// 		&.widget-count-4 .widget{
-// 			float: left;
-// 			width: 25%;
-
-// 			&:nth-child(odd) {
-// 				clear: none;
-// 			}
-// 		}
-		 
-// 		&.widget-count-5 .widget{
-// 			float: left;
-// 			width: 20%;
-
-// 			&:nth-child(odd) {
-// 				clear: none;
-// 				margin-left: 0;
-// 			}
-// 		}
-		 
-// 		&.widget-count-6 .widget{
-// 			float: left;
-// 			width: 16.666666667%;
-
-// 			&:nth-child(3n+4) {
-// 				clear: none;
-// 			}
-// 		}
-// 	}
-// }
-
-/* =Float Clearing
--------------------------------------------------------------- */
-// .wrap:after,
-// .widget:after {
-// 	content: "";
-// 	display: table;
-// 	clear: both;
-// }

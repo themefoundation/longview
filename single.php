@@ -74,7 +74,7 @@ if ( !function_exists( 'thmfdn_single_featured_image' ) ) {
 	 */
 	function thmfdn_single_featured_image() {
 		?>
-			<div class="row featured-image">
+			<div class="row thmfdn-featured-image">
 				<div class="wrap">
 					<div>
 						<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>

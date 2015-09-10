@@ -120,6 +120,19 @@ function thmfdn_register_sidebars() {
 		)
 	);
 
+	// Registers the widget area for the 404 page.
+	register_sidebar(
+		array(
+			'name' => __( '404', 'thmfdn_textdomain' ),
+			'id' => '404',
+			'description' => __( 'Displayed on the 404 page.', 'thmfdn_textdomain' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+
 }
 add_action( 'widgets_init', 'thmfdn_register_sidebars' );
 
@@ -128,89 +141,3 @@ add_action( 'widgets_init', 'thmfdn_register_sidebars' );
 
 
 
-/**
- * Displays the Before Footer widget area
- *
- * @since 1.0
- */
-function thmfdn_before_footer_widgets() {
-
-	// Does the Before Footer widget area contain any widgets?
-	if ( is_active_sidebar( 'footer-before' ) ) {
-
-		// Filters for class names.
-		$widget_count = thmfdn_widget_count('footer-before');
-		$widget_classes = '';
-		if ( $widget_count > 0 ) {
-			$widget_classes = ' widget-columns widget-count-' . $widget_count;
-		}
-		$thmfdn_footer_before_class = apply_filters( 'thmfdn-footer-before-class', 'row site-footer footer-before' . $widget_classes );
-		$thmfdn_footer_before_wrap_class = apply_filters( 'thmfdn-footer-before-wrap-class', 'wrap' );
-		?>
-
-			<div class="<?php echo $thmfdn_footer_before_class; ?>">
-				<div class="<?php echo $thmfdn_footer_before_wrap_class; ?>">
-					<?php dynamic_sidebar( 'footer-before' ); ?>
-				</div><!--.wrap-->
-			</div><!--.footer-before-->
-
-		<?php
-	}
-}
-
-/**
- * Displays the Inside Footer widget area
- *
- * @since 1.0
- */
-function thmfdn_footer_widgets() {
-
-	// Does the Inside Footer widget area contain any widgets?
-	if ( is_active_sidebar( 'footer-inside' ) ) {
-
-		// Filters for class names.
-		$widget_count = thmfdn_widget_count('footer-inside');$widget_classes = '';
-		$widget_classes = '';
-		if ( $widget_count > 0 ) {
-			$widget_classes = ' widget-columns widget-count-' . $widget_count;
-		}
-		$thmfdn_footer_inside_class = apply_filters( 'thmfdn-footer-inside-class', 'footer-inside' . $widget_classes );
-		?>
-
-			<div class="<?php echo $thmfdn_footer_inside_class; ?>">
-				<?php dynamic_sidebar( 'footer-inside' ); ?>
-			</div><!--.footer-inside-->
-
-		<?php
-	}
-}
-
-/**
- * Displays the After Footer widget area
- *
- * @since 1.0
- */
-function thmfdn_after_footer_widgets() {
-
-	// Does the After Footer widget area contain any widgets?
-	if ( is_active_sidebar( 'footer-after' ) ) {
-
-		// Filters for class names.
-		$widget_count = thmfdn_widget_count('footer-after');
-		$widget_classes = '';
-		if ( $widget_count > 0 ) {
-			$widget_classes = ' widget-columns widget-count-' . $widget_count;
-		}
-		$thmfdn_footer_after_class = apply_filters( 'thmfdn-footer-after-class', 'row site-footer footer-after' . $widget_classes );
-		$thmfdn_footer_after_wrap_class = apply_filters( 'thmfdn-footer-after-wrap-class', 'wrap' );
-		?>
-
-			<div class="<?php echo $thmfdn_footer_after_class; ?>">
-				<div class="<?php echo $thmfdn_footer_after_wrap_class; ?>">
-					<?php dynamic_sidebar( 'footer-after' ); ?>
-				</div><!--.wrap-->
-			</div><!--.footer-after-->
-
-		<?php
-	}
-}

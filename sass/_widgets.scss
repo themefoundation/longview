@@ -1,12 +1,12 @@
-/* =Widgets (mobile)
+/* =Widgets
 -------------------------------------------------------------- */
 
 .widget {
-	margin-bottom: 1.375rem;
+	margin-bottom: ($line + $unit);
 }
 
 .widget li {
-	margin: 0 0 1.375rem; /* 0 0 22px */
+	margin: 0 0 ($line + $unit);
 }
 
 .widget select {
@@ -14,7 +14,7 @@
 }
 
 .widget li li {
-	margin:1.375rem 0 0 1rem; /* 22px 0 0 16px */
+	margin: ($line + $unit) 0 0 (($line * 0.75) + $unit);
 }
 
 .widget_search label {
@@ -37,5 +37,40 @@
 .widget_tag_cloud {
 	a {
 		background-color: transparent;
+	}
+}
+
+.widget ol,
+.widget ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.widget-title {
+	border-bottom: 1px solid #dddddd;
+	margin-top: -1px;
+}
+
+
+/* =Search
+-------------------------------------------------------------- */
+.widget_search {
+
+	input {
+		border: 1px solid #dddddd;
+		margin-top: -1px;
+		display: block;
+		height: 45px;
+		float: left;
+		
+	}
+
+	input[type="search"] {
+		background-color: $background;
+	}
+
+	input[type="submit"] {
+		background-color: #f6f6f6;
+		border-left: 0 solid;
 	}
 }

@@ -135,6 +135,25 @@ if ( !function_exists( 'thmfdn_header_branding' ) ) {
 	}
 }
 
+if ( !function_exists( 'thmfdn_header_menu' ) ) {
+	/**
+	 * Header Menu
+	 *
+	 * Displays the header menu. However, if there are widgets present in the
+	 * Inside Header widget area, that widget area overrides this menu.
+	 */
+	function thmfdn_header_menu() {
+
+		// Is the Inside Header widget area currently empty?
+		if ( ! is_active_sidebar( 'header-inside' ) ) {
+			wp_nav_menu( array(
+				'theme_location' => 'header_menu',
+				'fallback_cb' => false
+			) );
+		}
+	}
+}
+
 if ( !function_exists( 'thmfdn_header_widgets' ) ) {
 	/**
 	 * Displays the Inside Header widget area
@@ -151,25 +170,6 @@ if ( !function_exists( 'thmfdn_header_widgets' ) ) {
 					<?php dynamic_sidebar( 'header-inside' ); ?>
 				</div><!--.header-inside-->
 			<?php
-		}
-	}
-}
-
-if ( !function_exists( 'thmfdn_header_menu' ) ) {
-	/**
-	 * Header Menu
-	 *
-	 * Displays the header menu. However, if there are widgets present in the
-	 * Inside Header widget area, that widget area overrides this menu.
-	 */
-	function thmfdn_header_menu() {
-
-		// Is the Inside Header widget area currently empty?
-		if ( ! is_active_sidebar( 'header-inside' ) ) {
-			wp_nav_menu( array(
-				'theme_location' => 'header_menu',
-				'fallback_cb' => false
-			) );
 		}
 	}
 }

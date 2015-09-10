@@ -1,0 +1,39 @@
+/* =Content
+-------------------------------------------------------------- */
+
+/* =Main
+-------------------------------------------------------------- */
+
+#main > .wrap {
+	padding-top: (($line * 3) + $unit);
+	padding-bottom: (($line * 3) + $unit);
+}
+
+
+/* =Archive pages
+-------------------------------------------------------------- */
+
+.entry-title a {
+	text-decoration: none;
+}
+
+/* =Single posts
+-------------------------------------------------------------- */
+
+.single .entry-title,
+.single-navigation {
+	padding-bottom: 1.375rem;
+}
+
+
+/* =Universal
+-------------------------------------------------------------- */
+
+.post {
+	padding-bottom: ($line * 4) + $unit;
+}
+
+.entry-meta-top,
+.entry-meta-bottom {
+	margin-bottom: ($line + $unit);
+}

@@ -141,29 +141,26 @@ code {
   line-height: 1rem;
   /* 16px */ }
 
-img,
-.wp-caption {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: normal; }
+
+img {
   margin-bottom: 1.375rem;
   max-width: 100%;
   height: auto; }
 
-.alignright {
-  float: right; }
-
-.alignleft {
-  float: left; }
-
-.aligncenter {
-  margin: 0 auto; }
-
-.envira-gallery-wrap {
-  margin-top: -22px !important; }
-
-.wp-post-image {
-  display: block; }
-
 /* =Forms
 -------------------------------------------------------------- */
+input {
+  height: 2.75rem;
+  padding: 0 0.5rem; }
+
 input[type="text"],
 input[type="password"],
 textarea {

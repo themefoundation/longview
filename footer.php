@@ -53,6 +53,38 @@ if ( !function_exists( 'thmfdn_main_close' ) ) {
 	}
 }
 
+if ( !function_exists( 'thmfdn_before_footer_widgets' ) ) {
+	/**
+	 * Displays the Before Footer widget area
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_before_footer_widgets() {
+
+		// Does the Before Footer widget area contain any widgets?
+		if ( is_active_sidebar( 'footer-before' ) ) {
+
+			// Filters for class names.
+			$widget_count = thmfdn_widget_count('footer-before');
+			$widget_classes = '';
+			if ( $widget_count > 0 ) {
+				$widget_classes = ' widget-columns widget-count-' . $widget_count;
+			}
+			$thmfdn_footer_before_class = apply_filters( 'thmfdn-footer-before-class', 'row site-footer footer-before' . $widget_classes );
+			$thmfdn_footer_before_wrap_class = apply_filters( 'thmfdn-footer-before-wrap-class', 'wrap' );
+			?>
+
+				<div class="<?php echo $thmfdn_footer_before_class; ?>">
+					<div class="<?php echo $thmfdn_footer_before_wrap_class; ?>">
+						<?php dynamic_sidebar( 'footer-before' ); ?>
+					</div><!--.wrap-->
+				</div><!--.footer-before-->
+
+			<?php
+		}
+	}
+}
+
 if ( !function_exists( 'thmfdn_footer_open' ) ) {
 	/**
 	 * Footer opening
@@ -60,7 +92,7 @@ if ( !function_exists( 'thmfdn_footer_open' ) ) {
 	 * Opens the footer and wrapper.
 	 */
 	function thmfdn_footer_open() {
-		echo 	'<footer id="' . apply_filters( 'thmfdn_footer_id', 'footer' ) . '" class="' . apply_filters( 'thmfdn_footer_class', 'site-footer row' ) . '">' . "\n";
+		echo '<footer id="' . apply_filters( 'thmfdn_footer_id', 'footer' ) . '" class="' . apply_filters( 'thmfdn_footer_class', 'site-footer row' ) . '">' . "\n";
 		echo '<div class="' . apply_filters( 'thmfdn_footer_wrap_class', 'wrap' ) . '">' . "\n";
 	}
 }
@@ -83,6 +115,36 @@ if ( !function_exists( 'thmfdn_footer_menu' ) ) {
 		}
 	}
 }
+
+if ( !function_exists( 'thmfdn_footer_widgets' ) ) {
+	/**
+	 * Displays the Inside Footer widget area
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_footer_widgets() {
+
+		// Does the Inside Footer widget area contain any widgets?
+		if ( is_active_sidebar( 'footer-inside' ) ) {
+
+			// Filters for class names.
+			$widget_count = thmfdn_widget_count('footer-inside');$widget_classes = '';
+			$widget_classes = '';
+			if ( $widget_count > 0 ) {
+				$widget_classes = ' widget-columns widget-count-' . $widget_count;
+			}
+			$thmfdn_footer_inside_class = apply_filters( 'thmfdn-footer-inside-class', 'footer-inside' . $widget_classes );
+			?>
+
+				<div class="<?php echo $thmfdn_footer_inside_class; ?>">
+					<?php dynamic_sidebar( 'footer-inside' ); ?>
+				</div><!--.footer-inside-->
+
+			<?php
+		}
+	}
+}
+
 
 if ( !function_exists( 'thmfdn_footer' ) ) {
 	/**
@@ -108,6 +170,39 @@ if ( !function_exists( 'thmfdn_footer_close' ) ) {
 		echo '</footer><!--#footer-->' . "\n";
 	}
 }
+
+if ( !function_exists( 'thmfdn_after_footer_widgets' ) ) {
+	/**
+	 * Displays the After Footer widget area
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_after_footer_widgets() {
+
+		// Does the After Footer widget area contain any widgets?
+		if ( is_active_sidebar( 'footer-after' ) ) {
+
+			// Filters for class names.
+			$widget_count = thmfdn_widget_count('footer-after');
+			$widget_classes = '';
+			if ( $widget_count > 0 ) {
+				$widget_classes = ' widget-columns widget-count-' . $widget_count;
+			}
+			$thmfdn_footer_after_class = apply_filters( 'thmfdn-footer-after-class', 'row site-footer footer-after' . $widget_classes );
+			$thmfdn_footer_after_wrap_class = apply_filters( 'thmfdn-footer-after-wrap-class', 'wrap' );
+			?>
+
+				<div class="<?php echo $thmfdn_footer_after_class; ?>">
+					<div class="<?php echo $thmfdn_footer_after_wrap_class; ?>">
+						<?php dynamic_sidebar( 'footer-after' ); ?>
+					</div><!--.wrap-->
+				</div><!--.footer-after-->
+
+			<?php
+		}
+	}
+}
+
 
 if ( !function_exists( 'thmfdn_wrapper_close' ) ) {
 	/**

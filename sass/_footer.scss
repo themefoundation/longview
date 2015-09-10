@@ -1,6 +1,12 @@
 /* =Footer
 -------------------------------------------------------------- */
 .site-footer {
+
+	.wrap {
+		padding: ($line + $unit);
+	}
+
+
 	&.footer-before {
 		@include footer-row( #333333, #222222, #ffffff );
 	}
@@ -44,4 +50,48 @@
 		}
 	}
 
+	&.widget-columns {
+		&.widget-count-2 .wrap {
+			@extend %two-columns;
+		}
+
+		&.widget-count-3 .wrap {
+			@extend %three-columns;
+		}
+
+		&.widget-count-4 .wrap {
+			@extend %four-columns;
+		}
+
+		&.widget-count-5 .wrap {
+			@extend %five-columns;
+		}
+
+		&.widget-count-6 .wrap {
+			@extend %six-columns;
+		}
+	}
+
+	&#footer {
+		.widget-count-2 {
+			@extend %two-columns;
+		}
+
+		.widget-count-3 {
+			@extend %three-columns;
+		}
+
+		.widget-count-4 {
+			@extend %four-columns;
+		}
+
+		.widget-count-5 {
+			@extend %five-columns;
+		}
+
+		.widget-count-6 {
+			@extend %six-columns;
+		}
+	}
 }
+

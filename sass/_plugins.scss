@@ -1,0 +1,33 @@
+/* =Syntax highlighter
+-------------------------------------------------------------- */
+
+#main .syntaxhighlighter {
+	width: 106% !important;
+	margin-left: -3% !important;
+	border: 1px solid #dddddd;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#main .line:first-child {
+	padding-top: 10px !important;
+}
+
+#main .line:last-child {
+	padding-bottom: 10px !important;
+}
+
+#main .syntaxhighlighter * {
+
+}
+
+#main .syntaxhighlighter .gutter .line {
+	border-right: 1px solid #dddddd !important;
+	background: #f6f6f6 !important;
+}
+
+/* =Envira Gallery
+-------------------------------------------------------------- */
+.envira-gallery-wrap{
+	margin-top: -22px !important;
+}

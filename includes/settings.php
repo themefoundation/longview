@@ -57,7 +57,7 @@ add_action( 'init', 'thmfdn_defaults' );
  */
 function get_thmfdn_layout() {
 
-	// Default layout
+	// Sets default layout
 	$layout_class = 'content-sidebar-sidebar';
 
 	// Overrides default layout for single posts.
@@ -70,8 +70,8 @@ function get_thmfdn_layout() {
 		$layout_class = 'content-only';
 	}
 
-	// Overrides default layout for archives.
-	if ( is_archive() ) {
+	// Overrides default layout for tag archives.
+	if ( is_tag() ) {
 		$layout_class = 'content-full-width';
 	}
 
@@ -79,8 +79,6 @@ function get_thmfdn_layout() {
 	if ( is_post_type_archive( 'portfolio' ) ) {
 		$layout_class = 'content-full-width';
 	}
-
-
 
 	return apply_filters( 'thmfdn_layout_class', $layout_class );
 }
@@ -114,13 +112,14 @@ add_filter( 'body_class', 'thmfdn_body_class_layout' );
  * These are the supported content formats:
  * - content (Standard blog format, single column of posts)
  * - grid (Rows of content, multiple columns)
+ * - gallery (Rows of images, multiple columns)
  *
  * @since 1.0
  * @return string Layout class name.
  */
 function get_thmfdn_content_format() {
 
-	// Default layout
+	// Sets default content format.
 	$format_class = get_post_format();
 
 	// Overrides default content format for portfolio archives.
@@ -128,9 +127,9 @@ function get_thmfdn_content_format() {
 		$format_class = 'gallery';
 	}
 
-	// Overrides default content format for pages.
-	if ( is_page() ) {
-		// $format_class = 'grid';
+	// Overrides default content format for archives.
+	if ( is_tag() ) {
+		$format_class = 'grid';
 	}
 
 	return apply_filters( 'thmfdn_content_format_class', $format_class );

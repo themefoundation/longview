@@ -1,39 +1,26 @@
-img,
-.wp-caption {
-	margin-bottom: 1.375rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Open Sans', helvetica, sans-serif;
+	font-weight: normal;
+}
+
+img {
+	margin-bottom: ($line + $unit);
 	max-width: 100%;
 	height: auto;
 }
 
-.wp-caption {}
-.wp-caption-text {}
-.sticky {}
-.gallery-caption {}
-.bypostauthor {}
-.alignright {
-	float: right;
-}
-
-.alignleft {
-	float: left;
-}
-
-.aligncenter {
-	margin: 0 auto;
-}
-
-.envira-gallery-wrap{
-	margin-top: -22px !important;
-}
-
-
-.wp-post-image {
-	display: block;
-}
-
-
 /* =Forms
 -------------------------------------------------------------- */
+input {
+	height: (($line * 2) + $unit);
+	padding: 0 0.5rem;
+}
+
 input[type="text"],
 input[type="password"],
 textarea {
@@ -53,3 +40,4 @@ input[type="submit"]:hover {
 	border: 1px solid #ccc;
 	cursor: pointer;
 }
+
