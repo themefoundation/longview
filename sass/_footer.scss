@@ -70,6 +70,18 @@
 		&.widget-count-6 .wrap {
 			@extend %six-columns;
 		}
+
+		&.widget-count-7 .wrap {
+			@extend %seven-columns;
+		}
+
+		&.widget-count-8 .wrap {
+			@extend %eight-columns;
+		}
+
+		&.widget-count-9 .wrap {
+			@extend %nine-columns;
+		}
 	}
 
 	&#footer {
@@ -91,6 +103,18 @@
 
 		.widget-count-6 {
 			@extend %six-columns;
+		}
+
+		.widget-count-7 .wrap {
+			@extend %seven-columns;
+		}
+
+		.widget-count-8 .wrap {
+			@extend %eight-columns;
+		}
+
+		.widget-count-9 .wrap {
+			@extend %nine-columns;
 		}
 	}
 }
