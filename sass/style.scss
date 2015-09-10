@@ -30,10 +30,14 @@ Tags: editor-style, threaded-comments
 @import 'plugins';
 
 
-// TODO: Handle header search widget on mobile.
-// TODO: Add .loop div to all template files.
+// TODO: Handle header search widget on mobile & submit hover.
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.
 // TODO: improve attachment page by detecting file type
+//       should be possible to simply filter the_content() and then call page.php, single.php (or something like that)
+//       Probably: just edit image attachment page. Then write tutorial on
+//       how to make a detailed attachment page.
 //       https://codex.wordpress.org/Function_Reference/get_post_mime_type
 //       http://wordpress.stackexchange.com/questions/15801/how-to-specify-width-and-height-in-the-content-for-image-attachments
+
+

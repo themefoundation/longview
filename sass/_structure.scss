@@ -214,7 +214,8 @@
 /* =Clearfix
 -------------------------------------------------------------- */
 .wrap:after,
-.widget:after {
+.widget:after,
+.gallery:after {
 	content: "";
 	display: table;
 	clear: both;

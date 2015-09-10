@@ -93,7 +93,7 @@ if ( !function_exists( 'thmfdn_post_open' ) ) {
 	 */
 	function thmfdn_post_open() {
 		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class( 'loop '); ?>>
 		<?php
 	}
 }

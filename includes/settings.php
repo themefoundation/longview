@@ -69,7 +69,7 @@ function get_thmfdn_layout() {
 
 	// Overrides default layout for single posts.
 	if ( is_single () ) {
-		$layout_class = 'sidebar-sidebar-content';
+		$layout_class = 'content-full-width';
 	} 
 
 	// Overrides default layout for pages.
@@ -84,7 +84,11 @@ function get_thmfdn_layout() {
 
 	// Overrides default layout for attachment pages.
 	if ( is_attachment() ) {
-		$layout_class = 'content-full-width';
+		if ( wp_attachment_is_image() ) {
+			$layout_class = 'content-full-width';
+		} else {
+			$layout_class = 'content-only';
+		}
 	}
 
 	// Overrides default layout for archives.
@@ -136,7 +140,7 @@ function get_thmfdn_content_format() {
 
 	// Overrides default content format for portfolio archives.
 	if ( is_post_type_archive( 'portfolio' ) ) {
-		$format_class = 'gallery';
+		$format_class = 'portfolio';
 	}
 
 	// Overrides default content format for archives.

@@ -2,7 +2,8 @@
 
 %two-columns {
 	@include breakpoint-medium {
-		> div {
+		> div,
+		> figure {
 			@include span-columns(6);
 			@include omega(2n);
 		}
@@ -11,7 +12,8 @@
 
 %three-columns {
 	@include breakpoint-medium {
-		> div {
+		// > div,
+		> figure {
 			@include span-columns(4);
 			@include omega(3n);
 		}
@@ -20,14 +22,16 @@
 
 %four-columns { 
 	@include breakpoint-medium {
-		> div {
+		> div,
+		> figure {
 			@include span-columns(6);
 			@include omega(2n);
 		}
 	}
 
 	@include breakpoint-large {
-		> div {
+		> div,
+		> figure {
 			@include omega-reset(2n);
 			@include span-columns(3);
 			@include omega(4n);
@@ -35,40 +39,136 @@
 	}
 }
 
-%five-columns { 
+%five-columns {
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+	}
+
 	@include breakpoint-medium {
-		> div {
+		> div,
+		> figure {
+			@include omega-reset(2n);
 			@include span-columns(4);
 			@include omega(3n);
 		}
 	}
 
 	@include breakpoint-large {
-		> div {
+		> div,
+		> figure {
 			@include omega-reset(3n);
-			@include span-columns(2);
+			@include span-columns(2.4);
 			@include omega(5n);
-
-			&:first-child {
-				@include shift(1);
-			}
 		}
 	}
 }
 
-%six-columns { 
+%six-columns {
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include span-columns(3);
+			@include omega(4n);
+		}
+	}
+
 	@include breakpoint-medium {
-		> div {
+		> div,
+		> figure {
+			@include omega-reset(2n);
 			@include span-columns(4);
 			@include omega(3n);
 		}
 	}
 
 	@include breakpoint-large {
-		> div {
+		> div,
+		> figure {
 			@include omega-reset(3n);
 			@include span-columns(2);
 			@include omega(6n);
+		}
+	}
+}
+
+%seven-columns {
+	> div,
+	> figure {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include omega-reset(2n);
+			@include span-columns(4);
+			@include omega(3n);
+		}
+	}
+
+	@include breakpoint-medium {
+		> div,
+		> figure {
+			@include omega-reset(3n);
+			@include span-columns(1.714285714);
+			@include omega(7n);
+		}
+	}
+}
+
+%eight-columns {
+	> div,
+	> figure {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include omega-reset(2n);
+			@include span-columns(3);
+			@include omega(4n);
+		}
+	}
+
+	@include breakpoint-large {
+		> div,
+		> figure {
+			@include omega-reset(4n);
+			@include span-columns(1.5);
+			@include omega(8n);
+		}
+	}
+}
+
+%nine-columns {
+	> div,
+	> figure {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include omega-reset(3n);
+			@include span-columns(2);
+			@include omega(6n);
+		}
+	}
+
+	@include breakpoint-large {
+		> div,
+		> figure {
+			@include omega-reset(6n);
+			@include span-columns(1.333333333);
+			@include omega(9n);
 		}
 	}
 }

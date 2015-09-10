@@ -19,11 +19,13 @@
 add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
+add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
 
 add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
 add_action( 'thmfdn_entry', 'thmfdn_page_content' );
 add_action( 'thmfdn_entry', 'thmfdn_page_pagination' );
 
+add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
 
 
@@ -78,6 +80,25 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 	}
 }
 
+if ( !function_exists( 'thmfdn_loop_open' ) ) {
+	/**
+	 * Loop wrapper
+	 *
+	 * Opens the .loop div. 
+	 *
+	 * This function is repeated in the base template files (index.php,
+	 * page.php, and single.php). This duplication is the unfortunate side
+	 * effect of trying to keep everything in its natural place.
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_loop_open() {
+		?>
+			<div class="<?php echo apply_filters( 'thmfdn_loop_class', 'loop' ) ?>">
+		<?php
+	}
+}
+
 if ( !function_exists( 'thmfdn_page_entry_title' ) ) {
 	/**
 	 * Entry title
@@ -105,6 +126,25 @@ if ( !function_exists( 'thmfdn_page_content' ) ) {
 		echo '<div class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-content' ) . '">' . "\n";
 		the_content();
 		echo '</div><!--.entry-content-->' . "\n";
+	}
+}
+
+if ( !function_exists( 'thmfdn_loop_close' ) ) {
+	/**
+	 * Loop wrapper closing
+	 *
+	 * Closes the .loop div.
+	 *
+	 * This function is repeated in the base template files (index.php,
+	 * page.php, and single.php). This duplication is the unfortunate side
+	 * effect of trying to keep everything in its natural place.
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_loop_close() {
+		?>
+			</div><!-- .loop -->
+		<?php
 	}
 }
 
