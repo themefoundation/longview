@@ -36,20 +36,6 @@
 	}
 }
 
-#main .thmfdn-gallery {
-	img {
-		margin-bottom: $gutter;
-	}
-
-	// @include tablet {
-	// 	@extend %two-columns;
-	// }
-
-	@include desktop {
-		@extend %four-columns;
-		
-	}
-
-
-
+#main .thmfdn-gallery .loop{
+	@extend %four-columns;
 }

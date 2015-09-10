@@ -36,17 +36,123 @@ html {
 /* 132px */
 /* =Layout widths
 -------------------------------------------------------------- */
-#main .thmfdn-gallery > div {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
-  #main .thmfdn-gallery > div:last-child {
-    margin-right: 0; }
-  #main .thmfdn-gallery > div:nth-child(5n) {
-    margin-right: 0; }
-  #main .thmfdn-gallery > div:nth-child(5n+1) {
-    clear: left; }
+@media (min-width: 900px) {
+  .widget-columns.widget-count-2 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
+    .widget-columns.widget-count-2 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-2 .wrap > div:nth-child(2n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-2 .wrap > div:nth-child(2n+1) {
+      clear: left; } }
+
+@media (min-width: 900px) {
+  .widget-columns.widget-count-3 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .widget-columns.widget-count-3 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-3 .wrap > div:nth-child(3n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-3 .wrap > div:nth-child(3n+1) {
+      clear: left; } }
+
+@media (min-width: 900px) {
+  .widget-columns.widget-count-4 .wrap > div, #main .thmfdn-gallery .loop > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
+    .widget-columns.widget-count-4 .wrap > div:last-child, #main .thmfdn-gallery .loop > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(2n), #main .thmfdn-gallery .loop > div:nth-child(2n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(2n+1), #main .thmfdn-gallery .loop > div:nth-child(2n+1) {
+      clear: left; } }
+
+@media (min-width: 1140px) {
+  .widget-columns.widget-count-4 .wrap > div, #main .thmfdn-gallery .loop > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 23.2317613015%; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(2n), #main .thmfdn-gallery .loop > div:nth-child(2n) {
+      margin-right: 2.3576515979%; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(2n+1), #main .thmfdn-gallery .loop > div:nth-child(2n+1) {
+      clear: none; }
+    .widget-columns.widget-count-4 .wrap > div:last-child, #main .thmfdn-gallery .loop > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(4n), #main .thmfdn-gallery .loop > div:nth-child(4n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-4 .wrap > div:nth-child(4n+1), #main .thmfdn-gallery .loop > div:nth-child(4n+1) {
+      clear: left; } }
+
+@media (min-width: 900px) {
+  .widget-columns.widget-count-5 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
+    .widget-columns.widget-count-5 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(2n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(2n+1) {
+      clear: left; } }
+
+@media (min-width: 1140px) {
+  .widget-columns.widget-count-5 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(2n) {
+      margin-right: 2.3576515979%; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(2n+1) {
+      clear: none; }
+    .widget-columns.widget-count-5 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(5n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-5 .wrap > div:nth-child(5n+1) {
+      clear: left; }
+    .widget-columns.widget-count-5 .wrap > div:first-child {
+      margin-left: 8.5298042998%; } }
+
+@media (min-width: 900px) {
+  .widget-columns.widget-count-6 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .widget-columns.widget-count-6 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(3n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(3n+1) {
+      clear: left; } }
+
+@media (min-width: 1140px) {
+  .widget-columns.widget-count-6 .wrap > div {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(3n) {
+      margin-right: 2.3576515979%; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(3n+1) {
+      clear: none; }
+    .widget-columns.widget-count-6 .wrap > div:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(6n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .wrap > div:nth-child(6n+1) {
+      clear: left; } }
 
 /* =Reset
 -------------------------------------------------------------- */
@@ -198,7 +304,9 @@ code {
 .primary,
 .secondary,
 .tertiary {
-  margin: 0 auto 1.618em; }
+  margin: 0 auto 1.618em;
+  padding-left: 25px;
+  padding-right: 25px; }
 
 /* =Content Only
 -------------------------------------------------------------- */
@@ -410,47 +518,52 @@ code {
 
 /* =Widget Area Columns
 -------------------------------------------------------------- */
-.widget-columns .widget {
-  padding: 0 1.375rem; }
-
 @media (min-width: 900px) {
-  .widget-columns.widget-count-2 .widget,
-  .widget-columns.widget-count-4 .widget,
-  .widget-columns.widget-count-5 .widget {
+  .widget-columns.widget-count-2 .widget {
     float: left;
-    width: 50%; }
-    .widget-columns.widget-count-2 .widget:nth-child(odd),
-    .widget-columns.widget-count-4 .widget:nth-child(odd),
-    .widget-columns.widget-count-5 .widget:nth-child(odd) {
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
+    .widget-columns.widget-count-2 .widget:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-2 .widget:nth-child(2n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-2 .widget:nth-child(2n+1) {
       clear: left; }
   .widget-columns.widget-count-3 .widget,
   .widget-columns.widget-count-6 .widget {
     float: left;
-    width: 33.333333333%; }
-    .widget-columns.widget-count-3 .widget:nth-child(3n+4),
-    .widget-columns.widget-count-6 .widget:nth-child(3n+4) {
-      clear: left; }
-  .widget-columns.widget-count-5 .widget:last-child {
-    margin-left: 25%; } }
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .widget-columns.widget-count-3 .widget:last-child,
+    .widget-columns.widget-count-6 .widget:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-3 .widget:nth-child(3n),
+    .widget-columns.widget-count-6 .widget:nth-child(3n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-3 .widget:nth-child(3n+1),
+    .widget-columns.widget-count-6 .widget:nth-child(3n+1) {
+      clear: left; } }
 
 @media (min-width: 1140px) {
-  .widget-columns.widget-count-4 .widget {
-    float: left;
-    width: 25%; }
-    .widget-columns.widget-count-4 .widget:nth-child(odd) {
-      clear: none; }
-  .widget-columns.widget-count-5 .widget {
-    float: left;
-    width: 20%; }
-    .widget-columns.widget-count-5 .widget:nth-child(odd) {
-      clear: none;
-      margin-left: 0; }
   .widget-columns.widget-count-6 .widget {
     float: left;
-    width: 16.666666667%; }
-    .widget-columns.widget-count-6 .widget:nth-child(3n+4) {
-      clear: none; } }
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%; }
+    .widget-columns.widget-count-6 .widget:nth-child(3n) {
+      margin-right: 2.3576515979%; }
+    .widget-columns.widget-count-6 .widget:nth-child(3n+1) {
+      clear: none; }
+    .widget-columns.widget-count-6 .widget:last-child {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .widget:nth-child(6n) {
+      margin-right: 0; }
+    .widget-columns.widget-count-6 .widget:nth-child(6n+1) {
+      clear: left; } }
 
+/* This was built before adding the Neat grid... */
 /* =Float Clearing
 -------------------------------------------------------------- */
 /*
@@ -1105,9 +1218,6 @@ input[type="submit"]:hover {
       #main .thmfdn-grid .post:nth-of-type(3n+2) {
         margin-left: 5%;
         margin-right: 5%; } }
-
-#main .thmfdn-gallery img {
-  margin-bottom: 1.618em; }
 
 /* =Gallery
 -------------------------------------------------------------- */

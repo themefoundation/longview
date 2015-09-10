@@ -35,7 +35,7 @@ function thmfdn_defaults() {
 
 	// Sets additional image sizes
 	add_image_size( 'grid', 300, 200, true );
-	add_image_size( 'gallery', 400, 200, true );
+	add_image_size( 'gallery', 500, 250, true );
 
 }
 add_action( 'init', 'thmfdn_defaults' );

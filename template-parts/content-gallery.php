@@ -58,7 +58,9 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 * @since 1.0
 	 */
 	function thmfdn_archive_featured_image() {
+		echo '<a href="' . get_permalink() . '">';
 		the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'gallery' ) );
+		echo '</a>';
 		echo "\n";
 	}
 }

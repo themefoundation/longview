@@ -25,6 +25,8 @@
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 add_action( 'thmfdn_content_top', 'thmfdn_archive_title' );
+add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
+add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_pagination' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
 
@@ -85,6 +87,44 @@ if ( !function_exists( 'thmfdn_archive_title' ) ) {
 			echo '<h1 class="page-title">' . $thmfdn_archive_title . '</h1>';
 		}
 		the_archive_description( '<p class="page-description">', '</p>' );
+	}
+}
+
+if ( !function_exists( 'thmfdn_loop_open' ) ) {
+	/**
+	 * Loop wrapper
+	 *
+	 * Opens the .loop div. 
+	 *
+	 * This function is repeated in the base template files (index.php,
+	 * page.php, and single.php). This duplication is the unfortunate side
+	 * effect of trying to keep everything in its natural place.
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_loop_open() {
+		?>
+			<div class="<?php echo apply_filters( 'thmfdn_loop_class', 'loop' ) ?>">
+		<?php
+	}
+}
+
+if ( !function_exists( 'thmfdn_loop_close' ) ) {
+	/**
+	 * Loop wrapper closing
+	 *
+	 * Closes the .loop div.
+	 *
+	 * This function is repeated in the base template files (index.php,
+	 * page.php, and single.php). This duplication is the unfortunate side
+	 * effect of trying to keep everything in its natural place.
+	 *
+	 * @since 1.0
+	 */
+	function thmfdn_loop_close() {
+		?>
+			</div><!-- .loop -->
+		<?php
 	}
 }
 
