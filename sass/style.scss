@@ -30,14 +30,11 @@ Tags: editor-style, threaded-comments
 
 
 
-
-
-
 /* =Feature Image
 -------------------------------------------------------------- */
 
 .featured-image .wrap {
-	margin-top: $triple;
+	margin-top: (($line * 3) + $unit);
 	text-align: center;
 	padding-left: $gutter;
 	padding-right: $gutter;
@@ -55,7 +52,8 @@ Tags: editor-style, threaded-comments
 -------------------------------------------------------------- */
 
 #main > .wrap {
-	padding-top: $triple;
+	padding-top: (($line * 3) + $unit);
+	padding-bottom: (($line * 3) + $unit);
 }
 
 /* =Footer (mobile)
@@ -91,7 +89,7 @@ Tags: editor-style, threaded-comments
 -------------------------------------------------------------- */
 
 input {
-	height: $double;
+	height: (($line * 2) + $unit);
 	padding: 0 0.5rem;
 }
 
@@ -152,7 +150,7 @@ input {
 -------------------------------------------------------------- */
 
 .menu-toggle-button {
-	line-height: $double;
+	line-height: (($line * 2) + $unit);
 }
 
 #header,
@@ -205,7 +203,7 @@ h6 {
 
 .entry-meta-top,
 .entry-meta-bottom {
-	margin-bottom: $single;
+	margin-bottom: ($line + $unit);
 }
 
 

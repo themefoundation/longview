@@ -1,4 +1,4 @@
-/* =Grid
+/* =Grid Content Format
 -------------------------------------------------------------- */
 #main .thmfdn-grid {
 	padding-left: 0;
@@ -36,6 +36,18 @@
 	}
 }
 
+/* =Gallery Content Format
+-------------------------------------------------------------- */
 #main .thmfdn-gallery .loop{
 	@extend %four-columns;
+
+	.wp-post-image {
+		margin: 0 auto ( ($line * 2 ) + $unit) auto;
+	}
+
+	@include breakpoint-medium {
+		.wp-post-image {
+			margin: 0 auto ( ($line ) + $unit) auto;
+		}
+	}
 }

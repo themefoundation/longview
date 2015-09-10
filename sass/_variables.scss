@@ -1,18 +1,10 @@
 /* =Bourbon/Neat
 -------------------------------------------------------------- */
+/// Max width for Bourbon/Neat grid rows.
 $max-width: 1600px;
-
-
-
-
-
-
-
-
 
 /* =Breakpoints
 -------------------------------------------------------------- */
-
 /// Small breakpoint.
 $breakpoint-small: 600px;
 
@@ -27,7 +19,6 @@ $breakpoint-xlarge: 1400px;
 
 /* =Colors
 -------------------------------------------------------------- */
-
 /// Default background color.
 $background: #ffffff;
 
@@ -52,38 +43,18 @@ $border-light: #eeeeee;
 /// Light boarder hover color.
 $border-light-hover: #cccccc;
 
-
 /* =Standard measurements
 -------------------------------------------------------------- */
-
+/// Default line height. Used all over the place, both directly and in Sass calculations.
 $line: 1.375;
 
+/// Default unit of measurement. Used in combination with $line.
 $unit: rem;
-
-/// Default line-height.
-$single: 1.375rem; /* 22px */
-
-/// Half of the default line-height.
-$half: 0.6875rem; /* 11px */
-
-
-
-///
-$single-half: 2.0625rem; /* 33px */
-$double: 2.75rem; /* 44px */
-$double-half: 3.4375rem; /* 44px */
-$triple: 4.125rem; /* 66px */
-$quadruple: 5.5rem; /* 88px */
-$quintuple: 6.875rem; /* 110px */
-$hextuple: 8.25rem; /* 132px */
 
 /* =Layout widths
 -------------------------------------------------------------- */
-$row-max-width: 1800px;
+/// Max width for content area of two column layout.
 $two-column-wrap-width: 1000px;
-$two-column-primary-width: 65%;
-$two-column-secondary-width: 35%;
+
+/// Max width for content area of three column layout.
 $three-column-wrap-width: 1400px;
-$three-column-primary-width: 50%;
-$three-column-secondary-width: 25%;
-$three-column-tertiary-width: 25%;

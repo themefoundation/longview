@@ -2,12 +2,13 @@
 -------------------------------------------------------------- */
 .row {
 	clear: both;
+
+	> .wrap {
+		@include outer-container;
+		width: 90%;
+	}
 }
 
-.row > .wrap {
-	@include outer-container;
-	width: 90%;
-}
 
 /* =Column Defaults
 -------------------------------------------------------------- */

@@ -45,9 +45,8 @@
 
 	.site-description {
 		text-align: center;
-		line-height: $single;
-		margin-bottom: $line + $unit; 
-			// line-height: ($line * 4) + $unit;
+		line-height: ($line + $unit);
+		margin-bottom: ($line + $unit); 
 
 		@include breakpoint-large {
 			margin-left: 25px;
@@ -59,7 +58,7 @@
 
 	.widget {
 		margin-bottom: 0;
-		line-height: $double;
+		line-height: (($line * 2) + $unit);
 
 	}
 
@@ -153,7 +152,7 @@
 
 	.widget_search {
 		@include breakpoint-large {
-			margin-top: $double;
+			margin-top: (($line * 2) + $unit);
 		}
 	}
 }
@@ -174,7 +173,7 @@
 		}
 
 		ul li a {
-			line-height: $double;
+			line-height: (($line * 2) + $unit);
 		}
 	}
 } 
@@ -203,7 +202,7 @@
 	}
 
 	ul li a {
-		line-height: $double;
+		line-height: (($line * 2) + $unit);
 	}
 }
 

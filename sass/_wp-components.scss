@@ -91,6 +91,7 @@
 -------------------------------------------------------------- */
 .pagination {
 	clear: both;
+	padding-top: ($line * 2) + $unit;
 
 	a,
 	span {
