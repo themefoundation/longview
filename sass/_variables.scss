@@ -13,11 +13,17 @@ $max-width: 1600px;
 /* =Breakpoints
 -------------------------------------------------------------- */
 
-/// Tablet breakpoint.
+/// Small breakpoint.
+$breakpoint-small: 600px;
+
+/// Medium breakpoint.
 $breakpoint-medium: 900px;
 
-/// Desktop breakpoint.
+/// Large breakpoint.
 $breakpoint-large: 1140px;
+
+/// Extra large breakpoint.
+$breakpoint-xlarge: 1400px;
 
 /* =Colors
 -------------------------------------------------------------- */
