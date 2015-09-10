@@ -3,14 +3,26 @@
   &:nth-child(#{$nth}+1) { clear: none }
 }
 
-@mixin tablet {
-	@media (min-width: #{$tablet}) {
+@mixin breakpoint-small {
+	@media (min-width: #{$breakpoint-small}) {
 		@content;
 	}
 }
 
-@mixin desktop {
-	@media (min-width: #{$desktop}) {
+@mixin breakpoint-medium {
+	@media (min-width: #{$breakpoint-medium}) {
+		@content;
+	}
+}
+
+@mixin breakpoint-large {
+	@media (min-width: #{$breakpoint-large}) {
+		@content;
+	}
+}
+
+@mixin breakpoint-xlarge {
+	@media (min-width: #{$breakpoint-xlarge}) {
 		@content;
 	}
 }

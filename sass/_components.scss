@@ -20,7 +20,7 @@
 			margin-right:  auto;
 		}
 
-		@include tablet {
+		@include breakpoint-medium {
 			width: 30%;
 			float: left;
 

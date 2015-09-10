@@ -141,7 +141,7 @@
 		margin-bottom: 0;
 
 		&:last-child {
-			@include tablet {
+			@include breakpoint-medium {
 				margin-bottom: ($line * 2) + $unit;
 			}
 		}
@@ -160,7 +160,7 @@
 			margin-top: $line + $unit;
 		}
 
-		@include tablet {
+		@include breakpoint-medium {
 			float: left;
 
 			&[type="password"] {

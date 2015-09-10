@@ -22,7 +22,7 @@
 /* =Content Only
 -------------------------------------------------------------- */
 .content-only {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -47,7 +47,7 @@
 /* =Content/Sidebar
 -------------------------------------------------------------- */
 .content-sidebar {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -65,7 +65,7 @@
 /* =Sidebar/Content
 -------------------------------------------------------------- */
 .sidebar-content {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -85,7 +85,7 @@
 /* =Content/Sidebar/Sidebar
 -------------------------------------------------------------- */
 .content-sidebar-sidebar {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -104,7 +104,7 @@
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		#main .wrap {
 			max-width: $three-column-wrap-width;
 		}
@@ -126,7 +126,7 @@
 /* =Sidebar/Sidebar/Content
 -------------------------------------------------------------- */
 .sidebar-sidebar-content {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -147,7 +147,7 @@
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		#main .wrap {
 			max-width: $three-column-wrap-width;
 		}
@@ -169,7 +169,7 @@
 /* =Sidebar/Content/Sidebar
 -------------------------------------------------------------- */
 .sidebar-content-sidebar {
-	@include tablet {
+	@include breakpoint-medium {
 		#main .wrap {
 			max-width: $two-column-wrap-width;
 		}
@@ -188,7 +188,7 @@
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		#main .wrap {
 			max-width: $three-column-wrap-width;
 		}
@@ -233,7 +233,7 @@
 		@extend %six-columns;
 	}
 
-	@include tablet {
+	@include breakpoint-medium {
 
 		&.widget-count-2 .widget {
 			@include span-columns(6);
@@ -247,7 +247,7 @@
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		 
 		// &.widget-count-4 .widget{
 		// 	@include omega-reset(2n);
@@ -280,7 +280,7 @@
 // 		padding: 0 $line + $unit;
 // 	}
 
-// 	@include tablet {
+// 	@include breakpoint-medium {
 
 // 		&.widget-count-2 .widget,
 // 		&.widget-count-4 .widget,
@@ -310,7 +310,7 @@
 // 		}
 // 	}
 
-// 	@include desktop {
+// 	@include breakpoint-large {
 		 
 // 		&.widget-count-4 .widget{
 // 			float: left;

@@ -146,7 +146,7 @@ $mo-class-hidden: is-hidden-menu;
 	}
 
 	// Desktop styles
-	@include desktop {
+	@include breakpoint-large {
 		&:after {
 			visibility: hidden;
 			display: block;
@@ -190,7 +190,7 @@ $mo-class-hidden: is-hidden-menu;
 /// Border design styles.
 %border-style {
 
-	@include tablet {
+	@include breakpoint-medium {
 
 		ul {
 			margin-top: -1px;

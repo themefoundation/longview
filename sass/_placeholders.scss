@@ -1,7 +1,7 @@
 
 
 %two-columns {
-	@include tablet {
+	@include breakpoint-medium {
 		> div {
 			@include span-columns(6);
 			@include omega(2n);
@@ -10,7 +10,7 @@
 }
 
 %three-columns {
-	@include tablet {
+	@include breakpoint-medium {
 		> div {
 			@include span-columns(4);
 			@include omega(3n);
@@ -19,14 +19,14 @@
 }
 
 %four-columns { 
-	@include tablet {
+	@include breakpoint-medium {
 		> div {
 			@include span-columns(6);
 			@include omega(2n);
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		> div {
 			@include omega-reset(2n);
 			@include span-columns(3);
@@ -36,16 +36,16 @@
 }
 
 %five-columns { 
-	@include tablet {
+	@include breakpoint-medium {
 		> div {
-			@include span-columns(6);
-			@include omega(2n);
+			@include span-columns(4);
+			@include omega(3n);
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		> div {
-			@include omega-reset(2n);
+			@include omega-reset(3n);
 			@include span-columns(2);
 			@include omega(5n);
 
@@ -57,14 +57,14 @@
 }
 
 %six-columns { 
-	@include tablet {
+	@include breakpoint-medium {
 		> div {
 			@include span-columns(4);
 			@include omega(3n);
 		}
 	}
 
-	@include desktop {
+	@include breakpoint-large {
 		> div {
 			@include omega-reset(3n);
 			@include span-columns(2);
