@@ -22,6 +22,25 @@ module.exports = function(grunt) {
 			},
 		},
 
+		jshint: {
+			files: ['Gruntfile.js', 'js/*.js'],
+			options: {
+				globals: {
+					jQuery: true
+				}
+			}
+		},
+
+		jscs: {
+		    src: ['Gruntfile.js', 'js/*.js'],
+		    options: {
+		        config: ".jscsrc",
+		        esnext: true, // If you use ES6 http://jscs.info/overview.html#esnext
+		        verbose: true, // If you need output with rule names http://jscs.info/overview.html#verbose
+		        requireCurlyBraces: [ "if" ]
+		    }
+		},
+
 		watch: {
 			// grunt: { files: ['Gruntfile.js'] },
 
@@ -48,6 +67,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sassdoc');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-jscs');
 	grunt.registerTask('default', ['watch']);
 
 
