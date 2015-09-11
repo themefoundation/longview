@@ -20,6 +20,7 @@
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 add_action( 'thmfdn_content_top', 'thmfdn_archive_title' );
 add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
+
 add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_pagination' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
