@@ -30,12 +30,14 @@ Tags: editor-style, threaded-comments
 @import 'plugins';
 
 
+// TODO: Figure out link color in footer (noticiable on touch to dial)
+// TODO: Test touch dial with multiple numbers on a page.
+// TODO: Figure out better class names for touch to dial and nested link.
+//       Nested link shouldn't need class name $(this).find('a') should work.
+//       Actually, $(this).find('a') should take care of multiple nubmers on a page as well.
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.
-// TODO: improve attachment page by detecting file type
-//       should be possible to simply filter the_content() and then call page.php, single.php (or something like that)
-//       Probably: just edit image attachment page. Then write tutorial on
-//       how to make a detailed attachment page.
+// TODO: Write tutorial on how to make a detailed attachment page.
 //       https://codex.wordpress.org/Function_Reference/get_post_mime_type
 //       http://wordpress.stackexchange.com/questions/15801/how-to-specify-width-and-height-in-the-content-for-image-attachments
 

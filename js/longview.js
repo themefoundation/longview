@@ -29,5 +29,18 @@ jQuery( document ).ready(function( $ ) {
 		mobileMenuLocation: 'body'
 	});
 
+	/**
+	 * Adds support for converting phone numbers to links on touch devices
+	 */
+	if ( 'ontouchstart' in document.documentElement ) {
+
+		// For each element with class "touch-to-dial".
+		$(".thmfdn-touch-to-dial").each(function () {
+			var ctdPhoneNumber = $(this).text();
+			// Wrap phone with href="tel:" and then insert phone number
+			$(this).wrapInner('<a class="ttd-link" href=""></a>');
+			$('.ttd-link').attr('href', 'tel:'+ctdPhoneNumber);
+		});
+	}
 
 });

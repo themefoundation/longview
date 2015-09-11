@@ -6,12 +6,6 @@
  * @since 1.0
  */
 
-// TODO: figure out a way to easily change the template part AND add a class name
-//       to either then content wrapper or body tag so styles can be applied
-//       across all elements inside wrapper. Possibly unneeded if same thing can
-//       be accomplished by giving each template part element a specific class
-//       name. Also, should be controllable from settings, just like layout.
-
 /**
  *****************************************************************************
  * Add actions
