@@ -17,23 +17,6 @@
 	margin: ($line + $unit) 0 0 (($line * 0.75) + $unit);
 }
 
-.widget_search label {
-	line-height: 0;
-}
-
-.widget_search {
-
-	input[type="search"] {
-		float: left;
-		width: 70%;
-	}
-
-	input[type="submit"] {
-		float: left;
-		width: 30%;
-	}
-}
-
 .widget_tag_cloud {
 	a {
 		background-color: transparent;
@@ -56,6 +39,10 @@
 -------------------------------------------------------------- */
 .widget_search {
 
+	label {
+		line-height: 0;
+	}
+
 	input {
 		border: 1px solid #dddddd;
 		margin-top: -1px;
@@ -67,10 +54,19 @@
 
 	input[type="search"] {
 		background-color: $background;
+		float: left;
+		width: 70%;
 	}
 
 	input[type="submit"] {
 		background-color: #f6f6f6;
 		border-left: 0 solid;
+		float: left;
+		width: 30%;
+
+		&:hover {
+			border-left: 0 solid;
+		}
 	}
 }
+

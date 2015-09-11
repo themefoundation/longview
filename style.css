@@ -1391,8 +1391,8 @@ by Jonathan Snook at http://smacss.com
 .site-header .widget_text .widget-title {
   display: none; }
 
-.site-header .widget_search {
-  margin: 0 auto;
+.site-header .widget.widget_search {
+  margin: 0 auto 1.375rem;
   display: block;
   width: 300px; }
 
@@ -1416,11 +1416,11 @@ by Jonathan Snook at http://smacss.com
     margin-right: 1em; }
   .site-header .widget_search {
     float: right;
-    margin-right: 0; } }
+    margin-right: 0;
+    margin-bottom: 0; } }
 
 #header .widget {
-  line-height: 5.5rem;
-  margin-bottom: 0; }
+  line-height: 5.5rem; }
   @media (min-width: 1140px) {
     #header .widget {
       float: right;
@@ -1593,17 +1593,6 @@ by Jonathan Snook at http://smacss.com
 .widget li li {
   margin: 1.375rem 0 0 1.03125rem; }
 
-.widget_search label {
-  line-height: 0; }
-
-.widget_search input[type="search"] {
-  float: left;
-  width: 70%; }
-
-.widget_search input[type="submit"] {
-  float: left;
-  width: 30%; }
-
 .widget_tag_cloud a {
   background-color: transparent; }
 
@@ -1618,6 +1607,9 @@ by Jonathan Snook at http://smacss.com
 
 /* =Search
 -------------------------------------------------------------- */
+.widget_search label {
+  line-height: 0; }
+
 .widget_search input {
   border: 1px solid #dddddd;
   margin-top: -1px;
@@ -1626,11 +1618,17 @@ by Jonathan Snook at http://smacss.com
   float: left; }
 
 .widget_search input[type="search"] {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  float: left;
+  width: 70%; }
 
 .widget_search input[type="submit"] {
   background-color: #f6f6f6;
-  border-left: 0 solid; }
+  border-left: 0 solid;
+  float: left;
+  width: 30%; }
+  .widget_search input[type="submit"]:hover {
+    border-left: 0 solid; }
 
 h1,
 h2,
@@ -1792,11 +1790,14 @@ input[type="submit"]:hover {
 -------------------------------------------------------------- */
 .gallery {
   margin-bottom: 2.75rem; }
+  .gallery img {
+    margin-bottom: 0; }
 
 .gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
+  margin-bottom: 1.375rem;
   width: 100%; }
 
 .gallery-columns-7 figcaption {

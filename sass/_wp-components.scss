@@ -60,12 +60,17 @@
 
 .gallery {
 	margin-bottom: (($line * 2) + $unit);
+
+	img {
+		margin-bottom: 0;
+	}
 }
 
 .gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
+	margin-bottom: ($line + $unit);
 	width: 100%;
 }
 
