@@ -24,7 +24,6 @@
 			var menu = this,
 				mojsToggle = true, // Window resize throttle flag.
 				mo;
-
 			mojsMenuId++;
 
 			menu.number = mojsMenuId;
@@ -86,7 +85,7 @@
 
 				// Broken code:
 				// var mo = menu.options,
-				// 	parentmenu = $(this),
+				// 	parentmenu = $( this),
 				// 	submenu = parentmenu.children( 'ul' );
 				// if ( !menu.el.hasClass( mo.classIsMobile ) ) {
 				// 	var menupos = parentmenu.offset();
@@ -227,7 +226,7 @@
 
 				// Moves the menus back to the original location.
 				if ( '' !== mo.mobileMenuLocation ) {
-					for ( i = mojsMenuId; i > 0; i-- ) {
+					for ( i = mojsMenuId; i >= 0; i-- ) {
 						if ( this.el.hasClass( 'mojs-' + i ) ) {
 							this.el.appendTo( '.mojs-' + i + '-placeholder' );
 						}
@@ -263,11 +262,11 @@
 
 			// Remove submenu open class from other open submenus.
 			if ( ! this.el.hasClass( mo.classIsMobile ) ) {
-				submenu.parent().find( '.' + mo.classOpenSubmenu ).not( submenu ).removeClass( mo.classOpenSubmenu );
+				submenu.parent().find( '.' + mo.classOpenSubmenu ).not( Submenu ).removeClass( mo.classOpenSubmenu );
 			}
 		},
 
-		/**
+				/**
 		 * Handles keyboard navigation.
 		 *
 		 * The menu container is used for determining the width of the menu when
@@ -299,6 +298,7 @@
 
 							// Prevents the default behavior (following the link).
 							e.preventDefault();
+
 						}
 
 						break;
@@ -386,7 +386,7 @@
 							$( e.target ).closest( 'ul' ).find( '.is-open-submenu' ).removeClass( mo.classOpenSubmenu );
 							$( e.target ).closest( 'li' ).prev( 'li' ).find( 'a' ).focus();
 						}
-						if ( $( e.target ).closest( 'li' ).parents( '.' + mo.classHasSubmenu ).length > 1 ) {
+						if ( 1 < $( e.target ).closest( 'li' ).parents( '.' + mo.classHasSubmenu ).length ) {
 							$( e.target ).parent( '.is-open-submenu' ).find( '.is-open-submenu' ).removeClass( mo.classOpenSubmenu );
 							$( e.target ).closest( 'ul' ).parent( 'li' ).find( 'a' ).first().focus();
 							$( e.target ).closest( 'ul' ).find( '.is-open-submenu' ).removeClass( mo.classOpenSubmenu );
@@ -414,7 +414,7 @@
 	 */
 	$.fn.mojs = function( settings ) {
 		return this.each(function() {
-			var menu = Object.create( menu );
+			var menu = Object.create( Menu );
 			menu.init( this, settings );
 		});
 	};
