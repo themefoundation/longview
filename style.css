@@ -1500,8 +1500,8 @@ by Jonathan Snook at http://smacss.com
 /* =Main
 -------------------------------------------------------------- */
 #main > .wrap {
-  padding-top: 4.125rem;
-  padding-bottom: 4.125rem; }
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem; }
 
 /* =Archive pages
 -------------------------------------------------------------- */

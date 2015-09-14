@@ -1,3 +1,6 @@
+// Requires:
+// variables.scss
+
 /* =Widgets
 -------------------------------------------------------------- */
 
@@ -30,7 +33,7 @@
 }
 
 .widget-title {
-	border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid $border;
 	margin-top: -1px;
 }
 
@@ -49,7 +52,6 @@
 		display: block;
 		height: 45px;
 		float: left;
-		
 	}
 
 	input[type="search"] {

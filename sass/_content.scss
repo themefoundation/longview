@@ -1,3 +1,6 @@
+// Requires:
+// variables.scss
+
 /* =Content
 -------------------------------------------------------------- */
 
@@ -5,8 +8,8 @@
 -------------------------------------------------------------- */
 
 #main > .wrap {
-	padding-top: (($line * 3) + $unit);
-	padding-bottom: (($line * 3) + $unit);
+	padding-top: (($line * 2) + $unit);
+	padding-bottom: (($line * 2) + $unit);
 }
 
 

@@ -1,3 +1,8 @@
+// Requires:
+// variables.scss
+// mixins.scss
+
+
 /* =Footer
 -------------------------------------------------------------- */
 .site-footer {
@@ -6,7 +11,6 @@
 		padding: ($line + $unit);
 	}
 
-
 	&.footer-before {
 		@include footer-row( #333333, #222222, #ffffff );
 	}
@@ -14,7 +18,7 @@
 	&#footer {
 		@include footer-row( #444444, #333333, #ffffff );
 	}
-	
+
 	&.footer-after {
 		@include footer-row( #eeeeee, #dddddd, #222222 );
 	}
@@ -27,7 +31,6 @@
 			margin-bottom: 0;
 		}
 
-		
 		ul {
 			display: block;
 			margin: 0;
@@ -118,4 +121,3 @@
 		}
 	}
 }
-

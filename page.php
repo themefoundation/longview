@@ -16,6 +16,8 @@
  * @see http://codex.wordpress.org/Function_Reference/add_action
  * @since 1.0
  */
+
+// The thmfdn_header_after action hook is located in the header.php file.
 add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
