@@ -1574,10 +1574,10 @@ by Jonathan Snook at http://smacss.com
     margin: 0; }
   .site-footer.widget-count-1 a,
   .site-footer .widget-count-1 a {
-    color: #ffffff;
     display: inline-block;
     line-height: 2.75rem;
-    padding: 0 1rem; }
+    padding: 0 1rem;
+    text-decoration: underline; }
 
 /* =Widgets
 -------------------------------------------------------------- */

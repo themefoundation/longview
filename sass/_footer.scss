@@ -46,10 +46,10 @@
 		}
 
 		a {
-			color: #ffffff;
 			display: inline-block;
 			line-height: ($line * 2 ) + $unit;
 			padding: 0 1rem;
+			text-decoration: underline;
 		}
 	}
 
