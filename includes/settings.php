@@ -7,18 +7,6 @@
  * @package THMFDN
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Remove widget areas
  *
@@ -29,7 +17,7 @@
  */
 function thmfnd_remove_widget_areas(){
 	// unregister_sidebar( 'sidebar-1' );
-	unregister_sidebar( 'sidebar-2' );
+	// unregister_sidebar( 'sidebar-2' );
 	// unregister_sidebar( 'header-before' );
 	// unregister_sidebar( 'header-inside' );
 	// unregister_sidebar( 'header-after' );
