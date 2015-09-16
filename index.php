@@ -76,7 +76,7 @@ if ( !function_exists( 'thmfdn_archive_title' ) ) {
 	 * @see https://developer.wordpress.org/reference/functions/the_archive_title/
 	 */
 	function thmfdn_archive_title() {
-		
+
 		$thmfdn_archive_title = get_the_archive_title();
 		if ( 'Archives' != $thmfdn_archive_title ) {
 			echo '<h1 class="page-title">' . $thmfdn_archive_title . '</h1>';
@@ -89,7 +89,7 @@ if ( !function_exists( 'thmfdn_loop_open' ) ) {
 	/**
 	 * Loop wrapper
 	 *
-	 * Opens the .loop div. 
+	 * Opens the .loop div.
 	 *
 	 * This function is repeated in the base template files (index.php,
 	 * page.php, and single.php). This duplication is the unfortunate side

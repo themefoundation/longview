@@ -8,21 +8,57 @@
  */
 
 
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Remove widget areas
+ *
+ * Uncommenting any of the lines below will remove that widget area from
+ * the theme.
+ *
+ * @since 1.0
+ */
+function thmfnd_remove_widget_areas(){
+	// unregister_sidebar( 'sidebar-1' );
+	unregister_sidebar( 'sidebar-2' );
+	// unregister_sidebar( 'header-before' );
+	// unregister_sidebar( 'header-inside' );
+	// unregister_sidebar( 'header-after' );
+	// unregister_sidebar( 'footer-before' );
+	// unregister_sidebar( 'footer-inside' );
+	// unregister_sidebar( 'footer-after' );
+}
+add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
+
+/**
+ * Sets default image size
+ *
+ * @since 1.0
+ */
 function theme_default_image_size() {
     return 'large';
 }
 add_filter( 'pre_option_image_default_size', 'theme_default_image_size' );
 
-
 /**
- * Configures default settings.
+ * Runs the theme initialization routine
+ *
+ * Theme setup process. Does things like add support for various features
+ * built into WordPress core.
  *
  * @since 1.0
  */
-function thmfdn_defaults() {
-
-	// Sets the default content width.
-	if ( ! isset( $content_width ) ) $content_width = 900;
+function thmfdn_init() {
+	add_theme_support( 'title-tag' );
 
 	// Adds automatic feed link support.
 	add_theme_support( 'automatic-feed-links' );
@@ -39,6 +75,22 @@ function thmfdn_defaults() {
 		'caption'
 	);
 	add_theme_support( 'html5', $html5_support );
+
+	// add_theme_support( 'welcome-screen' );
+}
+add_action( 'after_setup_theme', 'thmfdn_init' );
+
+/**
+ * Configures default settings.
+ *
+ * @since 1.0
+ */
+function thmfdn_defaults() {
+
+	// Sets the default content width.
+	if ( ! isset( $content_width ) ) $content_width = 900;
+
+
 
 	// Sets additional image sizes
 	add_image_size( 'grid', 300, 200, true );

@@ -3,9 +3,9 @@
  * Welcome
  *
  * This file contains functions to add a welcome screen when the
- * theme is activated. 
+ * theme is activated.
  *
- * @package THMFDN
+ * @package Longview
  * @since 1.0.0
  */
 

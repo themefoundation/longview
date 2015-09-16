@@ -40,16 +40,5 @@ function thmfdn_editor_style() {
 }
 add_action( 'admin_init', 'thmfdn_editor_style' );
 
-/**
- * Runs the theme initialization routine
- *
- * Theme setup process. Does things like add support for various features
- * built into WordPress core.
- *
- * @since 1.0
- */
-function thmfdn_init() {
-	add_theme_support( 'title-tag' );
-}
-add_action( 'after_setup_theme', 'thmfdn_init' );
+
 
