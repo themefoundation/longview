@@ -79,3 +79,54 @@ function thmfdn_widget_count( $widget_area_id ) {
 		return count( $widget_areas[$widget_area_id] );
 	}
 }
+
+
+/**
+ * Removes the post title from single posts
+ * 
+ * @since 1.0
+ */
+function thmfdn_remove_single_title(){
+    remove_action( 'thmfdn_entry', 'thmfdn_single_title' );
+}
+// add_action( 'thmfdn_entry', 'thmfdn_remove_single_title', 9 ); // Single posts
+
+/**
+ * Removes the post titles from archive pages
+ * 
+ * @since 1.0
+ */
+function thmfdn_remove_archive_title(){
+    remove_action( 'thmfdn_entry', 'thmfdn_archive_title' );
+}
+// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_title', 9 ); // Archive posts
+
+/**
+ * Removes the thumbnail images from single posts
+ * 
+ * @since 1.0
+ */
+function thmfdn_remove_single_featured_image(){
+    remove_action( 'thmfdn_entry', 'thmfdn_single_featured_image' );
+}
+// add_action( 'thmfdn_entry', 'thmfdn_remove_single_featured_image', 9 ); // Single posts
+
+/**
+ * Removes the thumbnail images from archive pages
+ * 
+ * @since 1.0
+ */
+function thmfdn_remove_archive_featured_image(){
+    remove_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
+}
+// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_featured_image', 9 ); // Archive posts
+
+/**
+ * Removes comments from single posts
+ * 
+ * @since 1.0
+ */
+function thmfdn_remove_single_comments(){
+    remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
+}
+// add_action( 'thmfdn_entry', 'thmfdn_remove_single_comments', 9 ); // Single posts

@@ -8,6 +8,48 @@
  */
 
 /**
+ * Runs the theme initialization routine
+ *
+ * Theme setup process. Does things like add support for various features
+ * built into WordPress core.
+ *
+ * @since 1.0.0
+ */
+function thmfdn_init() {
+
+	// Adds title tag support: https://codex.wordpress.org/Title_Tag
+	add_theme_support( 'title-tag' );
+
+	// Adds automatic feed link support: https://codex.wordpress.org/Automatic_Feed_Links
+	add_theme_support( 'automatic-feed-links' );
+
+	// Adds featured image support: https://codex.wordpress.org/Post_Thumbnails
+	add_theme_support( 'post-thumbnails' );
+
+	// Adds HTML5 support: https://codex.wordpress.org/Theme_Markup
+	$html5_support = array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption'
+	);
+	add_theme_support( 'html5', $html5_support );
+
+	// Adds installation welcome screen support.
+	// add_theme_support( 'welcome-screen' );
+
+	// Sets the default content width.
+	if ( ! isset( $content_width ) ) $content_width = 900;
+
+	// Sets additional image sizes
+	add_image_size( 'grid', 300, 200, true );
+	add_image_size( 'gallery', 500, 250, true );
+}
+add_action( 'init', 'thmfdn_init' );
+
+
+/**
  * Remove widget areas
  *
  * Uncommenting any of the lines below will remove that widget area from
@@ -15,7 +57,7 @@
  *
  * @since 1.0
  */
-function thmfnd_remove_widget_areas(){
+function thmfnd_remove_widget_areas() {
 	// unregister_sidebar( 'sidebar-1' );
 	// unregister_sidebar( 'sidebar-2' );
 	// unregister_sidebar( 'header-before' );
@@ -26,66 +68,6 @@ function thmfnd_remove_widget_areas(){
 	// unregister_sidebar( 'footer-after' );
 }
 add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
-
-/**
- * Sets default image size
- *
- * @since 1.0
- */
-function theme_default_image_size() {
-    return 'large';
-}
-add_filter( 'pre_option_image_default_size', 'theme_default_image_size' );
-
-/**
- * Runs the theme initialization routine
- *
- * Theme setup process. Does things like add support for various features
- * built into WordPress core.
- *
- * @since 1.0
- */
-function thmfdn_init() {
-	add_theme_support( 'title-tag' );
-
-	// Adds automatic feed link support.
-	add_theme_support( 'automatic-feed-links' );
-
-	// Adds featured image support.
-	add_theme_support( 'post-thumbnails' );
-
-	// Ensures WP outputs HTML5 when possible.
-	$html5_support = array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption'
-	);
-	add_theme_support( 'html5', $html5_support );
-
-	// add_theme_support( 'welcome-screen' );
-}
-add_action( 'after_setup_theme', 'thmfdn_init' );
-
-/**
- * Configures default settings.
- *
- * @since 1.0
- */
-function thmfdn_defaults() {
-
-	// Sets the default content width.
-	if ( ! isset( $content_width ) ) $content_width = 900;
-
-
-
-	// Sets additional image sizes
-	add_image_size( 'grid', 300, 200, true );
-	add_image_size( 'gallery', 500, 250, true );
-
-}
-add_action( 'init', 'thmfdn_defaults' );
 
 /**
  * Sets layout defaults
@@ -140,24 +122,6 @@ function get_thmfdn_layout() {
 }
 
 /**
- * Adds layout class to body element
- *
- * @param array $classes Array of class names used for the <body> tag.
- * @return array $classes Updated array of class names used for the <body> tag.
- */
-function thmfdn_body_class_layout( $classes ) {
-
-	// Gets the layout class.
-	$layout_class = get_thmfdn_layout();
-
-	// Adds the layout class to the existing array of classes.
-	$classes[] = $layout_class;
-
-	return $classes;
-}
-add_filter( 'body_class', 'thmfdn_body_class_layout' );
-
-/**
  * Sets content format defaults
  *
  * Content formats define the layout/format of the content portion the page.
@@ -195,24 +159,15 @@ function get_thmfdn_content_format( $format_class = '' ) {
 add_filter( 'thmfdn_template_part_name', 'get_thmfdn_content_format' );
 
 /**
- * Adds format class to .primary column
+ * Sets default image size
  *
- * @param string $classes String of class names used for the .primary column.
- * @return string $classes Updated string of class names used for the .primary column.
+ * @since 1.0.0
+ * @return string Name of image size to use as default.
  */
-function thmfdn_content_class_format( $classes ) {
-
-	// Gets the layout class.
-	$format_class = get_thmfdn_content_format();
-
-	// Adds the layout class to the existing string of classes.
-	if ( ! empty( $format_class ) ) {
-		$classes .= ' ' . 'thmfdn-' . $format_class;
-	}
-
-	return $classes;
+function theme_default_image_size() {
+    return 'large';
 }
-add_filter( 'thmfdn_content_class', 'thmfdn_content_class_format' );
+add_filter( 'pre_option_image_default_size', 'theme_default_image_size' );
 
 /**
  * Sets the default thumbnail size.
@@ -303,52 +258,4 @@ function thmfdn_settings_single_meta_bottom() {
 add_filter ( 'thmfdn_single_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
 add_filter ( 'thmfdn_archive_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
 
-/**
- * Removes the post title from single posts
- * 
- * @since 1.0
- */
-function thmfdn_remove_single_title(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_title' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_title', 9 ); // Single posts
 
-/**
- * Removes the post titles from archive pages
- * 
- * @since 1.0
- */
-function thmfdn_remove_archive_title(){
-    remove_action( 'thmfdn_entry', 'thmfdn_archive_title' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_title', 9 ); // Archive posts
-
-/**
- * Removes the thumbnail images from single posts
- * 
- * @since 1.0
- */
-function thmfdn_remove_single_featured_image(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_featured_image' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_featured_image', 9 ); // Single posts
-
-/**
- * Removes the thumbnail images from archive pages
- * 
- * @since 1.0
- */
-function thmfdn_remove_archive_featured_image(){
-    remove_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_featured_image', 9 ); // Archive posts
-
-/**
- * Removes comments from single posts
- * 
- * @since 1.0
- */
-function thmfdn_remove_single_comments(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_comments', 9 ); // Single posts
