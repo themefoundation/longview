@@ -23,9 +23,8 @@ add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
 
-add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
-add_action( 'thmfdn_entry', 'thmfdn_page_content' );
-add_action( 'thmfdn_entry', 'thmfdn_page_pagination' );
+// add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
+// add_action( 'thmfdn_entry', 'thmfdn_page_content' );
 
 add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
@@ -101,21 +100,6 @@ if ( !function_exists( 'thmfdn_loop_open' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_page_entry_title' ) ) {
-	/**
-	 * Entry title
-	 *
-	 * Displays the post title.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_page_entry_title() {
-		echo '<h1 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		the_title();
-		echo '</h1>' . "\n";
-	}
-}
-
 if ( !function_exists( 'thmfdn_page_content' ) ) {
 	/**
 	 * Entry content
@@ -147,23 +131,6 @@ if ( !function_exists( 'thmfdn_loop_close' ) ) {
 		?>
 			</div><!-- .loop -->
 		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_page_pagination' ) ) {
-	/**
-	 *  Single post/page navigation template part
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_page_pagination() {
-		// Useful if pagination needs to be wrapped in another element.
-		// $pagination_args = array(
-		// 	'before' => '<div class="single-navigation">',
-		// 	'after' => '</div>'
-		// );
-
-		wp_link_pages();
 	}
 }
 
@@ -208,9 +175,14 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		do_action( 'thmfdn_entry_top' );
-		do_action( 'thmfdn_entry' );
-		do_action( 'thmfdn_entry_bottom' );
+		// do_action( 'thmfdn_entry_top' );
+		// do_action( 'thmfdn_entry' );
+		// do_action( 'thmfdn_entry_bottom' );
+		echo get_thmfdn_content_format();
+
+		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', 'page' ) );
+
+		// get_template_part( 'template-parts/content', 'page' );
 	}
 } else {
 	get_template_part( 'template-parts/404' );

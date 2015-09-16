@@ -173,10 +173,12 @@ add_filter( 'body_class', 'thmfdn_body_class_layout' );
  * @since 1.0
  * @return string Layout class name.
  */
-function get_thmfdn_content_format() {
+function get_thmfdn_content_format( $format_class = '' ) {
 
 	// Sets default content format.
-	$format_class = get_post_format();
+	if ( empty( $format_class ) ) {
+		$format_class = get_post_format();
+	}
 
 	// Overrides default content format for portfolio archives.
 	if ( is_post_type_archive( 'portfolio' ) ) {
