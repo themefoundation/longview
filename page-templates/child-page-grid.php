@@ -7,8 +7,6 @@
  * @since 1.0
  */
 
-// TODO: consider: loading standard page template, removing all actions from entry hooks, then loading grid template
-
 /*
 Template Name: Child Page Grid
 */
@@ -24,8 +22,7 @@ Template Name: Child Page Grid
  * @since 1.0
  */
 
-add_action( 'thmfdn_content_bottom', 'thmfdn_display_child_grid', 5 );
-
+add_action( 'thmfdn_content_bottom', 'thmfdn_display_child_grid', 60 );
 
 /**
  *****************************************************************************
@@ -38,7 +35,8 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_display_child_grid', 5 );
  * @since 1.0
  */
 
-add_filter( 'thmfdn_layout_class', 'thmfdn_full_width_page' );
+add_filter( 'thmfdn_layout_class', 'thmfdn_child_page_grid_full_width' );
+add_filter( 'thmfdn_thumbnail_size', 'thmfdn_child_page_grid_thumbnail_size' );
 
 /**
  *****************************************************************************
@@ -95,9 +93,19 @@ function thmfdn_display_child_grid() {
  * @since 1.0
  * @return string Layout class.
  */
-function thmfdn_full_width_page() {
+function thmfdn_child_page_grid_full_width() {
 	return 'content-full-width';
 }
 
+/**
+ * Sets the thumbnail size
+ *
+ * @since 1.0
+ * @return string Thumbnail size.
+ */
+function thmfdn_child_page_grid_thumbnail_size() {
+	return 'grid';
+}
+
 // Loads the default page template.
-require( dirname(__FILE__) . '/../page.php' ); 
+require( dirname(__FILE__) . '/../page.php' );

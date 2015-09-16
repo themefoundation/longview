@@ -12,52 +12,52 @@ by Jonathan Snook at http://smacss.com
 /* =Variables
 -------------------------------------------------------------- */
 
-/// Default menu font size.
+// Default menu font size.
 $mo-font-size: 1;
 
-/// Line height determines the height of clickable menu items.
+// Line height determines the height of clickable menu items.
 $mo-line-height: 2.75;
 
-/// Default menu unit of measurement. Possible values: rem, em, px.
+// Default menu unit of measurement. Possible values: rem, em, px.
 $mo-unit: rem;
 
-/// Breakpoint for applying tablet styles.
+// Breakpoint for applying tablet styles.
 $mo-breakpoint-tablet: 900px;
 
-/// Breakpoint for applying desktop styles.
+// Breakpoint for applying desktop styles.
 $mo-breakpoint-desktop: 1140px;
 
-/// Background color for default menu.
+// Background color for default menu.
 $mo-default-background-color: #ffffff;
 
-/// Background color for default hovered menu items.
+// Background color for default hovered menu items.
 $mo-default-background-color-hover: #eeeeee;
 
-/// Border color for default menu items. Only used if the %border-style placeholder is in use.
+// Border color for default menu items. Only used if the %border-style placeholder is in use.
 $mo-default-border-color: #dddddd;
 
-/// Font color for default menu items.
+// Font color for default menu items.
 $mo-default-font-color: #000000;
 
-/// Background color for mobile menu.
+// Background color for mobile menu.
 $mo-mobile-background-color: #eeeeee;
 
-/// Background color for hovered mobile menu items.
+// Background color for hovered mobile menu items.
 $mo-mobile-background-color-hover: #dddddd;
 
-/// Border color for mobile menu items. Only used if the %border-style placeholder is in use.
+// Border color for mobile menu items. Only used if the %border-style placeholder is in use.
 $mo-mobile-border-color: #dddddd;
 
-/// Font color for mobile menu items.
+// Font color for mobile menu items.
 $mo-mobile-font-color: #000000; // Menu font color.
 
-/// Class name. Should match classJS variable from mo.js file.
+// Class name. Should match classJS variable from mo.js file.
 $mo-class-js: is-js-menu;
 
-/// Class name. Should match classArrows variable from mo.js file.
+// Class name. Should match classArrows variable from mo.js file.
 $mo-class-arrows: menu-arrows; // Should match classArrows from mo.js file.
 
-/// Class name. Should match classHideMobile variable from mo.js file.
+// Class name. Should match classHideMobile variable from mo.js file.
 $mo-class-hidden: is-hidden-menu;
 
 
