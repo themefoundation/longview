@@ -206,7 +206,9 @@ function thmfdn_content_class_format( $classes ) {
 	$format_class = get_thmfdn_content_format();
 
 	// Adds the layout class to the existing string of classes.
-	$classes .= ' ' . 'thmfdn-' . $format_class;
+	if ( ! empty( $format_class ) ) {
+		$classes .= ' ' . 'thmfdn-' . $format_class;
+	}
 
 	return $classes;
 }

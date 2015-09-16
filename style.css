@@ -1678,16 +1678,16 @@ input[type="submit"]:hover {
   width: 1000px; }
   #main .thmfdn-grid > * {
     text-align: left; }
-  #main .thmfdn-grid .post .wp-post-image {
+  #main .thmfdn-grid .thmfdn-grid-item .wp-post-image {
     margin-left: auto;
     margin-right: auto; }
   @media (min-width: 900px) {
-    #main .thmfdn-grid .post {
+    #main .thmfdn-grid .thmfdn-grid-item {
       width: 30%;
       float: left; }
-      #main .thmfdn-grid .post:nth-of-type(3n+4) {
+      #main .thmfdn-grid .thmfdn-grid-item:nth-of-type(3n+4) {
         clear: left; }
-      #main .thmfdn-grid .post:nth-of-type(3n+2) {
+      #main .thmfdn-grid .thmfdn-grid-item:nth-of-type(3n+2) {
         margin-left: 5%;
         margin-right: 5%; } }
 

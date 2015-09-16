@@ -23,9 +23,6 @@ add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
 
-// add_action( 'thmfdn_entry', 'thmfdn_page_entry_title' );
-// add_action( 'thmfdn_entry', 'thmfdn_page_content' );
-
 add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
 
