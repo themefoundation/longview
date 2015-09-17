@@ -1,37 +1,42 @@
 // Requires:
 // variables.scss
 
+/// Resets the omega mixin provided by the Neat grid framework.
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
 }
 
+/// Sets the small breakpoint.
 @mixin breakpoint-small {
 	@media (min-width: #{$breakpoint-small}) {
 		@content;
 	}
 }
 
+/// Sets the medium breakpoint.
 @mixin breakpoint-medium {
 	@media (min-width: #{$breakpoint-medium}) {
 		@content;
 	}
 }
 
+/// Sets the large breakpoint.
 @mixin breakpoint-large {
 	@media (min-width: #{$breakpoint-large}) {
 		@content;
 	}
 }
 
+/// Sets the extra large breakpoint.
 @mixin breakpoint-xlarge {
 	@media (min-width: #{$breakpoint-xlarge}) {
 		@content;
 	}
 }
 
-
-@mixin header-row($background-color, $background-color-hover, $color ) {
+/// Color styles for a row in the header.
+@mixin header-row( $background-color, $background-color-hover, $color ) {
 	background-color: $background-color;
 	color: $color;
 
@@ -48,9 +53,31 @@
 	ul li a:focus {
 		background-color: $background-color-hover;
 	}
+
+	.widget_search {
+
+		input[type="search"] {
+			border-color: $background-color-hover;
+
+			@include breakpoint-large {
+				border-color: $background-color;
+			}
+		}
+
+		input[type="submit"] {
+			background-color: $background-color;
+			border-color: $background-color-hover;
+			color: $color;
+
+			&:hover {
+				background-color: $background-color-hover;
+			}
+		}
+	}
 }
 
-@mixin footer-row($background-color, $background-color-hover, $color ) {
+/// Color styles for a row in the footer.
+@mixin footer-row( $background-color, $background-color-hover, $color ) {
 	background-color: $background-color;
 	color: $color;
 
@@ -61,5 +88,105 @@
 
 	a:hover {
 		text-decoration: underline;
+	}
+}
+
+/// Layout styles for content-only section.
+@mixin content-only( $width, $shift ) {
+	.primary {
+		@include span-columns($width);
+		@include shift($shift);
+	}
+}
+
+/// Layout styles for content-full-width section.
+@mixin content-full-width() {
+	.primary {
+		max-width: 100%;
+		width: 100%;
+		margin: 0;
+	}
+}
+
+/// Layout styles for content-sidebar section.
+@mixin content-sidebar( $primary, $secondary ) {
+	.primary {
+		@include span-columns($primary);
+	}
+
+	.secondary,
+	.tertiary {
+		@include span-columns($secondary);
+
+		clear: right;
+		float: right;
+		margin-right: 0;
+	}
+}
+
+/// Layout styles for sidebar-content section.
+@mixin sidebar-content( $secondary, $primary ) {
+	@include direction-context(right-to-left) {
+		.primary {
+			@include span-columns($primary);
+		}
+
+		.secondary,
+		.tertiary {
+			@include span-columns($secondary);
+
+			float: left;
+			clear: left;
+			margin-left: 0;
+		}
+	}
+}
+
+/// Layout styles for content-sidebar-sidebar section.
+@mixin content-sidebar-sidebar( $primary, $secondary, $tertiary ) {
+	.primary {
+		@include span-columns($primary);
+	}
+
+	.secondary {
+		@include span-columns($secondary);
+	}
+
+	.tertiary {
+		@include span-columns($tertiary);
+	}
+}
+
+/// Layout styles for sidebar-content-sidebar section.
+@mixin sidebar-content-sidebar( $secondary, $primary, $tertiary ) {
+	.primary {
+		@include span-columns($primary);
+		@include shift($secondary);
+	}
+
+	.secondary {
+		@include span-columns($secondary);
+		@include shift(-($primary + $secondary));
+	}
+
+	.tertiary {
+		@include span-columns($tertiary);
+	}
+}
+
+/// Layout styles for sidebar-sidebar-content section.
+@mixin sidebar-sidebar-content( $tertiary, $secondary, $primary ) {
+	@include direction-context(right-to-left) {
+		.primary {
+			@include span-columns($primary);
+		}
+
+		.secondary {
+			@include span-columns($secondary);
+		}
+
+		.tertiary {
+			@include span-columns($tertiary);
+		}
 	}
 }

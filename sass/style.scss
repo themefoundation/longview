@@ -4,7 +4,7 @@ Theme URI: http://themefoundation.com/
 Description: The Longview theme is a minimally styles WordPress theme designed to be easily extensible.
 Author: Theme Foundation
 Author URI: http://themefoundation.com/
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: editor-style, threaded-comments
@@ -28,10 +28,7 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
-// TODO: Test touch dial with multiple numbers on a page.
-// TODO: Figure out better class names for touch to dial and nested link.
-//       Nested link shouldn't need class name $(this).find('a') should work.
-//       Actually, $(this).find('a') should take care of multiple nubmers on a page as well.
+// TODO: Check for featured images before displaying featured image row.
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.
 // TODO: Write tutorial on how to make a detailed attachment page.

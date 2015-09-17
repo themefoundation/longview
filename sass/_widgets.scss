@@ -47,22 +47,22 @@
 	}
 
 	input {
-		border: 1px solid #dddddd;
-		margin-top: -1px;
+		border: 1px solid $border;
+		// margin-top: -1px;
 		display: block;
-		height: 45px;
+		height: (($line * 2) + $unit);
 		float: left;
 	}
 
 	input[type="search"] {
 		background-color: $background;
+		border-right: 0 solid;
 		float: left;
 		width: 70%;
 	}
 
 	input[type="submit"] {
-		background-color: #f6f6f6;
-		border-left: 0 solid;
+		background-color: $background-light;
 		float: left;
 		width: 30%;
 

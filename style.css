@@ -4,7 +4,7 @@ Theme URI: http://themefoundation.com/
 Description: The Longview theme is a minimally styles WordPress theme designed to be easily extensible.
 Author: Theme Foundation
 Author URI: http://themefoundation.com/
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: editor-style, threaded-comments
@@ -603,6 +603,13 @@ html {
     .site-footer.widget-columns.widget-count-9 .wrap > figure:nth-child(9n+1), .site-footer#footer .widget-count-9 .wrap > figure:nth-child(9n+1), .gallery-columns-9 > figure:nth-child(9n+1) {
       clear: left; } }
 
+.wrap:after,
+.widget:after,
+.gallery:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 /* =Reset
 -------------------------------------------------------------- */
 * {
@@ -735,17 +742,15 @@ code {
 
 /* =Row Defaults
 -------------------------------------------------------------- */
-.row {
-  clear: both; }
-  .row > .wrap {
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%; }
-    .row > .wrap::after {
-      clear: both;
-      content: "";
-      display: table; }
+.row > .wrap {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; }
+  .row > .wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 /* =Column Defaults
 -------------------------------------------------------------- */
@@ -761,18 +766,18 @@ code {
 @media (min-width: 900px) {
   .content-only #main .wrap {
     max-width: 1000px; }
-  .content-only .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
-    margin-left: 17.0596085997%; }
-    .content-only .primary:last-child {
-      margin-right: 0; } }
+    .content-only #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 65.8807828007%;
+      margin-left: 17.0596085997%; }
+      .content-only #main .wrap .primary:last-child {
+        margin-right: 0; } }
 
 /* =Full Width Content
 -------------------------------------------------------------- */
-.content-full-width .primary {
+.content-full-width #main .wrap .primary {
   max-width: 100%;
   width: 100%;
   margin: 0; }
@@ -782,197 +787,205 @@ code {
 @media (min-width: 900px) {
   .content-sidebar #main .wrap {
     max-width: 1000px; }
-  .content-sidebar .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%; }
-    .content-sidebar .primary:last-child {
+    .content-sidebar #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 65.8807828007%; }
+      .content-sidebar #main .wrap .primary:last-child {
+        margin-right: 0; }
+    .content-sidebar #main .wrap .secondary,
+    .content-sidebar #main .wrap .tertiary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 31.7615656014%;
+      clear: right;
+      float: right;
       margin-right: 0; }
-  .content-sidebar .secondary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%; }
-    .content-sidebar .secondary:last-child {
-      margin-right: 0; } }
+      .content-sidebar #main .wrap .secondary:last-child,
+      .content-sidebar #main .wrap .tertiary:last-child {
+        margin-right: 0; } }
 
 /* =Sidebar/Content
 -------------------------------------------------------------- */
 @media (min-width: 900px) {
   .sidebar-content #main .wrap {
     max-width: 1000px; }
-  .sidebar-content .primary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 65.8807828007%; }
-    .sidebar-content .primary:last-child {
+    .sidebar-content #main .wrap .primary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 65.8807828007%; }
+      .sidebar-content #main .wrap .primary:last-child {
+        margin-left: 0; }
+    .sidebar-content #main .wrap .secondary,
+    .sidebar-content #main .wrap .tertiary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 31.7615656014%;
+      float: left;
+      clear: left;
       margin-left: 0; }
-  .sidebar-content .secondary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 31.7615656014%; }
-    .sidebar-content .secondary:last-child {
-      margin-left: 0; } }
+      .sidebar-content #main .wrap .secondary:last-child,
+      .sidebar-content #main .wrap .tertiary:last-child {
+        margin-left: 0; } }
 
 /* =Content/Sidebar/Sidebar
 -------------------------------------------------------------- */
 @media (min-width: 900px) {
   .content-sidebar-sidebar #main .wrap {
     max-width: 1000px; }
-  .content-sidebar-sidebar .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%; }
-    .content-sidebar-sidebar .primary:last-child {
+    .content-sidebar-sidebar #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 65.8807828007%; }
+      .content-sidebar-sidebar #main .wrap .primary:last-child {
+        margin-right: 0; }
+    .content-sidebar-sidebar #main .wrap .secondary,
+    .content-sidebar-sidebar #main .wrap .tertiary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 31.7615656014%;
+      clear: right;
+      float: right;
       margin-right: 0; }
-  .content-sidebar-sidebar .secondary,
-  .content-sidebar-sidebar .tertiary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    clear: right;
-    float: right;
-    margin-right: 0; }
-    .content-sidebar-sidebar .secondary:last-child,
-    .content-sidebar-sidebar .tertiary:last-child {
-      margin-right: 0; } }
+      .content-sidebar-sidebar #main .wrap .secondary:last-child,
+      .content-sidebar-sidebar #main .wrap .tertiary:last-child {
+        margin-right: 0; } }
 
 @media (min-width: 1140px) {
   .content-sidebar-sidebar #main .wrap {
     max-width: 1400px; }
-  .content-sidebar-sidebar .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%; }
-    .content-sidebar-sidebar .primary:last-child {
-      margin-right: 0; }
-  .content-sidebar-sidebar .secondary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%; }
-    .content-sidebar-sidebar .secondary:last-child {
-      margin-right: 0; }
-  .content-sidebar-sidebar .tertiary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%; }
-    .content-sidebar-sidebar .tertiary:last-child {
-      margin-right: 0; } }
-
-/* =Sidebar/Sidebar/Content
--------------------------------------------------------------- */
-@media (min-width: 900px) {
-  .sidebar-sidebar-content #main .wrap {
-    max-width: 1000px; }
-  .sidebar-sidebar-content .primary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 65.8807828007%; }
-    .sidebar-sidebar-content .primary:last-child {
-      margin-left: 0; }
-  .sidebar-sidebar-content .secondary,
-  .sidebar-sidebar-content .tertiary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 31.7615656014%;
-    float: left;
-    clear: left;
-    margin-left: 0; }
-    .sidebar-sidebar-content .secondary:last-child,
-    .sidebar-sidebar-content .tertiary:last-child {
-      margin-left: 0; } }
-
-@media (min-width: 1140px) {
-  .sidebar-sidebar-content #main .wrap {
-    max-width: 1400px; }
-  .sidebar-sidebar-content .primary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 48.821174201%; }
-    .sidebar-sidebar-content .primary:last-child {
-      margin-left: 0; }
-  .sidebar-sidebar-content .secondary,
-  .sidebar-sidebar-content .tertiary {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 23.2317613015%; }
-    .sidebar-sidebar-content .secondary:last-child,
-    .sidebar-sidebar-content .tertiary:last-child {
-      margin-left: 0; } }
+    .content-sidebar-sidebar #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%; }
+      .content-sidebar-sidebar #main .wrap .primary:last-child {
+        margin-right: 0; }
+    .content-sidebar-sidebar #main .wrap .secondary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 23.2317613015%; }
+      .content-sidebar-sidebar #main .wrap .secondary:last-child {
+        margin-right: 0; }
+    .content-sidebar-sidebar #main .wrap .tertiary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 23.2317613015%; }
+      .content-sidebar-sidebar #main .wrap .tertiary:last-child {
+        margin-right: 0; } }
 
 /* =Sidebar/Content/Sidebar
 -------------------------------------------------------------- */
 @media (min-width: 900px) {
   .sidebar-content-sidebar #main .wrap {
     max-width: 1000px; }
-  .sidebar-content-sidebar .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%; }
-    .sidebar-content-sidebar .primary:last-child {
+    .sidebar-content-sidebar #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 65.8807828007%; }
+      .sidebar-content-sidebar #main .wrap .primary:last-child {
+        margin-right: 0; }
+    .sidebar-content-sidebar #main .wrap .secondary,
+    .sidebar-content-sidebar #main .wrap .tertiary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 31.7615656014%;
+      clear: right;
+      float: right;
       margin-right: 0; }
-  .sidebar-content-sidebar .secondary,
-  .sidebar-content-sidebar .tertiary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    clear: right;
-    float: right;
-    margin-right: 0; }
-    .sidebar-content-sidebar .secondary:last-child,
-    .sidebar-content-sidebar .tertiary:last-child {
-      margin-right: 0; } }
+      .sidebar-content-sidebar #main .wrap .secondary:last-child,
+      .sidebar-content-sidebar #main .wrap .tertiary:last-child {
+        margin-right: 0; } }
 
 @media (min-width: 1140px) {
   .sidebar-content-sidebar #main .wrap {
     max-width: 1400px; }
-  .sidebar-content-sidebar .primary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
-    margin-left: 25.5894128995%; }
-    .sidebar-content-sidebar .primary:last-child {
-      margin-right: 0; }
-  .sidebar-content-sidebar .secondary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
-    margin-left: -76.7682386985%; }
-    .sidebar-content-sidebar .secondary:last-child {
-      margin-right: 0; }
-  .sidebar-content-sidebar .tertiary {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%; }
-    .sidebar-content-sidebar .tertiary:last-child {
-      margin-right: 0; } }
+    .sidebar-content-sidebar #main .wrap .primary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 23.2317613015%;
+      margin-left: 51.178825799%; }
+      .sidebar-content-sidebar #main .wrap .primary:last-child {
+        margin-right: 0; }
+    .sidebar-content-sidebar #main .wrap .secondary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%;
+      margin-left: -76.7682386985%; }
+      .sidebar-content-sidebar #main .wrap .secondary:last-child {
+        margin-right: 0; }
+    .sidebar-content-sidebar #main .wrap .tertiary {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 23.2317613015%; }
+      .sidebar-content-sidebar #main .wrap .tertiary:last-child {
+        margin-right: 0; } }
+
+/* =Sidebar/Sidebar/Content
+-------------------------------------------------------------- */
+@media (min-width: 900px) {
+  .sidebar-sidebar-content #main .wrap {
+    max-width: 1000px; }
+    .sidebar-sidebar-content #main .wrap .primary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 65.8807828007%; }
+      .sidebar-sidebar-content #main .wrap .primary:last-child {
+        margin-left: 0; }
+    .sidebar-sidebar-content #main .wrap .secondary,
+    .sidebar-sidebar-content #main .wrap .tertiary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 31.7615656014%;
+      float: left;
+      clear: left;
+      margin-left: 0; }
+      .sidebar-sidebar-content #main .wrap .secondary:last-child,
+      .sidebar-sidebar-content #main .wrap .tertiary:last-child {
+        margin-left: 0; } }
+
+@media (min-width: 1140px) {
+  .sidebar-sidebar-content #main .wrap {
+    max-width: 1400px; }
+    .sidebar-sidebar-content #main .wrap .primary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 48.821174201%; }
+      .sidebar-sidebar-content #main .wrap .primary:last-child {
+        margin-left: 0; }
+    .sidebar-sidebar-content #main .wrap .secondary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 23.2317613015%; }
+      .sidebar-sidebar-content #main .wrap .secondary:last-child {
+        margin-left: 0; }
+    .sidebar-sidebar-content #main .wrap .tertiary {
+      float: right;
+      display: block;
+      margin-left: 2.3576515979%;
+      width: 23.2317613015%; }
+      .sidebar-sidebar-content #main .wrap .tertiary:last-child {
+        margin-left: 0; } }
 
 /* =Clearfix
 -------------------------------------------------------------- */
-.wrap:after,
-.widget:after,
-.gallery:after {
-  content: "";
-  display: table;
-  clear: both; }
-
 /*
 
 The mo.js stylesheet is heavily influenced by the
@@ -1314,34 +1327,67 @@ by Jonathan Snook at http://smacss.com
   .site-header.header-before ul li a:hover,
   .site-header.header-before ul li a:focus {
     background-color: #222222; }
+  .site-header.header-before .widget_search input[type="search"] {
+    border-color: #222222; }
+    @media (min-width: 1140px) {
+      .site-header.header-before .widget_search input[type="search"] {
+        border-color: #333333; } }
+  .site-header.header-before .widget_search input[type="submit"] {
+    background-color: #333333;
+    border-color: #222222;
+    color: #ffffff; }
+    .site-header.header-before .widget_search input[type="submit"]:hover {
+      background-color: #222222; }
 
 .site-header#header {
-  background-color: #444444;
-  color: #ffffff; }
+  background-color: #ffffff;
+  color: #222222; }
   .site-header#header a,
   .site-header#header ul li a {
-    background-color: #444444;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #222222;
     text-decoration: none; }
   .site-header#header a:hover,
   .site-header#header a:focus,
   .site-header#header ul li a:hover,
   .site-header#header ul li a:focus {
-    background-color: #333333; }
+    background-color: #f6f6f6; }
+  .site-header#header .widget_search input[type="search"] {
+    border-color: #f6f6f6; }
+    @media (min-width: 1140px) {
+      .site-header#header .widget_search input[type="search"] {
+        border-color: #ffffff; } }
+  .site-header#header .widget_search input[type="submit"] {
+    background-color: #ffffff;
+    border-color: #f6f6f6;
+    color: #222222; }
+    .site-header#header .widget_search input[type="submit"]:hover {
+      background-color: #f6f6f6; }
 
 .site-header.header-after {
-  background-color: #eeeeee;
+  background-color: #f6f6f6;
   color: #222222; }
   .site-header.header-after a,
   .site-header.header-after ul li a {
-    background-color: #eeeeee;
+    background-color: #f6f6f6;
     color: #222222;
     text-decoration: none; }
   .site-header.header-after a:hover,
   .site-header.header-after a:focus,
   .site-header.header-after ul li a:hover,
   .site-header.header-after ul li a:focus {
-    background-color: #dddddd; }
+    background-color: #eeeeee; }
+  .site-header.header-after .widget_search input[type="search"] {
+    border-color: #eeeeee; }
+    @media (min-width: 1140px) {
+      .site-header.header-after .widget_search input[type="search"] {
+        border-color: #f6f6f6; } }
+  .site-header.header-after .widget_search input[type="submit"] {
+    background-color: #f6f6f6;
+    border-color: #eeeeee;
+    color: #222222; }
+    .site-header.header-after .widget_search input[type="submit"]:hover {
+      background-color: #eeeeee; }
 
 .site-header .site-title {
   text-align: center;
@@ -1391,8 +1437,9 @@ by Jonathan Snook at http://smacss.com
 .site-header .widget_text .widget-title {
   display: none; }
 
-.site-header .widget.widget_search {
-  margin: 0 auto 1.375rem;
+.site-header .widget_search {
+  margin: 0 auto;
+  padding: 1.375rem;
   display: block;
   width: 300px; }
 
@@ -1416,8 +1463,7 @@ by Jonathan Snook at http://smacss.com
     margin-right: 1em; }
   .site-header .widget_search {
     float: right;
-    margin-right: 0;
-    margin-bottom: 0; } }
+    padding: 0; } }
 
 #header .widget {
   line-height: 5.5rem; }
@@ -1529,16 +1575,16 @@ by Jonathan Snook at http://smacss.com
   padding: 1.375rem; }
 
 .site-footer.footer-before {
-  background-color: #333333;
-  color: #ffffff; }
+  background-color: #f6f6f6;
+  color: #222222; }
   .site-footer.footer-before a {
-    color: #ffffff;
+    color: #222222;
     text-decoration: none; }
   .site-footer.footer-before a:hover {
     text-decoration: underline; }
 
 .site-footer#footer {
-  background-color: #444444;
+  background-color: #222222;
   color: #ffffff; }
   .site-footer#footer a {
     color: #ffffff;
@@ -1547,7 +1593,7 @@ by Jonathan Snook at http://smacss.com
     text-decoration: underline; }
 
 .site-footer.footer-after {
-  background-color: #eeeeee;
+  background-color: #ffffff;
   color: #222222; }
   .site-footer.footer-after a {
     color: #222222;
@@ -1612,19 +1658,18 @@ by Jonathan Snook at http://smacss.com
 
 .widget_search input {
   border: 1px solid #dddddd;
-  margin-top: -1px;
   display: block;
-  height: 45px;
+  height: 2.75rem;
   float: left; }
 
 .widget_search input[type="search"] {
   background-color: #ffffff;
+  border-right: 0 solid;
   float: left;
   width: 70%; }
 
 .widget_search input[type="submit"] {
   background-color: #f6f6f6;
-  border-left: 0 solid;
   float: left;
   width: 30%; }
   .widget_search input[type="submit"]:hover {

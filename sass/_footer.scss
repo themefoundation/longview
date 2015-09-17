@@ -12,15 +12,15 @@
 	}
 
 	&.footer-before {
-		@include footer-row( #333333, #222222, #ffffff );
+		@include footer-row( #f6f6f6, #eeeeee, #222222 );
 	}
 
 	&#footer {
-		@include footer-row( #444444, #333333, #ffffff );
+		@include footer-row( #222222, #333333, #ffffff );
 	}
 
 	&.footer-after {
-		@include footer-row( #eeeeee, #dddddd, #222222 );
+		@include footer-row( #ffffff, #eeeeee, #222222 );
 	}
 
 	&.widget-count-1,

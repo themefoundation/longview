@@ -1,5 +1,5 @@
 
-jQuery( document ).ready(function( $ ) {
+jQuery( document ).ready( function( $ ) {
 	var runBreakpoints = true;
 
 	$( window ).on( 'resize', function() {
@@ -28,15 +28,15 @@ jQuery( document ).ready(function( $ ) {
 	/**
 	 * Adds support for converting phone numbers to links on touch devices
 	 */
-	if ( 'ontouchstart' in document.documentElement ) {
+	// if ( 'ontouchstart' in document.documentElement ) {
 
 		// For each element with class "touch-to-dial".
-		$( '.thmfdn-touch-to-dial' ).each(function() {
-			var ctdPhoneNumber = $( this ).text();
+		$( '.touch-to-dial' ).each(function() {
+			var ttdPhoneNumber = $( this ).text();
 
-			// Wrap phone with href="tel:" and then insert phone number
-			$( this ).wrapInner( '<a class="ttd-link" href=""></a>' );
-			$( '.ttd-link' ).attr( 'href', 'tel:' + ctdPhoneNumber );
+			// Wrap phone with an anchor tag and then insert phone number.
+			$( this ).wrapInner( '<a href=""></a>' );
+			$( this ).find('a').attr( 'href', 'tel:' + ttdPhoneNumber );
 		});
-	}
+	// }
 });

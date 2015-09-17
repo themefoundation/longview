@@ -6,13 +6,9 @@
 
 /* =Row Defaults
 -------------------------------------------------------------- */
-.row {
-	clear: both;
-
-	> .wrap {
-		@include outer-container;
-		width: 90%;
-	}
+.row > .wrap {
+	@include outer-container;
+	width: 90%;
 }
 
 
@@ -28,201 +24,83 @@
 
 /* =Content Only
 -------------------------------------------------------------- */
-.content-only {
+.content-only #main .wrap {
 	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		.primary {
-			@include span-columns(8);
-			@include shift(2);
-		}
+		@include content-only( 8, 2 );
+		max-width: $two-column-wrap-width;
 	}
 }
 
 /* =Full Width Content
 -------------------------------------------------------------- */
-.content-full-width {
-	.primary {
-		max-width: 100%;
-		width: 100%;
-		margin: 0;
-	}
+.content-full-width #main .wrap {
+	@include content-full-width();
 }
 
 /* =Content/Sidebar
 -------------------------------------------------------------- */
-.content-sidebar {
+.content-sidebar #main .wrap {
 	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		.primary {
-			@include span-columns(8);
-		}
-
-		.secondary {
-			@include span-columns(4);
-		}
+		@include content-sidebar( 8, 4 );
+		max-width: $two-column-wrap-width;
 	}
 }
 
 /* =Sidebar/Content
 -------------------------------------------------------------- */
-.sidebar-content {
+.sidebar-content #main .wrap {
 	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		@include direction-context(right-to-left) {
-			.primary {
-				@include span-columns(8);
-			}
-
-			.secondary {
-				@include span-columns(4);
-			}
-		}
+		@include sidebar-content( 4, 8 );
+		max-width: $two-column-wrap-width;
 	}
 }
 
 /* =Content/Sidebar/Sidebar
 -------------------------------------------------------------- */
-.content-sidebar-sidebar {
+.content-sidebar-sidebar #main .wrap{
 	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		.primary {
-			@include span-columns(8);
-		}
-
-		.secondary,
-		.tertiary {
-			@include span-columns(4);
-
-			clear: right;
-			float: right;
-			margin-right: 0;
-		}
+		@include content-sidebar( 8, 4 );
+		max-width: $two-column-wrap-width;
 	}
 
 	@include breakpoint-large {
-		#main .wrap {
-			max-width: $three-column-wrap-width;
-		}
-
-		.primary {
-			@include span-columns(6);
-		}
-
-		.secondary {
-			@include span-columns(3);
-		}
-
-		.tertiary {
-			@include span-columns(3);
-		}
-	}
-}
-
-/* =Sidebar/Sidebar/Content
--------------------------------------------------------------- */
-.sidebar-sidebar-content {
-	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		@include direction-context(right-to-left) {
-			.primary {
-				@include span-columns(8);
-			}
-
-			.secondary,
-			.tertiary {
-				@include span-columns(4);
-
-				float: left;
-				clear: left;
-				margin-left: 0;
-			}
-		}
-	}
-
-	@include breakpoint-large {
-		#main .wrap {
-			max-width: $three-column-wrap-width;
-		}
-
-		@include direction-context(right-to-left) {
-
-			.primary {
-				@include span-columns(6);
-			}
-
-			.secondary,
-			.tertiary {
-				@include span-columns(3);
-			}
-		}
+		@include content-sidebar-sidebar( 6, 3, 3 );
+		max-width: $three-column-wrap-width;
 	}
 }
 
 /* =Sidebar/Content/Sidebar
 -------------------------------------------------------------- */
-.sidebar-content-sidebar {
+.sidebar-content-sidebar #main .wrap {
 	@include breakpoint-medium {
-		#main .wrap {
-			max-width: $two-column-wrap-width;
-		}
-
-		.primary {
-			@include span-columns(8);
-		}
-
-		.secondary,
-		.tertiary {
-			@include span-columns(4);
-
-			clear: right;
-			float: right;
-			margin-right: 0;
-		}
+		@include content-sidebar( 8, 4 );
+		max-width: $two-column-wrap-width;
 	}
 
 	@include breakpoint-large {
-		#main .wrap {
-			max-width: $three-column-wrap-width;
-		}
+		@include sidebar-content-sidebar( 6, 3, 3 );
+		max-width: $three-column-wrap-width;
+	}
+}
 
-		.primary {
-			@include span-columns(6);
-			@include shift(3);
-		}
+/* =Sidebar/Sidebar/Content
+-------------------------------------------------------------- */
+.sidebar-sidebar-content #main .wrap {
+	@include breakpoint-medium {
+		@include sidebar-content( 4, 8 );
+		max-width: $two-column-wrap-width;
+	}
 
-		.secondary {
-			@include span-columns(3);
-			@include shift(-9);
-		}
-
-		.tertiary {
-			@include span-columns(3);
-		}
-
+	@include breakpoint-large {
+		@include sidebar-sidebar-content( 3, 3, 6 );
+		max-width: $three-column-wrap-width;
 	}
 }
 
 /* =Clearfix
 -------------------------------------------------------------- */
-.wrap:after,
-.widget:after,
-.gallery:after {
-	content: "";
-	display: table;
-	clear: both;
+.wrap,
+.widget,
+.gallery {
+	@extend %clearfix;
 }

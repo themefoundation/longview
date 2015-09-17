@@ -28,11 +28,11 @@
 	}
 
 	&#header {
-		@include header-row( #444444, #333333, #ffffff );
+		@include header-row( #ffffff, #f6f6f6, #222222 );
 	}
 
 	&.header-after {
-		@include header-row( #eeeeee, #dddddd, #222222 );
+		@include header-row( #f6f6f6, #eeeeee, #222222 );
 	}
 
 
@@ -104,8 +104,9 @@
 		}
 	}
 
-	.widget.widget_search {
-		margin: 0 auto ($line + $unit);
+	.widget_search {
+		margin: 0 auto;
+		padding: ($line + $unit);
 		display: block;
 		width: 300px;
 	}
@@ -142,8 +143,7 @@
 
 		.widget_search {
 			float: right;
-			margin-right: 0;
-			margin-bottom: 0;
+			padding: 0;
 		}
 	}
 }
