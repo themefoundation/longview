@@ -3,7 +3,7 @@
  * Helpers
  *
  * This file contains functions to extend the functionality of the
- * THMFDN theme. 
+ * THMFDN theme.
  *
  * @package THMFDN
  */
@@ -53,7 +53,6 @@ function thmfdn_post_meta( $meta_args = array() ) {
 					echo '</span>';
 					break;
 
-				
 				default:
 					# code...
 					break;
@@ -80,53 +79,71 @@ function thmfdn_widget_count( $widget_area_id ) {
 	}
 }
 
+ /**
+ * Checks if a sidebar is registered
+ *
+ * This is a workaround for is_active_sidebar(), which returns true for every
+ * sidebar that has been registered, EVEN IF IT HAS BEEN UNREGISTERED. This
+ * function is based on patch #24878 to WordPress core submitted by GaryJ. 
+ *
+ * @since  1.0.0
+ *
+ * @see https://core.trac.wordpress.org/ticket/24878
+ * @param string $name The ID of the sidebar when it was registered.
+ * @return boolean True if the sidebar is registered, false otherwise.
+ */
+function thmfdn_is_registered_sidebar( $name ) {
+	global $wp_registered_sidebars;
+
+	return isset( $wp_registered_sidebars[$name] );
+}
 
 /**
  * Removes the post title from single posts
- * 
+ *
  * @since 1.0
  */
 function thmfdn_remove_single_title(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_title' );
+	remove_action( 'thmfdn_entry', 'thmfdn_single_title' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_single_title', 9 ); // Single posts
 
 /**
  * Removes the post titles from archive pages
- * 
+ *
  * @since 1.0
  */
 function thmfdn_remove_archive_title(){
-    remove_action( 'thmfdn_entry', 'thmfdn_archive_title' );
+	remove_action( 'thmfdn_entry', 'thmfdn_archive_title' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_archive_title', 9 ); // Archive posts
 
 /**
  * Removes the thumbnail images from single posts
- * 
+ *
  * @since 1.0
  */
 function thmfdn_remove_single_featured_image(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_featured_image' );
+	remove_action( 'thmfdn_entry', 'thmfdn_single_featured_image' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_single_featured_image', 9 ); // Single posts
 
 /**
  * Removes the thumbnail images from archive pages
- * 
+ *
  * @since 1.0
  */
 function thmfdn_remove_archive_featured_image(){
-    remove_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
+	remove_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_archive_featured_image', 9 ); // Archive posts
 
 /**
  * Removes comments from single posts
- * 
+ *
  * @since 1.0
  */
 function thmfdn_remove_single_comments(){
-    remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
+	remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_single_comments', 9 ); // Single posts

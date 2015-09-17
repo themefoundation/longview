@@ -43,8 +43,9 @@ function thmfdn_init() {
 	if ( ! isset( $content_width ) ) $content_width = 900;
 
 	// Sets additional image sizes
-	add_image_size( 'grid', 300, 200, true );
+	add_image_size( 'grid', 350, 200, true );
 	add_image_size( 'gallery', 500, 250, true );
+
 }
 add_action( 'init', 'thmfdn_init' );
 
@@ -67,8 +68,7 @@ function thmfnd_remove_widget_areas() {
 	// unregister_sidebar( 'footer-inside' );
 	// unregister_sidebar( 'footer-after' );
 }
-add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
-
+add_action( 'wp', 'thmfnd_remove_widget_areas', 11 );
 /**
  * Sets layout defaults
  *

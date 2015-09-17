@@ -46,15 +46,17 @@ if ( !function_exists( 'thmfdn_page_featured_image' ) ) {
 	 * @since 1.0
 	 */
 	function thmfdn_page_featured_image() {
-		?>
-			<div class="row thmfdn-featured-image">
-				<div class="wrap">
-					<div>
-						<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+		if ( has_post_thumbnail() ) {
+			?>
+				<div class="row thmfdn-featured-image">
+					<div class="wrap">
+						<div>
+							<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+						</div>
 					</div>
 				</div>
-			</div>
-		<?php
+			<?php
+		}
 	}
 }
 

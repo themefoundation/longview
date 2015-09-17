@@ -62,7 +62,7 @@ if ( !function_exists( 'thmfdn_before_footer_widgets' ) ) {
 	function thmfdn_before_footer_widgets() {
 
 		// Does the Before Footer widget area contain any widgets?
-		if ( is_active_sidebar( 'footer-before' ) ) {
+		if ( thmfdn_is_registered_sidebar( 'footer-before' ) ) {
 
 			// Filters for class names.
 			$widget_count = thmfdn_widget_count('footer-before');
@@ -125,7 +125,7 @@ if ( !function_exists( 'thmfdn_footer_widgets' ) ) {
 	function thmfdn_footer_widgets() {
 
 		// Does the Inside Footer widget area contain any widgets?
-		if ( is_active_sidebar( 'footer-inside' ) ) {
+		if ( thmfdn_is_registered_sidebar( 'footer-inside' ) ) {
 
 			// Filters for class names.
 			$widget_count = thmfdn_widget_count('footer-inside');$widget_classes = '';
@@ -180,7 +180,7 @@ if ( !function_exists( 'thmfdn_after_footer_widgets' ) ) {
 	function thmfdn_after_footer_widgets() {
 
 		// Does the After Footer widget area contain any widgets?
-		if ( is_active_sidebar( 'footer-after' ) ) {
+		if ( thmfdn_is_registered_sidebar( 'footer-after' ) ) {
 
 			// Filters for class names.
 			$widget_count = thmfdn_widget_count('footer-after');

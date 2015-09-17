@@ -47,6 +47,27 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
  * @since 1.0
  */
 
+if ( !function_exists( 'thmfdn_single_featured_image' ) ) {
+	/**
+	 * Featured image
+	 *
+	 * Displays the featured image (formerly called the post thumbnail).
+	 */
+	function thmfdn_single_featured_image() {
+		if ( has_post_thumbnail() ) {
+			?>
+				<div class="row thmfdn-featured-image">
+					<div class="wrap">
+						<div>
+							<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
+						</div>
+					</div>
+				</div>
+			<?php
+		}
+	}
+}
+
 if ( !function_exists( 'thmfdn_content_open' ) ) {
 	/**
 	 * Primary opening
@@ -64,25 +85,6 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 		?>
 			<div id="content" class="<?php echo apply_filters( 'thmfdn_content_class', 'primary hfeed' ) ?>" role="main">
 		<?php	}
-}
-
-if ( !function_exists( 'thmfdn_single_featured_image' ) ) {
-	/**
-	 * Featured image
-	 *
-	 * Displays the featured image (formerly called the post thumbnail).
-	 */
-	function thmfdn_single_featured_image() {
-		?>
-			<div class="row thmfdn-featured-image">
-				<div class="wrap">
-					<div>
-						<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
-					</div>
-				</div>
-			</div>
-		<?php
-	}
 }
 
 if ( !function_exists( 'thmfdn_post_open' ) ) {

@@ -63,3 +63,9 @@ function thmfdn_content_class_format( $classes ) {
 	return $classes;
 }
 add_filter( 'thmfdn_content_class', 'thmfdn_content_class_format' );
+
+
+function thmfdn_excerpt_more( $more ) {
+	return '...';
+}
+add_filter( 'excerpt_more', 'thmfdn_excerpt_more' );
