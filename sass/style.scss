@@ -36,5 +36,12 @@ Tags: editor-style, threaded-comments
 // TODO: Write tutorial on how to make a detailed attachment page.
 //       https://codex.wordpress.org/Function_Reference/get_post_mime_type
 //       http://wordpress.stackexchange.com/questions/15801/how-to-specify-width-and-height-in-the-content-for-image-attachments
-
-
+// TODO: Write tutorial on how to conditionally hide widget areas.
+//       Notice the action is connected to the "wp" hook. This is because earlier in
+//       the process, functions like is_page() aren't available.
+	// function thmfnd_remove_widget_areas() {
+	// 		if( is_page() ) {
+	// 			unregister_sidebar( 'footer-before' );
+	// 		}
+	// }
+	// add_action( 'wp', 'thmfnd_remove_widget_areas', 11 );

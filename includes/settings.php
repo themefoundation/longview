@@ -49,7 +49,6 @@ function thmfdn_init() {
 }
 add_action( 'init', 'thmfdn_init' );
 
-
 /**
  * Remove widget areas
  *
@@ -68,13 +67,14 @@ function thmfnd_remove_widget_areas() {
 	// unregister_sidebar( 'footer-inside' );
 	// unregister_sidebar( 'footer-after' );
 }
-add_action( 'wp', 'thmfnd_remove_widget_areas', 11 );
+add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
+
 /**
  * Sets layout defaults
  *
  * These are the supported layouts:
- * - content-only (Content takes up center column and no sidebars present)
- * - content-full-width (Content takes up all columns and no sidebars present)
+ * - content-only (Content takes up center column, no sidebars present)
+ * - content-full-width (Content takes up all columns, no sidebars present)
  * - content-sidebar (Content on the left, single sidebar on the right)
  * - content-sidebar-sidebar (Content on the left, double sidebars on the right)
  * - sidebar-content (Single sidebar on the left, content on the right)
@@ -92,7 +92,7 @@ function get_thmfdn_layout() {
 	// Overrides default layout for single posts.
 	if ( is_single () ) {
 		$layout_class = 'content-full-width';
-	} 
+	}
 
 	// Overrides default layout for pages.
 	if ( is_page() ) {
@@ -192,7 +192,7 @@ function thmfdn_thumbnail_size( $thumbnail_size ) {
 	// Overrides default layout for single posts.
 	if ( is_single () ) {
 		$thumbnail_size = 'large';
-	} 
+	}
 
 	// Overrides default layout for pages.
 	if ( is_page() ) {
@@ -217,7 +217,7 @@ add_filter( 'thmfdn_thumbnail_size', 'thmfdn_thumbnail_size' );
  * categories - List of post's categories. Uses: the_category()
  * date - Post date. Uses: the_time( get_option( 'date_format' ) )
  * tags - List of post's tags. Uses: the_tags()
- * 
+ *
  * @return array An array of meta/title combinations to display.
  * @since 1.0
  */
@@ -244,7 +244,7 @@ add_filter ( 'thmfdn_archive_meta_top', 'thmfdn_settings_single_meta_top' );
  * categories - List of post's categories. Uses: the_category()
  * date - Post date. Uses: the_time( get_option( 'date_format' ) )
  * tags - List of post's tags. Uses: the_tags()
- * 
+ *
  * @return array An array of meta/title combinations to display.
  * @since 1.0
  */
@@ -252,7 +252,7 @@ function thmfdn_settings_single_meta_bottom() {
 	$meta_bottom_args = array(
 		'tags' => ''
 	);
-	
+
 	return $meta_bottom_args;
 }
 add_filter ( 'thmfdn_single_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
