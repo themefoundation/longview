@@ -37,7 +37,10 @@ function thmfdn_init() {
 	add_theme_support( 'html5', $html5_support );
 
 	// Adds installation welcome screen support.
-	// add_theme_support( 'welcome-screen' );
+	add_theme_support( 'welcome-screen' );
+
+	// Adds description output support for Custom Menu widgets.
+	add_theme_support( 'menu-descriptions' );
 
 	// Sets the default content width.
 	if ( ! isset( $content_width ) ) $content_width = 900;

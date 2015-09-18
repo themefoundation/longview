@@ -28,6 +28,7 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
+// TODO: Create/find menu walker that displays descriptions.
 // TODO: Rewrite cadence to be a mixin.
 // TODO: Figure out a way to better modularize mo.scss (it shouldn't need so many of it's own variables... maybe separate things like padding/line height out?)
 // TODO: Move single.php content section into template part (like _s)

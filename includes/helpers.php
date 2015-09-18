@@ -84,7 +84,8 @@ function thmfdn_widget_count( $widget_area_id ) {
  *
  * This is a workaround for is_active_sidebar(), which returns true for every
  * sidebar that has been registered, EVEN IF IT HAS BEEN UNREGISTERED. This
- * function is based on patch #24878 to WordPress core submitted by GaryJ. 
+ * function is partially based on patch #24878 to WordPress core submitted
+ * by GaryJ.
  *
  * @since  1.0.0
  *
@@ -95,7 +96,11 @@ function thmfdn_widget_count( $widget_area_id ) {
 function thmfdn_is_registered_sidebar( $name ) {
 	global $wp_registered_sidebars;
 
-	return isset( $wp_registered_sidebars[$name] );
+	if ( ! is_active_sidebar( $name ) ) {
+		return false;
+	} else {
+		return isset( $wp_registered_sidebars[$name] );
+	}
 }
 
 /**
@@ -147,3 +152,14 @@ function thmfdn_remove_single_comments(){
 	remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
 }
 // add_action( 'thmfdn_entry', 'thmfdn_remove_single_comments', 9 ); // Single posts
+
+
+function thmfdn_log( $message ) {
+	if( WP_DEBUG === true ){
+		if( is_array( $message ) || is_object( $message ) ){
+			error_log( print_r( $message, true ) );
+		} else {
+			error_log( $message );
+		}
+	}
+}

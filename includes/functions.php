@@ -8,6 +8,12 @@
  * @package THMFDN
  */
 
+function thmfdn_theme_support() {
+	require_if_theme_supports( 'welcome-screen', trailingslashit( TEMPLATEPATH ) . 'includes/welcome-screen.php' );
+	require_if_theme_supports( 'menu-descriptions', trailingslashit( TEMPLATEPATH ) . 'includes/menu-descriptions.php' );
+}
+add_action( 'init', 'thmfdn_theme_support', 20 );
+
 /**
  * Loads the default scripts and stylesheets
  *
@@ -39,6 +45,7 @@ function thmfdn_editor_style() {
 	add_editor_style();
 }
 add_action( 'admin_init', 'thmfdn_editor_style' );
+
 
 
 
