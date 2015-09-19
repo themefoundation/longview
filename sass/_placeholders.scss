@@ -1,6 +1,7 @@
 // Requires:
 // mixins.scss
 
+/// Two column layout.
 %two-columns {
 	@include breakpoint-medium {
 		> div,
@@ -11,6 +12,7 @@
 	}
 }
 
+/// Three column layout.
 %three-columns {
 	@include breakpoint-medium {
 		> div,
@@ -21,6 +23,7 @@
 	}
 }
 
+/// Four column layout.
 %four-columns {
 	@include breakpoint-medium {
 		> div,
@@ -40,6 +43,7 @@
 	}
 }
 
+/// Five column layout.
 %five-columns {
 	@include breakpoint-small {
 		> div,
@@ -68,6 +72,7 @@
 	}
 }
 
+/// Six column layout.
 %six-columns {
 	@include breakpoint-small {
 		> div,
@@ -96,6 +101,7 @@
 	}
 }
 
+/// Seven column layout.
 %seven-columns {
 	> div,
 	> figure {
@@ -122,6 +128,7 @@
 	}
 }
 
+/// Eight column layout.
 %eight-columns {
 	> div,
 	> figure {
@@ -148,6 +155,7 @@
 	}
 }
 
+/// Nine column layout.
 %nine-columns {
 	> div,
 	> figure {
@@ -174,6 +182,7 @@
 	}
 }
 
+/// Clearfix.
 %clearfix {
 	&:after {
 		content: "";

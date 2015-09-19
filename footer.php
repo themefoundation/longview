@@ -70,8 +70,8 @@ if ( !function_exists( 'thmfdn_before_footer_widgets' ) ) {
 			if ( $widget_count > 0 ) {
 				$widget_classes = ' widget-columns widget-count-' . $widget_count;
 			}
-			$thmfdn_footer_before_class = apply_filters( 'thmfdn-footer-before-class', 'row site-footer footer-before' . $widget_classes );
-			$thmfdn_footer_before_wrap_class = apply_filters( 'thmfdn-footer-before-wrap-class', 'wrap' );
+			$thmfdn_footer_before_class = apply_filters( 'thmfdn-footer-before-class', 'row site-footer footer-before' );
+			$thmfdn_footer_before_wrap_class = apply_filters( 'thmfdn-footer-before-wrap-class', 'wrap' . $widget_classes );
 			?>
 
 				<div class="<?php echo $thmfdn_footer_before_class; ?>">
@@ -188,8 +188,8 @@ if ( !function_exists( 'thmfdn_after_footer_widgets' ) ) {
 			if ( $widget_count > 0 ) {
 				$widget_classes = ' widget-columns widget-count-' . $widget_count;
 			}
-			$thmfdn_footer_after_class = apply_filters( 'thmfdn-footer-after-class', 'row site-footer footer-after' . $widget_classes );
-			$thmfdn_footer_after_wrap_class = apply_filters( 'thmfdn-footer-after-wrap-class', 'wrap' );
+			$thmfdn_footer_after_class = apply_filters( 'thmfdn-footer-after-class', 'row site-footer footer-after' );
+			$thmfdn_footer_after_wrap_class = apply_filters( 'thmfdn-footer-after-wrap-class', 'wrap' . $widget_classes );
 			?>
 
 				<div class="<?php echo $thmfdn_footer_after_class; ?>">

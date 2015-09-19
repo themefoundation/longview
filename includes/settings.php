@@ -90,7 +90,7 @@ add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
 function get_thmfdn_layout() {
 
 	// Sets default layout
-	$layout_class = 'content-sidebar-sidebar';
+	$layout_class = 'content-sidebar';
 
 	// Overrides default layout for single posts.
 	if ( is_single () ) {

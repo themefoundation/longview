@@ -2,7 +2,6 @@
 // variables.scss
 // mixins.scss
 
-
 /* =Footer
 -------------------------------------------------------------- */
 .site-footer {
@@ -21,103 +20,5 @@
 
 	&.footer-after {
 		@include footer-row( #ffffff, #eeeeee, #222222 );
-	}
-
-	&.widget-count-1,
-	.widget-count-1 {
-		text-align: center;
-
-		.widget {
-			margin-bottom: 0;
-		}
-
-		ul {
-			display: block;
-			margin: 0;
-
-			ul {
-				display: inline;
-			}
-		}
-
-		li {
-			display: inline-block;
-			margin: 0;
-		}
-
-		a {
-			display: inline-block;
-			line-height: ($line * 2 ) + $unit;
-			padding: 0 1rem;
-			text-decoration: underline;
-		}
-	}
-
-	&.widget-columns {
-		&.widget-count-2 .wrap {
-			@extend %two-columns;
-		}
-
-		&.widget-count-3 .wrap {
-			@extend %three-columns;
-		}
-
-		&.widget-count-4 .wrap {
-			@extend %four-columns;
-		}
-
-		&.widget-count-5 .wrap {
-			@extend %five-columns;
-		}
-
-		&.widget-count-6 .wrap {
-			@extend %six-columns;
-		}
-
-		&.widget-count-7 .wrap {
-			@extend %seven-columns;
-		}
-
-		&.widget-count-8 .wrap {
-			@extend %eight-columns;
-		}
-
-		&.widget-count-9 .wrap {
-			@extend %nine-columns;
-		}
-	}
-
-	&#footer {
-		.widget-count-2 {
-			@extend %two-columns;
-		}
-
-		.widget-count-3 {
-			@extend %three-columns;
-		}
-
-		.widget-count-4 {
-			@extend %four-columns;
-		}
-
-		.widget-count-5 {
-			@extend %five-columns;
-		}
-
-		.widget-count-6 {
-			@extend %six-columns;
-		}
-
-		.widget-count-7 .wrap {
-			@extend %seven-columns;
-		}
-
-		.widget-count-8 .wrap {
-			@extend %eight-columns;
-		}
-
-		.widget-count-9 .wrap {
-			@extend %nine-columns;
-		}
 	}
 }

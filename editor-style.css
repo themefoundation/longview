@@ -18,8 +18,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', helvetica, sans-serif; }
+  padding: 0; }
 
 img {
   max-width: 100%;
@@ -37,7 +36,7 @@ pre {
   font-size: 100%;
   /* 16px */
   line-height: 1.375rem;
-  /* 22px */ }
+  font-family: 'Open Sans', helvetica, sans-serif; }
 
 h1,
 h2,
@@ -51,44 +50,37 @@ ul,
 table,
 blockquote,
 pre {
-  margin-bottom: 1.375rem;
-  /* 22px */ }
+  margin-bottom: 1.375rem; }
 
 h1 {
   font-size: 2.5rem;
   /* 40px */
-  line-height: 2.75rem;
-  /* 44px */ }
+  line-height: 2.75rem; }
 
 h2 {
   font-size: 2rem;
   /* 32px */
-  line-height: 2.75rem;
-  /* 44px */ }
+  line-height: 2.75rem; }
 
 h3 {
   font-size: 1.5rem;
   /* 24px */
-  line-height: 2.75rem;
-  /* 44px */ }
+  line-height: 2.75rem; }
 
 h4 {
   font-size: 1.125rem;
   /* 18px */
-  line-height: 2.75rem;
-  /* 44px */ }
+  line-height: 2.75rem; }
 
 h5 {
   font-size: 1rem;
   /* 16px */
-  line-height: 1.375rem;
-  /* 22px */ }
+  line-height: 1.375rem; }
 
 h6 {
   font-size: 0.875rem;
   /* 14px */
-  line-height: 1.375rem;
-  /* 22px */ }
+  line-height: 1.375rem; }
 
 blockquote {
   padding: 1.375rem 1.5rem 0 1.5rem;
@@ -96,13 +88,11 @@ blockquote {
 
 blockquote p {
   margin-bottom: 0;
-  padding-bottom: 1.375rem;
-  /* 22px */ }
+  padding-bottom: 1.375rem; }
 
 blockquote cite {
   display: block;
   margin-top: 1.375rem;
-  /* 22px */
   text-align: right; }
 
 table {
@@ -110,7 +100,6 @@ table {
 
 th {
   line-height: 2.75rem;
-  /* 44px */
   padding: 0 0.625rem;
   /* 0 10px */ }
 
@@ -141,6 +130,8 @@ code {
   line-height: 1rem;
   /* 16px */ }
 
+/* =Standard Elements
+-------------------------------------------------------------- */
 h1,
 h2,
 h3,

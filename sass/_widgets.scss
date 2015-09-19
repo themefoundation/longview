@@ -1,46 +1,51 @@
 // Requires:
 // variables.scss
 
-/* =Widgets
+/* =Universal Widget Styles
 -------------------------------------------------------------- */
-
 .widget {
+
 	margin-bottom: ($line + $unit);
+
+	.widget-title {
+		border-bottom: 1px solid $border;
+		margin-top: -1px;
+	}
+
+	ol,
+	ul {
+		list-style-type: none;
+		margin-left: 0;
+	}
+
+
+	li {
+		margin: 0 0 ($line + $unit);
+	}
+
+	select {
+		max-width: 100%;
+	}
+
+	li li {
+		margin: ($line + $unit) 0 0 (($line * 0.75) + $unit);
+	}
 }
 
-.widget li {
-	margin: 0 0 ($line + $unit);
-}
 
-.widget select {
-	max-width: 100%;
-}
-
-.widget li li {
-	margin: ($line + $unit) 0 0 (($line * 0.75) + $unit);
-}
-
+/* =Tag Cloud
+-------------------------------------------------------------- */
 .widget_tag_cloud {
 	a {
 		background-color: transparent;
 	}
 }
 
-.widget ol,
-.widget ul {
-	list-style-type: none;
-	margin-left: 0;
-}
-
-.widget-title {
-	border-bottom: 1px solid $border;
-	margin-top: -1px;
-}
-
 /* =Custom Menu
 -------------------------------------------------------------- */
 .widget_nav_menu {
 	.thmfdn-descriptive-menu {
+
 		a {
 			vertical-align: top;
 			line-height: ($line + $unit);
@@ -58,10 +63,11 @@
 
 		ul a {
 			font-weight: normal;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 	}
 }
-
 
 /* =Search
 -------------------------------------------------------------- */
@@ -97,3 +103,67 @@
 	}
 }
 
+/* =Widget Columns
+-------------------------------------------------------------- */
+.widget-count-1 {
+	text-align: center;
+
+	.widget {
+		margin-bottom: 0;
+	}
+
+	ul {
+		display: block;
+		margin: 0;
+
+		ul {
+			display: inline;
+		}
+	}
+
+	li {
+		display: inline-block;
+		margin: 0;
+	}
+
+	a {
+		display: inline-block;
+		line-height: ($line * 2 ) + $unit;
+		padding: 0 1rem;
+		text-decoration: underline;
+	}
+}
+
+.widget-columns {
+	&.widget-count-2 {
+		@extend %two-columns;
+	}
+
+	&.widget-count-3 {
+		@extend %three-columns;
+	}
+
+	&.widget-count-4 {
+		@extend %four-columns;
+	}
+
+	&.widget-count-5 {
+		@extend %five-columns;
+	}
+
+	&.widget-count-6 {
+		@extend %six-columns;
+	}
+
+	&.widget-count-7 {
+		@extend %seven-columns;
+	}
+
+	&.widget-count-8 {
+		@extend %eight-columns;
+	}
+
+	&.widget-count-9 {
+		@extend %nine-columns;
+	}
+}
