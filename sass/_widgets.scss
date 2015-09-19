@@ -37,6 +37,31 @@
 	margin-top: -1px;
 }
 
+/* =Custom Menu
+-------------------------------------------------------------- */
+.widget_nav_menu {
+	.thmfdn-descriptive-menu {
+		a {
+			vertical-align: top;
+			line-height: ($line + $unit);
+			padding-top: (($line * 0.5) + $unit);
+			padding-bottom: (($line * 0.5) + $unit);
+			font-weight: bold;
+			text-align: left;
+
+			.thmfdn-menu-item-description {
+				font-weight: normal;
+				display: block;
+				font-size: 0.875rem;
+			}
+		}
+
+		ul a {
+			font-weight: normal;
+		}
+	}
+}
+
 
 /* =Search
 -------------------------------------------------------------- */

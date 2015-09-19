@@ -81,6 +81,8 @@
 		margin-right: 0.5rem;
 	}
 
+
+
 	.widget_archive {
 
 		.widget-title {
@@ -155,6 +157,21 @@
 		@include breakpoint-large {
 			float: right;
 			line-height: ($line * 6) + $unit;
+		}
+	}
+
+	.widget_nav_menu {
+		.thmfdn-descriptive-menu {
+			a {
+				line-height: (($line * 1.5) + $unit);
+				padding-top: (($line * 1.75) + $unit);
+				padding-bottom: (($line * 1.75) + $unit);
+			}
+
+			ul a {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
 		}
 	}
 

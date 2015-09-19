@@ -1492,6 +1492,15 @@ by Jonathan Snook at http://smacss.com
       float: right;
       line-height: 8.25rem; } }
 
+#header .widget_nav_menu .thmfdn-descriptive-menu a {
+  line-height: 2.0625rem;
+  padding-top: 2.40625rem;
+  padding-bottom: 2.40625rem; }
+
+#header .widget_nav_menu .thmfdn-descriptive-menu ul a {
+  padding-top: 0;
+  padding-bottom: 0; }
+
 @media (min-width: 1140px) {
   #header .widget_search {
     margin-top: 2.75rem; } }
@@ -1670,6 +1679,23 @@ by Jonathan Snook at http://smacss.com
 .widget-title {
   border-bottom: 1px solid #dddddd;
   margin-top: -1px; }
+
+/* =Custom Menu
+-------------------------------------------------------------- */
+.widget_nav_menu .thmfdn-descriptive-menu a {
+  vertical-align: top;
+  line-height: 1.375rem;
+  padding-top: 0.6875rem;
+  padding-bottom: 0.6875rem;
+  font-weight: bold;
+  text-align: left; }
+  .widget_nav_menu .thmfdn-descriptive-menu a .thmfdn-menu-item-description {
+    font-weight: normal;
+    display: block;
+    font-size: 0.875rem; }
+
+.widget_nav_menu .thmfdn-descriptive-menu ul a {
+  font-weight: normal; }
 
 /* =Search
 -------------------------------------------------------------- */

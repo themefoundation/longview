@@ -8,7 +8,7 @@
  */
 
 /**
- * Add descriptions to menu item output
+ * Adds descriptions to menu item output
  *
  * Based partially on the menu implementation in the Twenty Fifteen theme.
  *
@@ -22,12 +22,39 @@
  * @return string $item_output The menu item's modified HTML output.
  */
 function thmfdn_nav_description( $item_output, $item, $depth, $args ) {
-    if ( empty($args->theme_location) && $item->description ) {
-        $item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
+    if ( empty( $args->theme_location ) && !empty( $item->description ) ) {
+        $item_output = str_replace( $args->link_after . '</a>', '<span class="thmfdn-menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
     }
 
     return $item_output;
 }
+
+
+/**
+ * Adds class to menu list
+ *
+ * This function adds a class of 'thmfdn-descriptive-menu' to the unordered
+ * list that holds the menu. This allows the descriptive menu to be styled
+ * independently of the normal menu. By default, WordPress adds a class of
+ * 'menu' at a later point in the menu output process. However, if a class
+ * has already been specified, WordPress doesn't add its own. So, to keep
+ * things consistent, this function adds the 'menu' class as well.
+ *
+ * @since 1.0.0
+ * @see https://developer.wordpress.org/reference/hooks/widget_nav_menu_args/
+ * @param array $nav_menu_args An array of arguments passed to wp_nav_menu() to retrieve a custom menu.
+ * @param stdClass $nav_menu Nav menu object for the current menu.
+ * @param array $args Display arguments for the current widget.
+ * @return array $args Updated menu args.
+ */
+function thmfdn_add_description_class( $nav_menu_args, $nav_menu, $args ) {
+	$nav_menu_args['menu_class'] = 'menu thmfdn-descriptive-menu';
+
+	return $nav_menu_args;
+}
+add_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
+
+
 
 /**
  * Add description option to menu widget
@@ -55,7 +82,7 @@ function thmfdn_add_menu_description_option( $widget, $return, $instance ) {
 		<?php
 	}
 }
-add_filter('in_widget_form', 'thmfdn_add_menu_description_option', 10, 3 );
+add_filter( 'in_widget_form', 'thmfdn_add_menu_description_option', 10, 3 );
 
 /**
  * Filters widget during save
@@ -97,10 +124,14 @@ function thmfdn_menu_description_control( $params ) {
 
 		// Adds filter to display menu item descriptions.
 		add_filter( 'walker_nav_menu_start_el', 'thmfdn_nav_description', 10, 4 );
+		add_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
+
 	} else {
 
 		// Removes filter to display menu item descriptions.
 		remove_filter( 'walker_nav_menu_start_el', 'thmfdn_nav_description', 10, 4 );
+		remove_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
+
 	}
 
 	// Return the unmodified $params.
