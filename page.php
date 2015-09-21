@@ -177,7 +177,6 @@ if ( have_posts() ) {
 		// do_action( 'thmfdn_entry_top' );
 		// do_action( 'thmfdn_entry' );
 		// do_action( 'thmfdn_entry_bottom' );
-		echo get_thmfdn_content_format();
 
 		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', 'page' ) );
 

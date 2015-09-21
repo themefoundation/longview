@@ -22,17 +22,7 @@ add_action( 'thmfdn_header_after', 'thmfdn_single_featured_image', 50 );
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
 
-add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
 
-add_action( 'thmfdn_entry', 'thmfdn_single_title' );
-add_action( 'thmfdn_entry', 'thmfdn_single_meta_top' );
-add_action( 'thmfdn_entry', 'thmfdn_single_content' );
-add_action( 'thmfdn_entry', 'thmfdn_post_pagination' );
-add_action( 'thmfdn_entry', 'thmfdn_single_meta_bottom' );
-add_action( 'thmfdn_entry', 'thmfdn_posts_nav' );
-add_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-
-add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
 
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
 
@@ -87,128 +77,7 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 		<?php	}
 }
 
-if ( !function_exists( 'thmfdn_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class( 'loop '); ?>>
-		<?php
-	}
-}
 
-if ( !function_exists( 'thmfdn_single_title' ) ) {
-	/**
-	 * Entry title
-	 *
-	 * Displays the post title.
-	 */
-	function thmfdn_single_title() {
-		echo '<h1 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		the_title();
-		echo '</h1>' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_meta_top' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 */
-	function thmfdn_single_meta_top() {
-		$meta_args = apply_filters( 'thmfdn_single_meta_top', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_top_class', 'entry-meta-top' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
-		}
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_content' ) ) {
-	/**
-	 * Entry content
-	 *
-	 * Displays the post content.
-	 */
-	function thmfdn_single_content() {
-		echo '<div class="' . apply_filters( 'thmfdn_entry_content_class', 'entry-content' ) . '">' . "\n";
-		the_content();
-		echo '</div><!--.entry-content-->' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_meta_bottom' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 */
-	function thmfdn_single_meta_bottom() {
-		$meta_args = apply_filters( 'thmfdn_single_meta_bottom', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_bottom_class', 'entry-meta-bottom' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
-		}
-	}
-}
-
-if ( !function_exists( 'thmfdn_post_pagination' ) ) {
-	/**
-	 *  Single post/page navigation template part
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_post_pagination() {
-		// Useful if pagination needs to be wrapped in another element.
-		// $pagination_args = array(
-		// 	'before' => '<div class="single-navigation">',
-		// 	'after' => '</div>'
-		// );
-
-		wp_link_pages();
-	}
-}
-
-if ( !function_exists( 'thmfdn_posts_nav' ) ) {
-	/**
-	 * Displays post navigation
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_posts_nav() {
-		the_post_navigation();
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_comments' ) ) {
-	/**
-	 * Comments
-	 *
-	 * Displays the post comments.
-	 */
-	function thmfdn_single_comments() {
-		comments_template();
-	}
-}
-
-if ( !function_exists( 'thmfdn_post_close' ) ) {
-	/**
-	 * Close #post div
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_post_close() {
-		?>
-			</div><!-- #post-number -->
-		<?php
-	}
-}
 
 if ( !function_exists( 'thmfdn_content_close' ) ) {
 	/**
@@ -250,11 +119,14 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		do_action( 'thmfdn_entry_before' );
-		do_action( 'thmfdn_entry_top' );
-		do_action( 'thmfdn_entry' );
-		do_action( 'thmfdn_entry_bottom' );
-		do_action( 'thmfdn_entry_after' );
+		// do_action( 'thmfdn_entry_before' );
+		// do_action( 'thmfdn_entry_top' );
+		// do_action( 'thmfdn_entry' );
+		// do_action( 'thmfdn_entry_bottom' );
+		// do_action( 'thmfdn_entry_after' );
+
+		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', 'single' ) );
+
 	}
 } else {
 	get_template_part( 'template-parts/404' );

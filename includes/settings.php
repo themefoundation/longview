@@ -37,10 +37,13 @@ function thmfdn_init() {
 	add_theme_support( 'html5', $html5_support );
 
 	// Adds installation welcome screen support.
-	add_theme_support( 'welcome-screen' );
+	// add_theme_support( 'welcome-screen' );
 
 	// Adds description output support for Custom Menu widgets.
-	add_theme_support( 'menu-descriptions' );
+	// add_theme_support( 'menu-descriptions' );
+	
+	// Adds support for the Portfolio Post Type plugin.
+	add_theme_support( 'portfolio' );
 
 	// Sets the default content width.
 	if ( ! isset( $content_width ) ) $content_width = 900;
@@ -116,11 +119,6 @@ function get_thmfdn_layout() {
 		}
 	}
 
-	// Overrides default layout for archives.
-	if ( is_post_type_archive( 'portfolio' ) ) {
-		$layout_class = 'content-full-width';
-	}
-
 	return apply_filters( 'thmfdn_layout_class', $layout_class );
 }
 
@@ -145,11 +143,6 @@ function get_thmfdn_content_format( $format_class = '' ) {
 	// Sets default content format.
 	if ( empty( $format_class ) ) {
 		$format_class = get_post_format();
-	}
-
-	// Overrides default content format for portfolio archives.
-	if ( is_post_type_archive( 'portfolio' ) ) {
-		$format_class = 'portfolio';
 	}
 
 	// Overrides default content format for archives.

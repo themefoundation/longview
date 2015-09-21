@@ -28,6 +28,7 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
+// TODO: Add open .loop and close .loop function to single post template part.
 // TODO: Consider rewriting column placeholders so they don't include breakpoints.
 //       The breakpoints should probably be set in the places calling the placeholders, not in the placeholders themselves.
 // TODO: Rewrite cadence to be a mixin.
