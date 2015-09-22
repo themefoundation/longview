@@ -8,9 +8,9 @@
 
 
 function thmfdn_theme_support() {
-	require_if_theme_supports( 'welcome-screen', trailingslashit( TEMPLATEPATH ) . 'includes/welcome-screen.php' );
-	require_if_theme_supports( 'menu-descriptions', trailingslashit( TEMPLATEPATH ) . 'includes/menu-descriptions.php' );
-	require_if_theme_supports( 'portfolio', trailingslashit( TEMPLATEPATH ) . 'includes/portfolio.php' );
+	require_if_theme_supports( 'welcome-screen', get_stylesheet_directory() . '/includes/welcome-screen.php' );
+	require_if_theme_supports( 'menu-descriptions', get_stylesheet_directory() . '/includes/menu-descriptions.php' );
+	require_if_theme_supports( 'portfolio', get_stylesheet_directory() . '/includes/portfolio.php' );
 }
 add_action( 'init', 'thmfdn_theme_support', 20 );
 
