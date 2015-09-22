@@ -20,11 +20,19 @@
 // The thmfdn_header_after action hook is located in the header.php file.
 add_action( 'thmfdn_header_after', 'thmfdn_page_featured_image', 50 );
 
-add_action( 'thmfdn_content_top', 'thmfdn_content_open', 50 );
-add_action( 'thmfdn_content_top', 'thmfdn_loop_open', 100 );
+/**
+ *****************************************************************************
+ * Add filters
+ *****************************************************************************
+ *
+ * This section adds filters to their respective filter hooks.
+ *
+ * @see http://codex.wordpress.org/Function_Reference/add_filter
+ * @since 1.0
+ */
 
-add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close', 50 );
-add_action( 'thmfdn_content_bottom', 'thmfdn_content_close', 100 );
+// The thmfdn_template_part_name filter hook is located in the index.php file.
+add_filter( 'thmfdn_template_part_name', 'thmfdn_template_part_page' );
 
 
 /**
@@ -60,135 +68,35 @@ if ( !function_exists( 'thmfdn_page_featured_image' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_content_open' ) ) {
-	/**
-	 * Primary opening
-	 *
-	 * Opens the #primary div column and the #content div. This theme supports
-	 * up to three columns, #primary, #secondary, and #tertiary.
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_content_open() {
-		?>
-			<div id="content" class="<?php echo apply_filters( 'thmfdn_content_class', 'primary hfeed' ) ?>" role="main">
-		<?php
-	}
-}
+/**
+ *****************************************************************************
+ * Define filters
+ *****************************************************************************
+ *
+ * This section defines the filters associated with each hook.
+ *
+ * @since 1.0
+ */
 
-if ( !function_exists( 'thmfdn_loop_open' ) ) {
+if ( !function_exists( 'thmfdn_template_part_page' ) ) {
 	/**
-	 * Loop wrapper
+	 * Single template part
 	 *
-	 * Opens the .loop div. 
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
-	 * @since 1.0
+	 * Filters the default template part to use.
 	 */
-	function thmfdn_loop_open() {
-		?>
-			<div class="<?php echo apply_filters( 'thmfdn_loop_class', 'loop' ) ?>">
-		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_page_content' ) ) {
-	/**
-	 * Entry content
-	 *
-	 * Displays the post content.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_page_content() {
-		echo '<div class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-content' ) . '">' . "\n";
-		the_content();
-		echo '</div><!--.entry-content-->' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_loop_close' ) ) {
-	/**
-	 * Loop wrapper closing
-	 *
-	 * Closes the .loop div.
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_loop_close() {
-		?>
-			</div><!-- .loop -->
-		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_content_close' ) ) {
-	/**
-	 * Content closing
-	 *
-	 * Closes the #content div.
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
-	 * @since 1.0
-	 */
-	function thmfdn_content_close() {
-		?>
-			</div><!-- #content -->
-		<?php
+	function thmfdn_template_part_page() {
+		return 'page';
 	}
 }
 
 /**
  *****************************************************************************
- * Do actions
+ * Load Template
  *****************************************************************************
  *
- * This section runs the actions associated with each hook.
+ * This section loads the default tamplate.
  *
- * @see http://codex.wordpress.org/Function_Reference/do_action
  * @since 1.0
  */
 
-// Use this hook to add and remove actions.
-do_action( 'thmfdn_template_setup' );
-
-get_header();
-
-do_action( 'thmfdn_content_before' );
-do_action( 'thmfdn_content_top' );
-
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post();
-		// do_action( 'thmfdn_entry_top' );
-		// do_action( 'thmfdn_entry' );
-		// do_action( 'thmfdn_entry_bottom' );
-
-		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', 'page' ) );
-
-		// get_template_part( 'template-parts/content', 'page' );
-	}
-} else {
-	get_template_part( 'template-parts/404' );
-}
-
-
-do_action( 'thmfdn_content_bottom' );
-do_action( 'thmfdn_content_after' );
-
-get_sidebar();
-get_footer();
+require_once( get_stylesheet_directory() . '/index.php' );

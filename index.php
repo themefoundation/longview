@@ -50,8 +50,8 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 	/**
 	 * Primary opening
 	 *
-	 * Opens the #primary div column and the #content div. This theme supports
-	 * up to three columns, #primary, #secondary, and #tertiary.
+	 * Opens the .primary div column and the #content div. This theme supports
+	 * up to three columns, .primary, .secondary, and .tertiary.
 	 *
 	 * This function is repeated in the base template files (index.php,
 	 * page.php, and single.php). This duplication is the unfortunate side

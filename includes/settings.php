@@ -41,7 +41,7 @@ function thmfdn_init() {
 
 	// Adds description output support for Custom Menu widgets.
 	// add_theme_support( 'menu-descriptions' );
-	
+
 	// Adds support for the Portfolio Post Type plugin.
 	add_theme_support( 'portfolio' );
 
@@ -94,11 +94,6 @@ function get_thmfdn_layout() {
 
 	// Sets default layout
 	$layout_class = 'content-sidebar';
-
-	// Overrides default layout for single posts.
-	if ( is_single () ) {
-		$layout_class = 'content-full-width';
-	}
 
 	// Overrides default layout for pages.
 	if ( is_page() ) {
