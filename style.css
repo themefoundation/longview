@@ -75,62 +75,62 @@ html {
 
 @media (min-width: 900px) {
   .widget-columns.widget-count-4 > div,
-  .thmfdn-gallery .loop > div,
+  .thmfdn-portfolio .loop > div,
   .gallery-columns-4 > div,
-  .widget-columns.widget-count-4 > figure, .thmfdn-gallery .loop > figure, .gallery-columns-4 > figure {
+  .widget-columns.widget-count-4 > figure, .thmfdn-portfolio .loop > figure, .gallery-columns-4 > figure {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 48.821174201%; }
     .widget-columns.widget-count-4 > div:last-child,
-    .thmfdn-gallery .loop > div:last-child,
+    .thmfdn-portfolio .loop > div:last-child,
     .gallery-columns-4 > div:last-child,
-    .widget-columns.widget-count-4 > figure:last-child, .thmfdn-gallery .loop > figure:last-child, .gallery-columns-4 > figure:last-child {
+    .widget-columns.widget-count-4 > figure:last-child, .thmfdn-portfolio .loop > figure:last-child, .gallery-columns-4 > figure:last-child {
       margin-right: 0; }
     .widget-columns.widget-count-4 > div:nth-child(2n),
-    .thmfdn-gallery .loop > div:nth-child(2n),
+    .thmfdn-portfolio .loop > div:nth-child(2n),
     .gallery-columns-4 > div:nth-child(2n),
-    .widget-columns.widget-count-4 > figure:nth-child(2n), .thmfdn-gallery .loop > figure:nth-child(2n), .gallery-columns-4 > figure:nth-child(2n) {
+    .widget-columns.widget-count-4 > figure:nth-child(2n), .thmfdn-portfolio .loop > figure:nth-child(2n), .gallery-columns-4 > figure:nth-child(2n) {
       margin-right: 0; }
     .widget-columns.widget-count-4 > div:nth-child(2n+1),
-    .thmfdn-gallery .loop > div:nth-child(2n+1),
+    .thmfdn-portfolio .loop > div:nth-child(2n+1),
     .gallery-columns-4 > div:nth-child(2n+1),
-    .widget-columns.widget-count-4 > figure:nth-child(2n+1), .thmfdn-gallery .loop > figure:nth-child(2n+1), .gallery-columns-4 > figure:nth-child(2n+1) {
+    .widget-columns.widget-count-4 > figure:nth-child(2n+1), .thmfdn-portfolio .loop > figure:nth-child(2n+1), .gallery-columns-4 > figure:nth-child(2n+1) {
       clear: left; } }
 
 @media (min-width: 1140px) {
   .widget-columns.widget-count-4 > div,
-  .thmfdn-gallery .loop > div,
+  .thmfdn-portfolio .loop > div,
   .gallery-columns-4 > div,
-  .widget-columns.widget-count-4 > figure, .thmfdn-gallery .loop > figure, .gallery-columns-4 > figure {
+  .widget-columns.widget-count-4 > figure, .thmfdn-portfolio .loop > figure, .gallery-columns-4 > figure {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 23.2317613015%; }
     .widget-columns.widget-count-4 > div:nth-child(2n),
-    .thmfdn-gallery .loop > div:nth-child(2n),
+    .thmfdn-portfolio .loop > div:nth-child(2n),
     .gallery-columns-4 > div:nth-child(2n),
-    .widget-columns.widget-count-4 > figure:nth-child(2n), .thmfdn-gallery .loop > figure:nth-child(2n), .gallery-columns-4 > figure:nth-child(2n) {
+    .widget-columns.widget-count-4 > figure:nth-child(2n), .thmfdn-portfolio .loop > figure:nth-child(2n), .gallery-columns-4 > figure:nth-child(2n) {
       margin-right: 2.3576515979%; }
     .widget-columns.widget-count-4 > div:nth-child(2n+1),
-    .thmfdn-gallery .loop > div:nth-child(2n+1),
+    .thmfdn-portfolio .loop > div:nth-child(2n+1),
     .gallery-columns-4 > div:nth-child(2n+1),
-    .widget-columns.widget-count-4 > figure:nth-child(2n+1), .thmfdn-gallery .loop > figure:nth-child(2n+1), .gallery-columns-4 > figure:nth-child(2n+1) {
+    .widget-columns.widget-count-4 > figure:nth-child(2n+1), .thmfdn-portfolio .loop > figure:nth-child(2n+1), .gallery-columns-4 > figure:nth-child(2n+1) {
       clear: none; }
     .widget-columns.widget-count-4 > div:last-child,
-    .thmfdn-gallery .loop > div:last-child,
+    .thmfdn-portfolio .loop > div:last-child,
     .gallery-columns-4 > div:last-child,
-    .widget-columns.widget-count-4 > figure:last-child, .thmfdn-gallery .loop > figure:last-child, .gallery-columns-4 > figure:last-child {
+    .widget-columns.widget-count-4 > figure:last-child, .thmfdn-portfolio .loop > figure:last-child, .gallery-columns-4 > figure:last-child {
       margin-right: 0; }
     .widget-columns.widget-count-4 > div:nth-child(4n),
-    .thmfdn-gallery .loop > div:nth-child(4n),
+    .thmfdn-portfolio .loop > div:nth-child(4n),
     .gallery-columns-4 > div:nth-child(4n),
-    .widget-columns.widget-count-4 > figure:nth-child(4n), .thmfdn-gallery .loop > figure:nth-child(4n), .gallery-columns-4 > figure:nth-child(4n) {
+    .widget-columns.widget-count-4 > figure:nth-child(4n), .thmfdn-portfolio .loop > figure:nth-child(4n), .gallery-columns-4 > figure:nth-child(4n) {
       margin-right: 0; }
     .widget-columns.widget-count-4 > div:nth-child(4n+1),
-    .thmfdn-gallery .loop > div:nth-child(4n+1),
+    .thmfdn-portfolio .loop > div:nth-child(4n+1),
     .gallery-columns-4 > div:nth-child(4n+1),
-    .widget-columns.widget-count-4 > figure:nth-child(4n+1), .thmfdn-gallery .loop > figure:nth-child(4n+1), .gallery-columns-4 > figure:nth-child(4n+1) {
+    .widget-columns.widget-count-4 > figure:nth-child(4n+1), .thmfdn-portfolio .loop > figure:nth-child(4n+1), .gallery-columns-4 > figure:nth-child(4n+1) {
       clear: left; } }
 
 @media (min-width: 600px) {
@@ -1635,11 +1635,11 @@ input[type="submit"]:hover {
 
 /* =Gallery Content Format
 -------------------------------------------------------------- */
-.thmfdn-gallery .loop .wp-post-image {
+.thmfdn-portfolio .loop .wp-post-image {
   margin: 0 auto 2.75rem auto; }
 
 @media (min-width: 900px) {
-  .thmfdn-gallery .loop .wp-post-image {
+  .thmfdn-portfolio .loop .wp-post-image {
     margin: 0 auto 1.375rem auto; } }
 
 /* =Feature Image Row

@@ -28,6 +28,7 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
+// TODO: Figure out how to handle search results.
 // TODO: Figure out how to handle the rest of the post meta besides date and tags.
 // TODO: Consider rewriting column placeholders so they don't include breakpoints.
 //       The breakpoints should probably be set in the places calling the placeholders, not in the placeholders themselves.

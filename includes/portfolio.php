@@ -39,7 +39,7 @@ function thmfdn_portfolio_archive_content_format( $format ) {
 
 	// Overrides default content format for portfolio archives.
 	if ( is_post_type_archive( 'portfolio' ) ) {
-		$format = 'gallery';
+		$format = 'portfolio';
 	}
 
 	return $format;

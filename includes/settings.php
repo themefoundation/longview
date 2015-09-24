@@ -50,7 +50,7 @@ function thmfdn_init() {
 
 	// Sets additional image sizes
 	add_image_size( 'grid', 350, 200, true );
-	add_image_size( 'gallery', 500, 250, true );
+	add_image_size( 'portfolio', 500, 250, true );
 
 }
 add_action( 'init', 'thmfdn_init' );
@@ -128,7 +128,7 @@ function get_thmfdn_layout() {
  * These are the supported content formats:
  * - content (Standard blog format, single column of posts)
  * - grid (Rows of content, multiple columns)
- * - gallery (Rows of images, multiple columns)
+ * - portfolio (Rows of images, multiple columns)
  *
  * @since 1.0
  * @return string Layout class name.
