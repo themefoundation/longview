@@ -2,8 +2,8 @@
 /**
  *  Index template
  *
- * @package THMFDN
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**
@@ -14,7 +14,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
@@ -33,7 +33,7 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
  * This section adds filters to their respective filter hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_filter
- * @since 1.0
+ * @since 1.0.0
  */
 
 /**
@@ -43,7 +43,7 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_content_open' ) ) {
@@ -57,7 +57,7 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 	 * page.php, and single.php). This duplication is the unfortunate side
 	 * effect of trying to keep everything in its natural place.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_content_open() {
 		?>
@@ -72,7 +72,7 @@ if ( !function_exists( 'thmfdn_archive_title' ) ) {
 	 *
 	 * Displays the title for archive pages.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @see https://developer.wordpress.org/reference/functions/the_archive_title/
 	 */
 	function thmfdn_archive_title() {
@@ -95,7 +95,7 @@ if ( !function_exists( 'thmfdn_loop_open' ) ) {
 	 * page.php, and single.php). This duplication is the unfortunate side
 	 * effect of trying to keep everything in its natural place.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_loop_open() {
 		?>
@@ -114,7 +114,7 @@ if ( !function_exists( 'thmfdn_loop_close' ) ) {
 	 * page.php, and single.php). This duplication is the unfortunate side
 	 * effect of trying to keep everything in its natural place.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_loop_close() {
 		?>
@@ -133,7 +133,7 @@ if ( !function_exists( 'thmfdn_pagination' ) ) {
 	 * page.php, and single.php). This duplication is the unfortunate side
 	 * effect of trying to keep everything in its natural place.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_pagination() {
 		the_posts_pagination();
@@ -150,7 +150,7 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
 	 * page.php, and single.php). This duplication is the unfortunate side
 	 * effect of trying to keep everything in its natural place.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_content_close() {
 		?>
@@ -167,7 +167,7 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header();

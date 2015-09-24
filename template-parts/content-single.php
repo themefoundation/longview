@@ -14,7 +14,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
@@ -36,13 +36,13 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 if ( !function_exists( 'thmfdn_post_open' ) ) {
 	/**
 	 * Open #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_open() {
 		?>
@@ -56,6 +56,8 @@ if ( !function_exists( 'thmfdn_single_title' ) ) {
 	 * Entry title
 	 *
 	 * Displays the post title.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_single_title() {
 		echo '<h1 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
@@ -69,6 +71,8 @@ if ( !function_exists( 'thmfdn_single_meta_top' ) ) {
 	 * Entry meta
 	 *
 	 * Displays the post meta data.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_single_meta_top() {
 		$meta_args = apply_filters( 'thmfdn_single_meta_top', array() );
@@ -85,6 +89,8 @@ if ( !function_exists( 'thmfdn_single_content' ) ) {
 	 * Entry content
 	 *
 	 * Displays the post content.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_single_content() {
 		echo '<div class="' . apply_filters( 'thmfdn_entry_content_class', 'entry-content' ) . '">' . "\n";
@@ -98,6 +104,8 @@ if ( !function_exists( 'thmfdn_single_meta_bottom' ) ) {
 	 * Entry meta
 	 *
 	 * Displays the post meta data.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_single_meta_bottom() {
 		$meta_args = apply_filters( 'thmfdn_single_meta_bottom', array() );
@@ -113,7 +121,7 @@ if ( !function_exists( 'thmfdn_post_pagination' ) ) {
 	/**
 	 *  Single post/page navigation template part
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_pagination() {
 		// Useful if pagination needs to be wrapped in another element.
@@ -130,7 +138,7 @@ if ( !function_exists( 'thmfdn_posts_nav' ) ) {
 	/**
 	 * Displays post navigation
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_posts_nav() {
 		the_post_navigation();
@@ -142,6 +150,8 @@ if ( !function_exists( 'thmfdn_single_comments' ) ) {
 	 * Comments
 	 *
 	 * Displays the post comments.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_single_comments() {
 		comments_template();
@@ -152,7 +162,7 @@ if ( !function_exists( 'thmfdn_post_close' ) ) {
 	/**
 	 * Close #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.
 	 */
 	function thmfdn_post_close() {
 		?>

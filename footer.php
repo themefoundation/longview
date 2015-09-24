@@ -2,9 +2,8 @@
 /**
  * Footer template
  *
- * @package THMFDN
- * @since 1.0
- * @todo Improve footer text. Possibly from Clean Yeti
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**
@@ -38,7 +37,7 @@ add_action( 'thmfdn_body_bottom', 'thmfdn_wrapper_close' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_main_close' ) ) {
@@ -57,7 +56,7 @@ if ( !function_exists( 'thmfdn_before_footer_widgets' ) ) {
 	/**
 	 * Displays the Before Footer widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_before_footer_widgets() {
 
@@ -90,6 +89,8 @@ if ( !function_exists( 'thmfdn_footer_open' ) ) {
 	 * Footer opening
 	 *
 	 * Opens the footer and wrapper.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_footer_open() {
 		echo '<footer id="' . apply_filters( 'thmfdn_footer_id', 'footer' ) . '" class="' . apply_filters( 'thmfdn_footer_class', 'site-footer row' ) . '">' . "\n";
@@ -103,6 +104,8 @@ if ( !function_exists( 'thmfdn_footer_menu' ) ) {
 	 *
 	 * Displays the footer menu. However, if there are widgets present in the
 	 * Inside Footer widget area, that widget area overrides this menu.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_footer_menu() {
 
@@ -120,7 +123,7 @@ if ( !function_exists( 'thmfdn_footer_widgets' ) ) {
 	/**
 	 * Displays the Inside Footer widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_footer_widgets() {
 
@@ -151,6 +154,8 @@ if ( !function_exists( 'thmfdn_footer' ) ) {
 	 * Footer
 	 *
 	 * Displays the site footer.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_footer() {
 		if ( ! is_active_sidebar( 'footer-inside' ) ) {
@@ -164,6 +169,8 @@ if ( !function_exists( 'thmfdn_footer_close' ) ) {
 	 * Footer closing
 	 *
 	 * Closes the footer and wrapper.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_footer_close() {
 		echo 	'</div><!--.wrap-->' . "\n";
@@ -176,6 +183,8 @@ if ( !function_exists( 'thmfdn_after_footer_widgets' ) ) {
 	 * Displays the After Footer widget area
 	 *
 	 * @since 1.0
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_after_footer_widgets() {
 
@@ -210,6 +219,8 @@ if ( !function_exists( 'thmfdn_wrapper_close' ) ) {
 	 *
 	 * This div wraps the entire site, and can be used for handling the
 	 * site width.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_wrapper_close() {
 		echo '</div><!--#page-->';
@@ -224,7 +235,7 @@ if ( !function_exists( 'thmfdn_wrapper_close' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 do_action( 'thmfdn_footer_before' );

@@ -2,8 +2,8 @@
 /**
  * Comments template
  *
- * @package THMFDN
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 // Exits if password is required, but has not been entered.

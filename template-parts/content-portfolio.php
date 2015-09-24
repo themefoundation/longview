@@ -14,7 +14,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
@@ -30,14 +30,14 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_post_open' ) ) {
 	/**
 	 * Open #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_open() {
 		?>
@@ -52,7 +52,7 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 *
 	 * Displays the featured image (formerly called the post thumbnail).
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_featured_image() {
 		echo '<a href="' . get_permalink() . '">';
@@ -66,7 +66,7 @@ if ( !function_exists( 'thmfdn_post_close' ) ) {
 	/**
 	 * Close #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_close() {
 		?>
@@ -83,7 +83,7 @@ if ( !function_exists( 'thmfdn_post_close' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Use this hook to add and remove actions.

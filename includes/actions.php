@@ -51,3 +51,18 @@ function thmfdn_editor_style() {
 	add_editor_style();
 }
 add_action( 'admin_init', 'thmfdn_editor_style' );
+
+/**
+ * Registers menus
+ *
+ * @since 1.0.0
+ */
+function thmfdn_menus() {
+	register_nav_menus(
+		array(
+			'header_menu' => __( 'Header Menu' ),
+			'footer_menu' => __( 'Footer Menu' )
+		)
+	);
+}
+add_action( 'init', 'thmfdn_menus' );

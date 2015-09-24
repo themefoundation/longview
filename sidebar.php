@@ -2,8 +2,8 @@
 /**
  *  Sidebar template
  *
- * @package THMFDN
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 $sidebar_layout = get_thmfdn_layout();
@@ -17,7 +17,7 @@ if ( is_active_sidebar( 'sidebar-1' ) && substr_count( $sidebar_layout, 'sidebar
 	dynamic_sidebar( 'sidebar-1' );
 	do_action( 'thmfdn_sidebar_bottom' );
 	echo '</div><!--.secondary-->';
-	
+
 	do_action( 'thmfdn_sidebar_after' );
 }
 
@@ -30,6 +30,6 @@ if ( is_active_sidebar( 'sidebar-2' ) && substr_count( $sidebar_layout, 'sidebar
 	dynamic_sidebar( 'sidebar-2' );
 	do_action( 'thmfdn_sidebar_bottom' );
 	echo '</div><!--.tertiary-->';
-	
+
 	do_action( 'thmfdn_sidebar_after' );
 }

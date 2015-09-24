@@ -14,7 +14,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_entry', 'thmfdn_404_widgets' );
@@ -27,14 +27,14 @@ add_action( 'thmfdn_entry', 'thmfdn_404_widgets' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_404_widgets' ) ) {
 	/**
 	 * Displays the 404 widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_404_widgets() {
 
@@ -77,7 +77,7 @@ if ( !function_exists( 'thmfdn_404_widgets' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Use this hook to add and remove actions.

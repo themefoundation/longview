@@ -2,8 +2,8 @@
 /**
  * Header template
  *
- * @package THMFDN
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -11,9 +11,9 @@
 	<?php do_action( 'thmfdn_head_top' ); ?>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="<?php apply_filters( 'thmfdn_viewport', 'width=device-width' ); ?>" />
+	<meta name="viewport" content="<?php echo apply_filters( 'thmfdn_viewport', 'width=device-width, initial-scale=1' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	
+
 	<?php do_action( 'thmfdn_head_bottom' ); ?>
 	<?php wp_head(); ?>
 </head>

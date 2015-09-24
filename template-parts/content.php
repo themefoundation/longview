@@ -14,7 +14,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
@@ -34,14 +34,14 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_post_open' ) ) {
 	/**
 	 * Open #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_open() {
 		?>
@@ -56,7 +56,7 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 *
 	 * Displays the featured image (formerly called the post thumbnail).
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_featured_image() {
 		the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
@@ -70,7 +70,7 @@ if ( !function_exists( 'thmfdn_archive_entry_title' ) ) {
 	 *
 	 * Displays the post title.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_entry_title() {
 		echo '<h2 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
@@ -86,6 +86,8 @@ if ( !function_exists( 'thmfdn_archive_meta_top' ) ) {
 	 * Entry meta
 	 *
 	 * Displays the post meta data.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_meta_top() {
 		$meta_args = apply_filters( 'thmfdn_archive_meta_top', array() );
@@ -103,7 +105,7 @@ if ( !function_exists( 'thmfdn_archive_content' ) ) {
 	 *
 	 * Displays the post content.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_content() {
 		echo '<div class="' . apply_filters( 'thmfdn_entry_content_class', 'entry-content' ) . '">' . "\n";
@@ -117,6 +119,8 @@ if ( !function_exists( 'thmfdn_archive_meta_bottom' ) ) {
 	 * Entry meta
 	 *
 	 * Displays the post meta data.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_archive_meta_bottom() {
 		$meta_args = apply_filters( 'thmfdn_archive_meta_bottom', array() );
@@ -132,7 +136,7 @@ if ( !function_exists( 'thmfdn_post_close' ) ) {
 	/**
 	 * Close #post div
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_post_close() {
 		?>
@@ -149,7 +153,7 @@ if ( !function_exists( 'thmfdn_post_close' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Use this hook to add and remove actions.
