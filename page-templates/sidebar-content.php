@@ -23,4 +23,4 @@ function thmfdn_sidebar_content_page() {
 add_filter( 'thmfdn_layout_class', 'thmfdn_sidebar_content_page' );
 
 // Loads the default page template.
-require( dirname(__FILE__) . '/../page.php' ); 
+require_once( get_stylesheet_directory() . '/page.php' );

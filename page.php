@@ -2,7 +2,7 @@
 /**
  *  Single page template
  *
- * @package THMFDN
+ * @package Longview
  * @since 1.0
  */
 

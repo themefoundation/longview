@@ -1,4 +1,10 @@
 <?php
+/**
+ * Filters
+ *
+ * @package Longview
+ * @since 1.0.0
+ */
 
 /**
  * Filters page templates listed in the page editor drop down list

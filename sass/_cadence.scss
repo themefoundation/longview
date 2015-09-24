@@ -3,12 +3,8 @@
 
 /// Sets up vertical rhythm.
 @mixin cadence( $font, $line, $unit ) {
-
-	*{
-		font-size: ($font + $unit);
-		line-height: ($line + $unit);
-
-	}
+	font-size: ($font + $unit);
+	line-height: ($line + $unit);
 
 	h1,
 	h2,

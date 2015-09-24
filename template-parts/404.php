@@ -2,8 +2,8 @@
 /**
  *  404 template
  *
- * @package Draft
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**

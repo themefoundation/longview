@@ -3,7 +3,7 @@
 
 /// Two column layout.
 %two-columns {
-	@include breakpoint-medium {
+	@include breakpoint-small {
 		> div,
 		> figure {
 			@include span-columns(6);
@@ -14,9 +14,18 @@
 
 /// Three column layout.
 %three-columns {
+	@include breakpoint-small {
+		> div,
+		> figure {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+	}
+
 	@include breakpoint-medium {
 		> div,
 		> figure {
+			@include omega-reset(2n);
 			@include span-columns(4);
 			@include omega(3n);
 		}
@@ -25,7 +34,8 @@
 
 /// Four column layout.
 %four-columns {
-	@include breakpoint-medium {
+
+	@include breakpoint-small {
 		> div,
 		> figure {
 			@include span-columns(6);
@@ -33,7 +43,7 @@
 		}
 	}
 
-	@include breakpoint-large {
+	@include breakpoint-medium {
 		> div,
 		> figure {
 			@include omega-reset(2n);
@@ -57,15 +67,6 @@
 		> div,
 		> figure {
 			@include omega-reset(2n);
-			@include span-columns(4);
-			@include omega(3n);
-		}
-	}
-
-	@include breakpoint-large {
-		> div,
-		> figure {
-			@include omega-reset(3n);
 			@include span-columns(2.4);
 			@include omega(5n);
 		}

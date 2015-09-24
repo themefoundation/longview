@@ -108,4 +108,4 @@ function thmfdn_child_page_grid_thumbnail_size() {
 }
 
 // Loads the default page template.
-require( dirname(__FILE__) . '/../page.php' );
+require_once( get_stylesheet_directory() . '/page.php' );

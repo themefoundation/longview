@@ -4,7 +4,8 @@
  *
  * This file enables the display of descriptions within the Custom Menu widget.
  *
- * @package THMFDN
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**

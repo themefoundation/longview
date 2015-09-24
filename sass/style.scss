@@ -30,8 +30,6 @@ Tags: editor-style, threaded-comments
 
 // TODO: Figure out how to handle search results.
 // TODO: Figure out how to handle the rest of the post meta besides date and tags.
-// TODO: Consider rewriting column placeholders so they don't include breakpoints.
-//       The breakpoints should probably be set in the places calling the placeholders, not in the placeholders themselves.
 // TODO: Figure out a way to better modularize mo.scss (it shouldn't need so many of it's own variables... maybe separate things like padding/line height out?)
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.

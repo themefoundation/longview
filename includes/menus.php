@@ -4,7 +4,8 @@
  *
  * This file defines the default menus.
  *
- * @package THMFDN
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**

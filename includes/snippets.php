@@ -2,8 +2,8 @@
 /**
  *  Snippets
  *
- * @package THMFDN
- * @since 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 // phpdoc

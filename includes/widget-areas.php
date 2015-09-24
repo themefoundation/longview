@@ -5,8 +5,8 @@
  * This file registers the widget areas and provides functions related to
  * displaying the widget areas.
  *
- * @package THMFDN
- * @version 1.0
+ * @package Longview
+ * @since 1.0.0
  */
 
 /**
