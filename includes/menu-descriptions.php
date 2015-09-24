@@ -52,7 +52,6 @@ function thmfdn_add_description_class( $nav_menu_args, $nav_menu, $args ) {
 
 	return $nav_menu_args;
 }
-add_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
 
 
 
@@ -116,6 +115,8 @@ add_filter( 'widget_update_callback', 'thmfdn_save_menu_description_option', 10,
  */
 function thmfdn_menu_description_control( $params ) {
 
+	thmfdn_log($params);
+
 	// Gets every custom menu widget from the database.
 	$widget_settings = get_option('widget_nav_menu');
 
@@ -125,13 +126,11 @@ function thmfdn_menu_description_control( $params ) {
 		// Adds filter to display menu item descriptions.
 		add_filter( 'walker_nav_menu_start_el', 'thmfdn_nav_description', 10, 4 );
 		add_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
-
 	} else {
 
 		// Removes filter to display menu item descriptions.
 		remove_filter( 'walker_nav_menu_start_el', 'thmfdn_nav_description', 10, 4 );
 		remove_filter( 'widget_nav_menu_args', 'thmfdn_add_description_class', 10, 3 );
-
 	}
 
 	// Return the unmodified $params.

@@ -3,13 +3,21 @@
 
 /* =Standard Elements
 -------------------------------------------------------------- */
+body {
+	font-size: 100%;
+	@include cadence( 1, 1.375, rem );
+}
+
+* {
+	font-family: 'Open Sans', helvetica, sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: 'Open Sans', helvetica, sans-serif;
 	font-weight: normal;
 }
 

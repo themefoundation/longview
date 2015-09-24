@@ -40,7 +40,7 @@ function thmfdn_init() {
 	// add_theme_support( 'welcome-screen' );
 
 	// Adds description output support for Custom Menu widgets.
-	// add_theme_support( 'menu-descriptions' );
+	add_theme_support( 'menu-descriptions' );
 
 	// Adds support for the Portfolio Post Type plugin.
 	add_theme_support( 'portfolio' );
