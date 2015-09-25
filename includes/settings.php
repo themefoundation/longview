@@ -249,5 +249,3 @@ function thmfdn_settings_single_meta_bottom() {
 }
 add_filter ( 'thmfdn_single_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
 add_filter ( 'thmfdn_archive_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
-
-
