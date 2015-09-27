@@ -116,8 +116,6 @@ add_filter( 'widget_update_callback', 'thmfdn_save_menu_description_option', 10,
  */
 function thmfdn_menu_description_control( $params ) {
 
-	thmfdn_log($params);
-
 	// Gets every custom menu widget from the database.
 	$widget_settings = get_option('widget_nav_menu');
 

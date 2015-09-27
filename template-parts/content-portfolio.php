@@ -16,12 +16,18 @@
  * @see http://codex.wordpress.org/Function_Reference/add_action
  * @since 1.0.0
  */
+if( !function_exists( 'thmfdn_portfolio_setup' ) ) {
+	/**
+	 * Adds and removes actions from the hooks in the base template part
+	 */
+	function thmfdn_portfolio_setup() {
+		remove_action( 'thmfdn_entry', 'thmfdn_entry_title', 100 );
+		remove_action( 'thmfdn_entry', 'thmfdn_content', 200 );
 
-add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
-
-add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
-
-add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
+		add_action( 'thmfdn_entry', 'thmfdn_portfolio_featured_image', 50 );
+	}
+}
+add_action( 'thmfdn_template_part_setup', 'thmfdn_portfolio_setup' );
 
 /**
  *****************************************************************************
@@ -32,21 +38,7 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * @since 1.0.0
  */
-
-if ( !function_exists( 'thmfdn_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
+if ( !function_exists( 'thmfdn_portfolio_featured_image' ) ) {
 	/**
 	 * Featured image
 	 *
@@ -54,7 +46,7 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function thmfdn_archive_featured_image() {
+	function thmfdn_portfolio_featured_image() {
 		echo '<a href="' . get_permalink() . '">';
 		the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'gallery' ) );
 		echo '</a>';
@@ -62,35 +54,5 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_post_close' ) ) {
-	/**
-	 * Close #post div
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_post_close() {
-		?>
-			</div><!-- #post-number -->
-		<?php
-	}
-}
-
-/**
- *****************************************************************************
- * Do actions
- *****************************************************************************
- *
- * This section runs the actions associated with each hook.
- *
- * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0.0
- */
-
-// Use this hook to add and remove actions.
-do_action( 'thmfdn_template_part_setup' );
-
-do_action( 'thmfdn_entry_before' );
-do_action( 'thmfdn_entry_top' );
-do_action( 'thmfdn_entry' );
-do_action( 'thmfdn_entry_bottom' );
-do_action( 'thmfdn_entry_after' );
+// Loads the default template part.
+get_template_part( 'template-parts/content' );

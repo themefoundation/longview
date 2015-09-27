@@ -21,4 +21,39 @@
 	&.footer-after {
 		@include footer-row( #ffffff, #eeeeee, #222222 );
 	}
+
+	.site-credits {
+		line-height: ($line * 2 ) + $unit;
+		padding: 0 1rem;
+		margin-bottom: 0;
+	}
+
+
+	.thmfdn-footer-menu {
+
+		ul {
+			margin: 0;
+
+			ul {
+				display: inline;
+			}
+		}
+
+		li {
+			display: inline-block;
+			margin: 0;
+		}
+
+		a {
+			display: inline-block;
+			line-height: ($line * 2 ) + $unit;
+			padding: 0 1rem;
+		}
+	}
+
+	@include breakpoint-small {
+		.thmfdn-footer-menu {
+			float: right;
+		}
+	}
 }

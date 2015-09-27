@@ -78,7 +78,7 @@
 	}
 
 	@include breakpoint-large {
-		@include sidebar-content-sidebar( 6, 3, 3 );
+		@include sidebar-content-sidebar( 3, 6, 3 );
 		max-width: $three-column-wrap-width;
 	}
 }

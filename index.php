@@ -17,24 +17,13 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_content_top', 'thmfdn_content_open' );
-add_action( 'thmfdn_content_top', 'thmfdn_archive_title' );
-add_action( 'thmfdn_content_top', 'thmfdn_loop_open' );
+add_action( 'thmfdn_content_top', 'thmfdn_content_open', 100);
+add_action( 'thmfdn_content_top', 'thmfdn_archive_title', 200 );
+add_action( 'thmfdn_content_top', 'thmfdn_loop_open', 300 );
 
-add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close' );
-add_action( 'thmfdn_content_bottom', 'thmfdn_pagination' );
-add_action( 'thmfdn_content_bottom', 'thmfdn_content_close' );
-
-/**
- *****************************************************************************
- * Add filters
- *****************************************************************************
- *
- * This section adds filters to their respective filter hooks.
- *
- * @see http://codex.wordpress.org/Function_Reference/add_filter
- * @since 1.0.0
- */
+add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close', 100 );
+add_action( 'thmfdn_content_bottom', 'thmfdn_pagination', 200 );
+add_action( 'thmfdn_content_bottom', 'thmfdn_content_close', 300 );
 
 /**
  *****************************************************************************
@@ -181,10 +170,16 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ), apply_filters( 'thmfdn_template_part_name', '' ) );
+		get_template_part(
+			apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ),
+			apply_filters( 'thmfdn_template_part_name', 'archive' )
+		);
 	}
 } else {
-	get_template_part( apply_filters( 'thmfdn_404_template_part_slug', 'template-parts/404' ), apply_filters( 'thmfdn_404_template_part_name', '' ) );
+	get_template_part(
+		apply_filters( 'thmfdn_404_template_part_slug', 'template-parts/404' ),
+		apply_filters( 'thmfdn_404_template_part_name', '' )
+	);
 }
 
 do_action( 'thmfdn_content_bottom' );

@@ -113,6 +113,8 @@ if ( !function_exists( 'thmfdn_footer_menu' ) ) {
 		if ( ! is_active_sidebar( 'footer-inside' ) ) {
 			wp_nav_menu( array(
 				'theme_location' => 'footer_menu',
+				'container' => 'div',
+				'container_class' => 'thmfdn-footer-menu',
 				'fallback_cb' => false
 			) );
 		}

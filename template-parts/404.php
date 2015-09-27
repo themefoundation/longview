@@ -17,7 +17,18 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_entry', 'thmfdn_404_widgets' );
+if( !function_exists( 'thmfdn_content_grid_setup' ) ) {
+	/**
+	 * Adds and removes actions from the hooks in the base template part
+	 */
+	function thmfdn_content_grid_setup() {
+		remove_all_actions( 'thmfdn_entry' );
+
+		add_action( 'thmfdn_entry', 'thmfdn_404_widgets' );
+	}
+}
+add_action( 'thmfdn_template_part_setup', 'thmfdn_content_grid_setup' );
+
 
 
 /**
@@ -67,24 +78,5 @@ if ( !function_exists( 'thmfdn_404_widgets' ) ) {
 	}
 }
 
-
-
-/**
- *****************************************************************************
- * Do actions
- *****************************************************************************
- *
- * This section runs the actions associated with each hook.
- *
- * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0.0
- */
-
-// Use this hook to add and remove actions.
-do_action( 'thmfdn_template_part_setup' );
-
-do_action( 'thmfdn_entry_before' );
-do_action( 'thmfdn_entry_top' );
-do_action( 'thmfdn_entry' );
-do_action( 'thmfdn_entry_bottom' );
-do_action( 'thmfdn_entry_after' );
+// Loads the default template part.
+get_template_part( 'template-parts/content' );

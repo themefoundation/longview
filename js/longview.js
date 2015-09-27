@@ -28,7 +28,7 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * Adds support for converting phone numbers to links on touch devices
 	 */
-	// if ( 'ontouchstart' in document.documentElement ) {
+	if ( 'ontouchstart' in document.documentElement ) {
 
 		// For each element with class "touch-to-dial".
 		$( '.touch-to-dial' ).each(function() {
@@ -38,5 +38,5 @@ jQuery( document ).ready( function( $ ) {
 			$( this ).wrapInner( '<a href=""></a>' );
 			$( this ).find('a').attr( 'href', 'tel:' + ttdPhoneNumber );
 		});
-	// }
+	}
 });

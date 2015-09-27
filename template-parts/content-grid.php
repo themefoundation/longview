@@ -16,14 +16,18 @@
  * @see http://codex.wordpress.org/Function_Reference/add_action
  * @since 1.0.0
  */
+if( !function_exists( 'thmfdn_content_grid_setup' ) ) {
+	/**
+	 * Adds and removes actions from the hooks in the base template part
+	 */
+	function thmfdn_content_grid_setup() {
+		remove_action( 'thmfdn_entry', 'thmfdn_content', 200 );
 
-add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
-
-add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_entry_title' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_excerpt' );
-
-add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
+		add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image', 50 );
+		add_action( 'thmfdn_entry', 'thmfdn_archive_excerpt', 150 );
+	}
+}
+add_action( 'thmfdn_template_part_setup', 'thmfdn_content_grid_setup' );
 
 /**
  *****************************************************************************
@@ -34,19 +38,6 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * @since 1.0.0
  */
-
-if ( !function_exists( 'thmfdn_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class( 'thmfdn-grid-item' ); ?>>
-		<?php
-	}
-}
 
 if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 	/**
@@ -60,23 +51,6 @@ if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
 		echo '<a href="' . get_permalink() . '">';
 		the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'grid' ) );
 		echo '</a>';
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_entry_title' ) ) {
-	/**
-	 * Entry title
-	 *
-	 * Displays the post title.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_entry_title() {
-		echo '<h2 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		echo '<a href="' . get_permalink() . '">';
-		the_title();
-		echo '</a>';
-		echo '</h2>' . "\n";
 	}
 }
 
@@ -95,35 +69,6 @@ if ( !function_exists( 'thmfdn_archive_excerpt' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_post_close' ) ) {
-	/**
-	 * Close #post div
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_post_close() {
-		?>
-			</div><!-- #post-number -->
-		<?php
-	}
-}
+// Loads the default template part.
+get_template_part( 'template-parts/content' );
 
-/**
- *****************************************************************************
- * Do actions
- *****************************************************************************
- *
- * This section runs the actions associated with each hook.
- *
- * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0.0
- */
-
-// Use this hook to add and remove actions.
-do_action( 'thmfdn_template_part_setup' );
-
-do_action( 'thmfdn_entry_before' );
-do_action( 'thmfdn_entry_top' );
-do_action( 'thmfdn_entry' );
-do_action( 'thmfdn_entry_bottom' );
-do_action( 'thmfdn_entry_after' );

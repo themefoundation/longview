@@ -47,4 +47,4 @@ if ( !function_exists( 'thmfdn_template_part_page' ) ) {
 add_filter( 'thmfdn_template_part_name', 'thmfdn_template_part_page' );
 
 // Loads the default template.
-require_once( get_stylesheet_directory() . '/index.php' );
+locate_template( array( 'index.php' ), true );

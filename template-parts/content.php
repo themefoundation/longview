@@ -17,15 +17,12 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
+add_action( 'thmfdn_entry_top', 'thmfdn_post_open', 100 );
 
-add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_entry_title' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_meta_top' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_content' );
-add_action( 'thmfdn_entry', 'thmfdn_archive_meta_bottom' );
+add_action( 'thmfdn_entry', 'thmfdn_entry_title', 100 );
+add_action( 'thmfdn_entry', 'thmfdn_content', 200 );
 
-add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
+add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close', 100 );
 
 /**
  *****************************************************************************
@@ -50,21 +47,7 @@ if ( !function_exists( 'thmfdn_post_open' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
-	/**
-	 * Featured image
-	 *
-	 * Displays the featured image (formerly called the post thumbnail).
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
-		echo "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_entry_title' ) ) {
+if ( !function_exists( 'thmfdn_entry_title' ) ) {
 	/**
 	 * Entry title
 	 *
@@ -72,34 +55,22 @@ if ( !function_exists( 'thmfdn_archive_entry_title' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function thmfdn_archive_entry_title() {
-		echo '<h2 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		echo '<a href="' . get_permalink() . '">';
-		the_title();
-		echo '</a>';
-		echo '</h2>' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_meta_top' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_meta_top() {
-		$meta_args = apply_filters( 'thmfdn_archive_meta_top', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_top_class', 'entry-meta-top' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
+	function thmfdn_entry_title() {
+		if ( is_singular() ) {
+			echo '<h1 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
+			the_title();
+			echo '</h1>' . "\n";
+		} else {
+			echo '<h2 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
+			echo '<a href="' . get_permalink() . '">';
+			the_title();
+			echo '</a>';
+			echo '</h2>' . "\n";
 		}
 	}
 }
 
-if ( !function_exists( 'thmfdn_archive_content' ) ) {
+if ( !function_exists( 'thmfdn_content' ) ) {
 	/**
 	 * Entry content
 	 *
@@ -107,28 +78,10 @@ if ( !function_exists( 'thmfdn_archive_content' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function thmfdn_archive_content() {
+	function thmfdn_content() {
 		echo '<div class="' . apply_filters( 'thmfdn_entry_content_class', 'entry-content' ) . '">' . "\n";
 		the_content();
 		echo '</div><!--.entry-content-->' . "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_meta_bottom' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_meta_bottom() {
-		$meta_args = apply_filters( 'thmfdn_archive_meta_bottom', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_bottom_class', 'entry-meta-bottom' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
-		}
 	}
 }
 

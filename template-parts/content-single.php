@@ -17,17 +17,19 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_entry_top', 'thmfdn_post_open' );
-
-add_action( 'thmfdn_entry', 'thmfdn_single_title' );
-add_action( 'thmfdn_entry', 'thmfdn_single_meta_top' );
-add_action( 'thmfdn_entry', 'thmfdn_single_content' );
-add_action( 'thmfdn_entry', 'thmfdn_post_pagination' );
-add_action( 'thmfdn_entry', 'thmfdn_single_meta_bottom' );
-add_action( 'thmfdn_entry', 'thmfdn_posts_nav' );
-add_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-
-add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
+if( !function_exists( 'thmfdn_single_setup' ) ) {
+	/**
+	 * Adds and removes actions from the hooks in the base template part
+	 */
+	function thmfdn_single_setup() {
+		add_action( 'thmfdn_entry', 'thmfdn_single_meta_top', 150 );
+		add_action( 'thmfdn_entry', 'thmfdn_post_pagination', 250 );
+		add_action( 'thmfdn_entry', 'thmfdn_single_meta_bottom', 300 );
+		add_action( 'thmfdn_entry', 'thmfdn_posts_nav', 350 );
+		add_action( 'thmfdn_entry', 'thmfdn_single_comments', 400 );
+	}
+}
+add_action( 'thmfdn_template_part_setup', 'thmfdn_single_setup' );
 
 /**
  *****************************************************************************
@@ -38,34 +40,6 @@ add_action( 'thmfdn_entry_bottom', 'thmfdn_post_close' );
  *
  * @since 1.0.0
  */
-if ( !function_exists( 'thmfdn_post_open' ) ) {
-	/**
-	 * Open #post div
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_post_open() {
-		?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class( 'loop '); ?>>
-		<?php
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_title' ) ) {
-	/**
-	 * Entry title
-	 *
-	 * Displays the post title.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_single_title() {
-		echo '<h1 class="' . apply_filters( 'thmfdn_entry_title_class', 'entry-title' ) . '">';
-		the_title();
-		echo '</h1>' . "\n";
-	}
-}
-
 if ( !function_exists( 'thmfdn_single_meta_top' ) ) {
 	/**
 	 * Entry meta
@@ -81,21 +55,6 @@ if ( !function_exists( 'thmfdn_single_meta_top' ) ) {
 			thmfdn_post_meta( $meta_args );
 			echo '</div>' . "\n";
 		}
-	}
-}
-
-if ( !function_exists( 'thmfdn_single_content' ) ) {
-	/**
-	 * Entry content
-	 *
-	 * Displays the post content.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_single_content() {
-		echo '<div class="' . apply_filters( 'thmfdn_entry_content_class', 'entry-content' ) . '">' . "\n";
-		the_content();
-		echo '</div><!--.entry-content-->' . "\n";
 	}
 }
 
@@ -158,35 +117,5 @@ if ( !function_exists( 'thmfdn_single_comments' ) ) {
 	}
 }
 
-if ( !function_exists( 'thmfdn_post_close' ) ) {
-	/**
-	 * Close #post div
-	 *
-	 * @since 1.0.
-	 */
-	function thmfdn_post_close() {
-		?>
-			</div><!-- #post-number -->
-		<?php
-	}
-}
-
-/**
- *****************************************************************************
- * Do actions
- *****************************************************************************
- *
- * This section runs the actions associated with each hook.
- *
- * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
- */
-
-// Use this hook to add and remove actions.
-do_action( 'thmfdn_template_part_setup' );
-
-do_action( 'thmfdn_entry_before' );
-do_action( 'thmfdn_entry_top' );
-do_action( 'thmfdn_entry' );
-do_action( 'thmfdn_entry_bottom' );
-do_action( 'thmfdn_entry_after' );
+// Loads the default template part.
+get_template_part( 'template-parts/content' );

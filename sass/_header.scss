@@ -177,6 +177,11 @@
 	}
 
 	.widget_search {
+		input[type="search"] {
+			border: 1px solid #f6f6f6 !important;
+			border-right: 0 solid !important;
+		}
+
 		@include breakpoint-large {
 			margin-top: (($line * 2) + $unit);
 		}

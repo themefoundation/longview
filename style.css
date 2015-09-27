@@ -545,7 +545,8 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  word-wrap: break-word; }
 
 img {
   max-width: 100%;
@@ -733,15 +734,15 @@ pre {
       float: left;
       display: block;
       margin-right: 2.3576515979%;
-      width: 23.2317613015%;
-      margin-left: 51.178825799%; }
+      width: 48.821174201%;
+      margin-left: 25.5894128995%; }
       .sidebar-content-sidebar #main .wrap .primary:last-child {
         margin-right: 0; }
     .sidebar-content-sidebar #main .wrap .secondary {
       float: left;
       display: block;
       margin-right: 2.3576515979%;
-      width: 48.821174201%;
+      width: 23.2317613015%;
       margin-left: -76.7682386985%; }
       .sidebar-content-sidebar #main .wrap .secondary:last-child {
         margin-right: 0; }
@@ -1301,6 +1302,10 @@ by Jonathan Snook at http://smacss.com
   padding-bottom: 0;
   line-height: 2.75rem; }
 
+#header .widget_search input[type="search"] {
+  border: 1px solid #f6f6f6 !important;
+  border-right: 0 solid !important; }
+
 @media (min-width: 1140px) {
   #header .widget_search {
     margin-top: 2.75rem; } }
@@ -1429,6 +1434,29 @@ by Jonathan Snook at http://smacss.com
     text-decoration: none; }
   .site-footer.footer-after a:hover {
     text-decoration: underline; }
+
+.site-footer .site-credits {
+  line-height: 2.75rem;
+  padding: 0 1rem;
+  margin-bottom: 0; }
+
+.site-footer .thmfdn-footer-menu ul {
+  margin: 0; }
+  .site-footer .thmfdn-footer-menu ul ul {
+    display: inline; }
+
+.site-footer .thmfdn-footer-menu li {
+  display: inline-block;
+  margin: 0; }
+
+.site-footer .thmfdn-footer-menu a {
+  display: inline-block;
+  line-height: 2.75rem;
+  padding: 0 1rem; }
+
+@media (min-width: 600px) {
+  .site-footer .thmfdn-footer-menu {
+    float: right; } }
 
 /* =Universal Widget Styles
 -------------------------------------------------------------- */
@@ -1731,6 +1759,7 @@ input[type="submit"]:hover {
   margin-right: 1rem; }
 
 .aligncenter {
+  display: block;
   margin-left: auto;
   margin-right: auto; }
 
