@@ -14,6 +14,20 @@
 	}
 }
 
+/* =Search Content Format
+-------------------------------------------------------------- */
+#main .thmfdn-search {
+	.wp-post-image {
+		float: left;
+		width: 25%;
+		margin-right: 5%;
+	}
+}
+
+.thmfdn-meta {
+	margin-bottom: (($line * 2) + $unit);
+}
+
 /* =Page Template: Child Page Grid
 -------------------------------------------------------------- */
 .page-template-child-page-grid #content > .loop > .page {

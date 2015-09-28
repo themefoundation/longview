@@ -27,14 +27,7 @@ do_action( 'thmfdn_template_part_setup' );
 	<?php } ?>
 	<?php do_action( 'thmfdn_entry_title_after' ); ?>
 
-	<?php
-		$meta_args = apply_filters( 'thmfdn_archive_meta_top', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_top_class', 'entry-meta-top' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
-		}
-	?>
+	<?php thmfdn_post_meta( array( 'date' ), array( 'display_titles' => false ) ); ?>
 
 	<?php do_action( 'thmfdn_entry_content_before' ); ?>
 	<div class="<?php echo apply_filters( 'thmfdn_entry_content_class', 'entry-content' ); ?>">
@@ -43,15 +36,13 @@ do_action( 'thmfdn_template_part_setup' );
 	<?php do_action( 'thmfdn_entry_content_after' ); ?>
 
 	<?php
-		$meta_args = apply_filters( 'thmfdn_archive_meta_bottom', array() );
-		if ( !empty( $meta_args ) ) {
-			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_bottom_class', 'entry-meta-bottom' ) . '">';
-			thmfdn_post_meta( $meta_args );
-			echo '</div>' . "\n";
-		}
+		// Display additional post meta (function located in includes/helpers.php file).
+		thmfdn_post_meta( array( 'categories' ) );
 
+		// Display post naviation (WordPress core function).
 		the_post_navigation();
 
+		// Loads comments.php file.
 		comments_template();
 	?>
 

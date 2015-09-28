@@ -10,54 +10,109 @@
  */
 
 /**
- * Displays post meta based on $meta_args
+ * Displays post meta based on $meta_data
  *
  * @since 1.0.0
- * @param array $meta_args Array of meta data to display.
+ * @param array $meta_data Array of meta data to display.
+ * @param array $args Array of display settings.
  */
-function thmfdn_post_meta( $meta_args = array() ) {
-	if ( !empty( $meta_args ) ) {
-		foreach ( $meta_args as $meta => $meta_title ) {
+function thmfdn_post_meta( $meta_data = array(), $args = array() ) {
+	$defaults = array(
+		'class_name' => '',
+		'separator' => '&bull;',
+		'display_titles' => true
+	);
+
+	$args = array_merge( $defaults, $args );
+
+	echo '<div class="thmfdn-meta ' . $args['class_name'] . '">';
+
+	if ( !empty( $meta_data ) ) {
+		$display_separator = false;
+		foreach ( $meta_data as $meta ) {
 			switch ( $meta ) {
 				case 'author':
-					echo '<span class="meta author-wrap">' . $meta_title;
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
+					echo '<span class="meta author-wrap">';
+					if ( $args['display_titles'] ) {
+						_e( 'By ', 'thmfdn_textdomain' );
+					}
 					echo '<span class="author">';
 					the_author();
 					echo '</span>';
-					echo '</span>';
+					echo '</span> ';
+					$display_separator = true;
 					break;
 				case 'author_website':
-					echo '<span class="meta author-wrap">' . $meta_title;
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
+					echo '<span class="meta author-wrap">';
+					if ( $args['display_titles'] ) {
+						_e( 'By ', 'thmfdn_textdomain' );
+					}
 					echo '<span class="author">';
 					the_author_link();
 					echo '</span>';
-					echo '</span>';
+					echo '</span> ';
+					$display_separator = true;
 					break;
 				case 'author_posts':
-					echo '<span class="meta author-wrap">' . $meta_title;
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
+					echo '<span class="meta author-wrap">';
+					if ( $args['display_titles'] ) {
+						_e( 'By ', 'thmfdn_textdomain' );
+					}
 					echo '<span class="author">';
 					the_author_posts_link();
 					echo '</span>';
-					echo '</span>';
+					echo '</span> ';
+					$display_separator = true;
 					break;
 				case 'categories':
-					echo '<span class="meta categories-wrap">' . $meta_title;
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
+					echo '<span class="meta categories-wrap">';
+					if ( $args['display_titles'] ) {
+						_e( 'Posted in: ', 'thmfdn_textdomain' );
+					}
 					echo '<span class="categories">';
-					the_category();
+					the_category( ', ' );
 					echo '</span>';
-					echo '</span>';
+					echo '</span> ';
+					$display_separator = true;
 					break;
 				case 'date':
-					echo '<span class="meta date-wrap">' . $meta_title;
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
+					echo '<span class="meta date-wrap">';
+					if ( $args['display_titles'] ) {
+						_e( 'Published: ', 'thmfdn_textdomain' );
+					}
 					echo '<span class="date">';
 					the_time( get_option( 'date_format' ) );
 					echo '</span>';
-					echo '</span>';
+					echo '</span> ';
+					$display_separator = true;
 					break;
 				case 'tags':
+					if ( $display_separator ) {
+						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					}
 					echo '<span class="meta tags-wrap">';
-					the_tags( $meta_title );
-					echo '</span>';
+					if ( $args['display_titles'] ) {
+						the_tags( __( 'Tags: ', 'thmfdn_textdomain' ) );
+					} else {
+						the_tags();
+					}
+					echo '</span> ';
+					$display_separator = true;
 					break;
 
 				default:
@@ -66,6 +121,8 @@ function thmfdn_post_meta( $meta_args = array() ) {
 			}
 		}
 	}
+
+	echo '</div>';
 }
 
 

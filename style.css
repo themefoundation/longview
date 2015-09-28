@@ -1396,12 +1396,12 @@ by Jonathan Snook at http://smacss.com
 
 /* =Universal
 -------------------------------------------------------------- */
+.page,
 .post {
-  padding-bottom: 5.5rem; }
+  padding-bottom: 1.375rem; }
 
-.entry-meta-top,
-.entry-meta-bottom {
-  margin-bottom: 1.375rem; }
+.entry-content {
+  padding-bottom: 1.375rem; }
 
 /* =Footer
 -------------------------------------------------------------- */
@@ -1657,6 +1657,16 @@ input[type="submit"]:hover {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
+
+/* =Search Content Format
+-------------------------------------------------------------- */
+#main .thmfdn-search .wp-post-image {
+  float: left;
+  width: 25%;
+  margin-right: 5%; }
+
+.thmfdn-meta {
+  margin-bottom: 2.75rem; }
 
 /* =Page Template: Child Page Grid
 -------------------------------------------------------------- */

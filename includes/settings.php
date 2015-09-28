@@ -141,6 +141,11 @@ function get_thmfdn_content_format( $format_class = '' ) {
 		$format_class = get_post_format();
 	}
 
+	if ( is_search() ) {
+		$format_class = 'search';
+	}
+
+
 	// Overrides default content format for archives.
 	if ( is_tag() ) {
 		$format_class = 'grid';

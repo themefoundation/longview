@@ -32,11 +32,11 @@
 /* =Universal
 -------------------------------------------------------------- */
 
+.page,
 .post {
-	padding-bottom: ($line * 4) + $unit;
+	padding-bottom: ($line + $unit);
 }
 
-.entry-meta-top,
-.entry-meta-bottom {
-	margin-bottom: ($line + $unit);
+.entry-content {
+	padding-bottom: ($line + $unit);
 }
