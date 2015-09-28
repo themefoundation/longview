@@ -55,13 +55,6 @@ add_filter( 'thmfdn_thumbnail_size', 'thmfdn_child_page_grid_thumbnail_size' );
  */
 function thmfdn_display_child_grid() {
 
-	// Removes actions added by the content-page.php template.
-	// These actions will be used by the content-grid.php template.
-	// If previous actions aren't removed, they will carry over.
-	remove_all_actions( 'thmfdn_entry_top' );
-	remove_all_actions( 'thmfdn_entry' );
-	remove_all_actions( 'thmfdn_entry_bottom' );
-
 	// Sets up the child page query.
 	$child_pages = new WP_Query( array(
 		'post_type' => 'page',

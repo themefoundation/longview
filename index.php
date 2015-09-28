@@ -170,16 +170,24 @@ do_action( 'thmfdn_content_top' );
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
+		do_action( 'thmfdn_entry_before' );
+
 		get_template_part(
 			apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ),
 			apply_filters( 'thmfdn_template_part_name', 'archive' )
 		);
+
+		do_action( 'thmfdn_entry_after' );
 	}
 } else {
+	do_action( 'thmfdn_entry_before' );
+
 	get_template_part(
 		apply_filters( 'thmfdn_404_template_part_slug', 'template-parts/404' ),
 		apply_filters( 'thmfdn_404_template_part_name', '' )
 	);
+
+	do_action( 'thmfdn_entry_after' );
 }
 
 do_action( 'thmfdn_content_bottom' );

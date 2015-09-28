@@ -40,7 +40,7 @@ if ( !function_exists( 'thmfdn_template_part_page' ) ) {
 	 * @since 1.0.0
 	 */
 	function thmfdn_template_part_page() {
-		return 'page';
+		return '';
 	}
 }
 // The thmfdn_template_part_name filter hook is located in the index.php file.

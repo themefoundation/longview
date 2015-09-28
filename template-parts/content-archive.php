@@ -6,89 +6,52 @@
  * @since 1.0.0
  */
 
-/**
- *****************************************************************************
- * Add actions
- *****************************************************************************
- *
- * This section adds actions to their respective action hooks.
- *
- * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0.0
- */
+// Use this hook to add and remove actions.
+do_action( 'thmfdn_template_part_setup' );
+?>
 
-if( !function_exists( 'thmfdn_archive_setup' ) ) {
-	/**
-	 * Adds and removes actions from the hooks in the base template part
-	 */
-	function thmfdn_archive_setup() {
-		add_action( 'thmfdn_entry', 'thmfdn_archive_featured_image', 50 );
-		add_action( 'thmfdn_entry', 'thmfdn_archive_meta_top', 150 );
-		add_action( 'thmfdn_entry', 'thmfdn_archive_meta_bottom', 250 );
-	}
-}
-add_action( 'thmfdn_template_part_setup', 'thmfdn_archive_setup' );
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php do_action( 'thmfdn_entry_top' ); ?>
 
+	<?php the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) ); ?>
 
-/**
- *****************************************************************************
- * Define actions
- *****************************************************************************
- *
- * This section defines the actions associated with each hook.
- *
- * @since 1.0.0
- */
+	<?php do_action( 'thmfdn_entry_title_before' ); ?>
+	<?php if ( is_singular() ) { ?>
+		<h1 class="<?php echo apply_filters( 'thmfdn_entry_title_class', 'entry-title' ); ?>">
+			<?php the_title(); ?>
+		</h1>
+	<?php } else { ?>
+		<h2 class="<?php echo apply_filters( 'thmfdn_entry_title_class', 'entry-title' ); ?>">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_title(); ?>
+			</a>
+		</h2>
+	<?php } ?>
+	<?php do_action( 'thmfdn_entry_title_after' ); ?>
 
-if ( !function_exists( 'thmfdn_archive_featured_image' ) ) {
-	/**
-	 * Featured image
-	 *
-	 * Displays the featured image (formerly called the post thumbnail).
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_featured_image() {
-		the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) );
-		echo "\n";
-	}
-}
-
-if ( !function_exists( 'thmfdn_archive_meta_top' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_meta_top() {
+	<?php
 		$meta_args = apply_filters( 'thmfdn_archive_meta_top', array() );
 		if ( !empty( $meta_args ) ) {
 			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_top_class', 'entry-meta-top' ) . '">';
 			thmfdn_post_meta( $meta_args );
 			echo '</div>' . "\n";
 		}
-	}
-}
+	?>
 
-if ( !function_exists( 'thmfdn_archive_meta_bottom' ) ) {
-	/**
-	 * Entry meta
-	 *
-	 * Displays the post meta data.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_archive_meta_bottom() {
+	<?php do_action( 'thmfdn_entry_content_before' ); ?>
+	<div class="<?php echo apply_filters( 'thmfdn_entry_content_class', 'entry-content' ); ?>">
+		<?php the_content(); ?>
+	</div><!--.entry-content-->
+	<?php do_action( 'thmfdn_entry_content_after' ); ?>
+
+	<?php
 		$meta_args = apply_filters( 'thmfdn_archive_meta_bottom', array() );
 		if ( !empty( $meta_args ) ) {
 			echo '<div class="' . apply_filters( 'thmfdn_entry_meta_bottom_class', 'entry-meta-bottom' ) . '">';
 			thmfdn_post_meta( $meta_args );
 			echo '</div>' . "\n";
 		}
-	}
-}
+	?>
 
-// Loads the default template part.
-get_template_part( 'template-parts/content' );
+	<?php do_action( 'thmfdn_entry_bottom' ); ?>
+</div><!-- #post-number -->
