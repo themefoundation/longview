@@ -13,7 +13,7 @@ do_action( 'thmfdn_template_part_setup' );
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action( 'thmfdn_entry_top' ); ?>
 
-	<?php the_post_thumbnail( apply_filters( 'thmfdn_archive_thumbnail_size', apply_filters( 'thmfdn_thumbnail_size', '' ) ) ); ?>
+	<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
 
 	<?php do_action( 'thmfdn_entry_title_before' ); ?>
 	<?php if ( is_singular() ) { ?>

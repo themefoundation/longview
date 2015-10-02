@@ -39,8 +39,8 @@ if ( !function_exists( 'thmfdn_template_part_single' ) ) {
 		return 'single';
 	}
 }
-// The thmfdn_template_part_name filter hook is located in the index.php file.
-add_filter( 'thmfdn_template_part_name', 'thmfdn_template_part_single' );
+// The thmfdn_template_part_class filter hook is located in the index.php file.
+add_filter( 'thmfdn_content_format', 'thmfdn_template_part_single' );
 
 // Loads the default template.
 require_once( get_stylesheet_directory() . '/index.php' );

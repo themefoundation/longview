@@ -19,7 +19,7 @@ do_action( 'thmfdn_template_part_setup' );
 	<?php do_action( 'thmfdn_entry_content_before' ); ?>
 	<div class="<?php echo apply_filters( 'thmfdn_entry_content_class', 'entry-content' ); ?>">
 		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'gallery' ) ); ?>
+			<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', 'portfolio' ) ); ?>
 		</a>
 	</div><!--.entry-content-->
 	<?php do_action( 'thmfdn_entry_content_after' ); ?>

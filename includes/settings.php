@@ -134,24 +134,23 @@ function get_thmfdn_layout() {
  * @since 1.0
  * @return string Layout class name.
  */
-function get_thmfdn_content_format( $format_class = '' ) {
+function get_thmfdn_content_format( $format = '' ) {
 
 	// Sets default content format.
-	if ( empty( $format_class ) ) {
-		$format_class = get_post_format();
+	if ( empty( $format ) ) {
+		$format = get_post_format();
 	}
 
 	if ( is_search() ) {
-		$format_class = 'search';
+		$format = 'search';
 	}
 
-
-	// Overrides default content format for archives.
+	// Overrides default content format for tag archives.
 	if ( is_tag() ) {
-		$format_class = 'grid';
+		$format = 'grid';
 	}
 
-	return apply_filters( 'thmfdn_content_format_class', $format_class );
+	return apply_filters( 'thmfdn_content_format', $format );
 }
 add_filter( 'thmfdn_template_part_name', 'get_thmfdn_content_format' );
 

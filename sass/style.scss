@@ -28,7 +28,7 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
-// TODO: Figure out how to handle the rest of the post meta besides date and tags.
+// TODO: Make sure "posted in:" isn't displayed if there are no categories.
 // TODO: Figure out a way to better modularize mo.scss (it shouldn't need so many of it's own variables... maybe separate things like padding/line height out?)
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.
@@ -44,3 +44,4 @@ Tags: editor-style, threaded-comments
 	// 		}
 	// }
 	// add_action( 'wp', 'thmfnd_remove_widget_areas', 11 );
+// TODO: Write tutorial on thmfdn_log function

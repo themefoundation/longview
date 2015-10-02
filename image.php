@@ -7,18 +7,7 @@
  */
 
 /**
- * Remove unwanted elements
- *
- * @since 1.0.0
- */
-function thmfdn_attachment_template() {
-	remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-	remove_action( 'thmfdn_entry', 'thmfdn_single_meta_top' );
-}
-add_action( 'thmfdn_template_part_setup', 'thmfdn_attachment_template' );
-
-/**
- * Displays the Before Footer widget area
+ * Replaces typical post content with the image attachment
  *
  * @since 1.0.0
  * @param string $content Post content.
@@ -26,9 +15,19 @@ add_action( 'thmfdn_template_part_setup', 'thmfdn_attachment_template' );
 function thmfdn_attachment_content( $content ) {
 	global $post;
 
-	return wp_get_attachment_image( $post->ID, 'large' ); // filterable image width with, essentially, no limit for image height.
+	return wp_get_attachment_image( $post->ID, 'large' );
 }
 add_filter( 'the_content', 'thmfdn_attachment_content' );
 
-// Loads the default single post template.
-require_once( get_stylesheet_directory() . '/single.php' );
+/**
+ * Adds link back to attached post
+ *
+ * @since 1.0.0
+ */
+function thmfdn_attachment_template() {
+	the_post_navigation();
+}
+add_action( 'thmfdn_entry_content_after', 'thmfdn_attachment_template' );
+
+// Loads the default page template.
+require_once( get_stylesheet_directory() . '/page.php' );

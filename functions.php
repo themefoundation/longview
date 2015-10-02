@@ -13,8 +13,3 @@ locate_template( array('includes/actions.php'), true );
 locate_template( array('includes/filters.php'), true );
 locate_template( array('includes/helpers.php'), true );
 locate_template( array('includes/widget-areas.php'), true );
-// include_once( get_stylesheet_directory() . '/includes/settings.php' );
-// include_once( get_stylesheet_directory() . '/includes/actions.php' );
-// include_once( get_stylesheet_directory() . '/includes/filters.php' );
-// include_once( get_stylesheet_directory() . '/includes/helpers.php' );
-// include_once( get_stylesheet_directory() . '/includes/widget-areas.php' );

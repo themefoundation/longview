@@ -42,9 +42,14 @@ function thmfdn_portfolio_archive_content_format( $format ) {
 		$format = 'portfolio';
 	}
 
+	// Overrides default content format for single portfolio pages.
+	if ( is_singular( 'portfolio' ) ) {
+		$format = '';
+	}
+
 	return $format;
 }
-add_filter( 'thmfdn_content_format_class', 'thmfdn_portfolio_archive_content_format' );
+add_filter( 'thmfdn_content_format', 'thmfdn_portfolio_archive_content_format', 100 );
 
 /**
  * Removes page title form portfolio archive pages
@@ -53,19 +58,7 @@ add_filter( 'thmfdn_content_format_class', 'thmfdn_portfolio_archive_content_for
  */
 function thmfdn_portfolio_archive_remove_title() {
 	if ( is_post_type_archive( 'portfolio' ) ) {
-		remove_action( 'thmfdn_content_top', 'thmfdn_archive_title' );
+		remove_action( 'thmfdn_content_top', 'thmfdn_archive_title', 200 );
 	}
 }
 add_action( 'thmfdn_template_setup', 'thmfdn_portfolio_archive_remove_title' );
-
-/**
- * Removes comment form from single portfolio pages
- *
- * @since 1.0.0
- */
-function thmfdn_portfolio_remove_comments() {
-	if ( is_singular( 'portfolio' ) ) {
-		remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-	}
-}
-add_action( 'thmfdn_template_part_setup', 'thmfdn_portfolio_remove_comments' );
