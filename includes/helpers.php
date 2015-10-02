@@ -74,18 +74,20 @@ function thmfdn_post_meta( $meta_data = array(), $args = array() ) {
 					$display_separator = true;
 					break;
 				case 'categories':
-					if ( $display_separator ) {
-						echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+					if ( has_category() ) {
+						if ( $display_separator ) {
+							echo '<span class="thmfdn-meta-separator"> ' . $args['separator'] . ' </span>';
+						}
+						echo '<span class="meta categories-wrap">';
+						if ( $args['display_titles'] ) {
+							_e( 'Posted in: ', 'thmfdn_textdomain' );
+						}
+						echo '<span class="categories">';
+						the_category( ', ' );
+						echo '</span>';
+						echo '</span> ';
+						$display_separator = true;
 					}
-					echo '<span class="meta categories-wrap">';
-					if ( $args['display_titles'] ) {
-						_e( 'Posted in: ', 'thmfdn_textdomain' );
-					}
-					echo '<span class="categories">';
-					the_category( ', ' );
-					echo '</span>';
-					echo '</span> ';
-					$display_separator = true;
 					break;
 				case 'date':
 					if ( $display_separator ) {
