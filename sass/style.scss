@@ -28,7 +28,10 @@ Tags: editor-style, threaded-comments
 @import 'wp-components';
 @import 'plugins';
 
-// TODO: Make sure "posted in:" isn't displayed if there are no categories.
+// TODO: Add styles for HTML5 form elements (noticable in comment form)
+// TODO: Fix comment styles.
+// TODO: Make post meta output filterable/controlable from child themes.
+// TODO: Change mo.js placeholders to mixins.
 // TODO: Figure out a way to better modularize mo.scss (it shouldn't need so many of it's own variables... maybe separate things like padding/line height out?)
 // TODO: Add js and css minification
 // TODO: Allow minified files to be bypassed in dev mode.

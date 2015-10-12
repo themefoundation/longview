@@ -169,56 +169,6 @@ function thmfdn_is_registered_sidebar( $name ) {
 }
 
 /**
- * Removes the post title from single posts
- *
- * @since 1.0.0
- */
-function thmfdn_remove_single_title(){
-	remove_action( 'thmfdn_entry', 'thmfdn_single_title' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_title', 9 ); // Single posts
-
-/**
- * Removes the post titles from archive pages
- *
- * @since 1.0.0
- */
-function thmfdn_remove_archive_title(){
-	remove_action( 'thmfdn_entry', 'thmfdn_archive_title' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_title', 9 ); // Archive posts
-
-/**
- * Removes the thumbnail images from single posts
- *
- * @since 1.0.0
- */
-function thmfdn_remove_single_featured_image(){
-	remove_action( 'thmfdn_entry', 'thmfdn_single_featured_image' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_featured_image', 9 ); // Single posts
-
-/**
- * Removes the thumbnail images from archive pages
- *
- * @since 1.0.0
- */
-function thmfdn_remove_archive_featured_image(){
-	remove_action( 'thmfdn_entry', 'thmfdn_archive_featured_image' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_archive_featured_image', 9 ); // Archive posts
-
-/**
- * Removes comments from single posts
- *
- * @since 1.0.0
- */
-function thmfdn_remove_single_comments(){
-	remove_action( 'thmfdn_entry', 'thmfdn_single_comments' );
-}
-// add_action( 'thmfdn_entry', 'thmfdn_remove_single_comments', 9 ); // Single posts
-
-/**
  * Writes $message to the WordPress log file
  *
  * This funciton checks if debugging is turned on. If it is, this function can
@@ -227,6 +177,7 @@ function thmfdn_remove_single_comments(){
  * that doesn't let the variable be printed to the screen.
  *
  * @since 1.0.0
+ * @param string|array|object $message The data to write to the log file.
  */
 function thmfdn_log( $message ) {
 	if( WP_DEBUG === true ){

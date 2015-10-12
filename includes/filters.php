@@ -53,6 +53,7 @@ add_filter( 'body_class', 'thmfdn_body_class_layout' );
 /**
  * Adds format class to .primary column
  *
+ * @since 1.0.0
  * @param string $classes String of class names used for the .primary column.
  * @return string $classes Updated string of class names used for the .primary column.
  */
@@ -70,7 +71,13 @@ function thmfdn_content_class_format( $classes ) {
 }
 add_filter( 'thmfdn_content_class', 'thmfdn_content_class_format' );
 
-
+/**
+ * Sets the default "more" text at the end of excerpts
+ *
+ * @since 1.0.0
+ * @param string $more Default "more" text.
+ * @return string Custom "more" text.
+ */
 function thmfdn_excerpt_more( $more ) {
 	return '...';
 }

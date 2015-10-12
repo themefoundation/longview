@@ -184,8 +184,6 @@ if ( !function_exists( 'thmfdn_after_footer_widgets' ) ) {
 	/**
 	 * Displays the After Footer widget area
 	 *
-	 * @since 1.0
-	 *
 	 * @since 1.0.0
 	 */
 	function thmfdn_after_footer_widgets() {

@@ -12,7 +12,7 @@
 /**
  * Registers sidebars
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_register_sidebars() {
 
@@ -135,9 +135,3 @@ function thmfdn_register_sidebars() {
 
 }
 add_action( 'widgets_init', 'thmfdn_register_sidebars' );
-
-
-
-
-
-

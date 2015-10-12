@@ -30,7 +30,6 @@ function thmfdn_nav_description( $item_output, $item, $depth, $args ) {
     return $item_output;
 }
 
-
 /**
  * Adds class to menu list
  *
@@ -53,8 +52,6 @@ function thmfdn_add_description_class( $nav_menu_args, $nav_menu, $args ) {
 
 	return $nav_menu_args;
 }
-
-
 
 /**
  * Add description option to menu widget

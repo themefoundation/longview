@@ -4,7 +4,7 @@
  * Single page template with no sidebars and standard size content
  *
  * @package Longview
- * @since 1.0
+ * @since 1.0.0
  */
 
 /*
@@ -14,7 +14,7 @@ Template Name: No Sidebars
 /**
  * Sets the layout class
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Layout class.
  */
 function thmfdn_no_sidebars_page() {

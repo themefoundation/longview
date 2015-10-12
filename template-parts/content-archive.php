@@ -16,17 +16,11 @@ do_action( 'thmfdn_template_part_setup' );
 	<?php the_post_thumbnail( apply_filters( 'thmfdn_thumbnail_size', '' ) ); ?>
 
 	<?php do_action( 'thmfdn_entry_title_before' ); ?>
-	<?php if ( is_singular() ) { ?>
-		<h1 class="<?php echo apply_filters( 'thmfdn_entry_title_class', 'entry-title' ); ?>">
+	<h2 class="<?php echo apply_filters( 'thmfdn_entry_title_class', 'entry-title' ); ?>">
+		<a href="<?php the_permalink(); ?>">
 			<?php the_title(); ?>
-		</h1>
-	<?php } else { ?>
-		<h2 class="<?php echo apply_filters( 'thmfdn_entry_title_class', 'entry-title' ); ?>">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
-			</a>
-		</h2>
-	<?php } ?>
+		</a>
+	</h2>
 	<?php do_action( 'thmfdn_entry_title_after' ); ?>
 
 	<?php thmfdn_post_meta( array( 'date' ), array( 'display_titles' => false ) ); ?>

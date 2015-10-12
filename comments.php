@@ -60,12 +60,14 @@ if ( post_password_required() ) {
  * Single comment callback template
  *
  * This is based on the html5_comment() function in the
- * wp-includes/comments-template.php file. 
+ * wp-includes/comments-template.php file.
  *
- * @package THMFDN
- * @since 1.0
+ * @since 1.0.0
+ * @param object $comment Object holding the comment data.
+ * @param array $args Array of settings for displaying comment data.
+ * @param integer $depth Nested comment depth.
  */
-function thmfdn_comment ( $comment, $args, $depth ) {
+function thmfdn_comment( $comment, $args, $depth ) {
 	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 	?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $args['has_children'] ? 'parent' : '' ); ?>>
@@ -105,4 +107,4 @@ function thmfdn_comment ( $comment, $args, $depth ) {
 				?>
 			</article><!-- .comment-body -->
 	<?php
-}	
+}

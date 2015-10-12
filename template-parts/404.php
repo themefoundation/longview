@@ -6,20 +6,11 @@
  * @since 1.0.0
  */
 
-/**
- *****************************************************************************
- * Add actions
- *****************************************************************************
- *
- * This section adds actions to their respective action hooks.
- *
- * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0.0
- */
-
 if( !function_exists( 'thmfdn_content_grid_setup' ) ) {
 	/**
 	 * Adds and removes actions from the hooks in the base template part
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_content_grid_setup() {
 		remove_all_actions( 'thmfdn_entry' );
@@ -28,18 +19,6 @@ if( !function_exists( 'thmfdn_content_grid_setup' ) ) {
 	}
 }
 add_action( 'thmfdn_template_part_setup', 'thmfdn_content_grid_setup' );
-
-
-
-/**
- *****************************************************************************
- * Define actions
- *****************************************************************************
- *
- * This section defines the actions associated with each hook.
- *
- * @since 1.0.0
- */
 
 if ( !function_exists( 'thmfdn_404_widgets' ) ) {
 	/**

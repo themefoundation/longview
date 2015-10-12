@@ -4,7 +4,7 @@
  * Single page template with double right sidebars
  *
  * @package Longview
- * @since 1.0
+ * @since 1.0.0
  */
 
 /*
@@ -14,7 +14,7 @@ Template Name: Content-Sidebar-Sidebar
 /**
  * Sets the layout class
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Layout class.
  */
 function thmfdn_content_sidebar_sidebar_page() {

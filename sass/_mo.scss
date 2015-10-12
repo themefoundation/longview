@@ -12,9 +12,6 @@ by Jonathan Snook at http://smacss.com
 /* =Variables
 -------------------------------------------------------------- */
 
-// Default menu font size.
-$mo-font-size: 1;
-
 // Line height determines the height of clickable menu items.
 $mo-line-height: 2.75;
 
@@ -26,12 +23,6 @@ $mo-breakpoint-tablet: 900px;
 
 // Breakpoint for applying desktop styles.
 $mo-breakpoint-desktop: 1140px;
-
-// Background color for default menu.
-$mo-default-background-color: #ffffff;
-
-// Background color for default hovered menu items.
-$mo-default-background-color-hover: #eeeeee;
 
 // Border color for default menu items. Only used if the %border-style placeholder is in use.
 $mo-default-border-color: #dddddd;
@@ -122,8 +113,6 @@ $mo-class-hidden: is-hidden-menu;
 
 	a {
 		position: relative;
-		padding: 0 $mo-font-size + $mo-unit;
-		line-height: $mo-line-height + $mo-unit;
 	}
 
 	// Drop downs (first level)
@@ -171,21 +160,6 @@ $mo-class-hidden: is-hidden-menu;
 	}
 }
 
-/* =Block style
--------------------------------------------------------------- */
-/// Block design styles.
-%block-style {
-	a:hover,
-	a:focus {
-		background: $mo-default-background-color-hover;
-		outline: none;
-	}
-
-	ul a {
-		background: $mo-default-background-color;
-	}
-}
-
 /* =Border style
 -------------------------------------------------------------- */
 /// Border design styles.
@@ -198,7 +172,6 @@ $mo-class-hidden: is-hidden-menu;
 
 			a {
 				// border: 1px solid $mo-default-border-color;
-				height: $mo-line-height + $mo-unit;
 				// margin-top: -1px;
 				border-bottom: 0 solid;
 				outline: none;
@@ -314,8 +287,7 @@ $mo-class-hidden: is-hidden-menu;
 	text-align: left;
 	text-transform: uppercase;
 	color: #ffffff;
-	padding: 0 $mo-font-size + $mo-unit;
-	display: inline-block;
+	padding: 0 1em;
 }
 
 /* =Mobile menu
@@ -323,20 +295,10 @@ $mo-class-hidden: is-hidden-menu;
 /// Mobile menu styles.
 %is-mobile-menu {
 	text-align: left;
-	background-color: $mo-mobile-background-color;
 
+	a,
 	li {
 		display: block;
-
-		a {
-			display: block;
-			background-color: $mo-mobile-background-color;
-			color: $mo-mobile-font-color;
-
-			&:hover {
-				background-color: $mo-mobile-background-color-hover;
-			}
-		}
 	}
 
 	ul {
@@ -345,7 +307,7 @@ $mo-class-hidden: is-hidden-menu;
 		margin-top: 0;
 
 		li {
-			margin: 0 $mo-font-size + $mo-unit;
+			margin: 0 1em;
 		}
 
 		ul {
@@ -365,15 +327,6 @@ $mo-class-hidden: is-hidden-menu;
 .site-header .widget_recent_entries ul,
 .site-header .widget_pages ul {
 	@extend %mo;
-}
-
-.site-header .menu,
-.site-header .widget_archive ul,
-.site-header .widget_categories ul,
-.site-header .widget_meta ul,
-.site-header .widget_recent_entries ul,
-.site-header .widget_pages ul {
-	// @extend %block-style;
 }
 
 .menu-toggle-button {

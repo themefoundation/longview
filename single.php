@@ -1,6 +1,6 @@
 <?php
 /**
- *  Single post template
+ * Single post template
  *
  * @package Longview
  * @since 1.0.0
@@ -43,4 +43,5 @@ if ( !function_exists( 'thmfdn_template_part_single' ) ) {
 add_filter( 'thmfdn_content_format', 'thmfdn_template_part_single' );
 
 // Loads the default template.
-require_once( get_stylesheet_directory() . '/index.php' );
+locate_template( array( 'index.php' ), true );
+

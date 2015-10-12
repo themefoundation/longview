@@ -30,7 +30,7 @@
  * This section adds actions to their respective action hooks.
  *
  * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 add_action( 'thmfdn_body_top', 'thmfdn_wrapper_open' );
@@ -54,7 +54,7 @@ add_action( 'thmfdn_header_after', 'thmfdn_main_open', 100 );
  *
  * This section defines the actions associated with each hook.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 if ( !function_exists( 'thmfdn_wrapper_open' ) ) {
@@ -63,6 +63,8 @@ if ( !function_exists( 'thmfdn_wrapper_open' ) ) {
 	 *
 	 * This div wraps the entire site, and can be used for handling the
 	 * site width.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_wrapper_open() {
 		echo '<div id="' . apply_filters( 'thmfdn_wrapper_open_id', 'page' ) . '" class="' . apply_filters( 'thmfdn_wrapper_open_class', '' ) . '">' . "\n\n";
@@ -76,6 +78,8 @@ if ( !function_exists( 'thmfdn_skip_link' ) ) {
 	 * The "Skip to content" link allows people using screen readers to jump
 	 * straight to the page content without being forced to listen to the
 	 * header and menu text on every page load.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_skip_link() {
 		echo '<a class="' . apply_filters( 'thmfdn_skip_link_class', 'skip-link screen-reader-text' ) . '" href="' . apply_filters( 'thmfdn_skip_link_href', '#content' ) . '">' . __( 'Skip to content', 'thmfdn_textdomain' ) . '</a>' . "\n\n";
@@ -86,7 +90,7 @@ if ( !function_exists( 'thmfdn_before_header_widgets' ) ) {
 	/**
 	 * Displays the Before Header widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_before_header_widgets() {
 
@@ -114,6 +118,8 @@ if ( !function_exists( 'thmfdn_header_open' ) ) {
 	 * Header opening
 	 *
 	 * Opens the header div and wrapper.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_header_open() {
 		echo '<header id="' . apply_filters( 'thmfdn_header_id', 'header' ) . '" class="' . apply_filters( 'thmfdn_header_class', 'site-header row' ) . '">' . "\n";
@@ -126,6 +132,8 @@ if ( !function_exists( 'thmfdn_header_branding' ) ) {
 	 * Branding
 	 *
 	 * Displays branding, including site title and site description.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_header_branding() {
 		echo '<div id="' . apply_filters( 'thmfdn_branding_id', 'branding' ) . '" class="' . apply_filters( 'thmfdn_branding_class', '' ) . '" role="banner">' . "\n";
@@ -141,6 +149,8 @@ if ( !function_exists( 'thmfdn_header_menu' ) ) {
 	 *
 	 * Displays the header menu. However, if there are widgets present in the
 	 * Inside Header widget area, that widget area overrides this menu.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_header_menu() {
 
@@ -158,7 +168,7 @@ if ( !function_exists( 'thmfdn_header_widgets' ) ) {
 	/**
 	 * Displays the Inside Header widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_header_widgets() {
 
@@ -179,6 +189,8 @@ if ( !function_exists( 'thmfdn_header_close' ) ) {
 	 * Header closing
 	 *
 	 * Opens the header div and wrapper.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_header_close() {
 		echo '    </div><!--.wrap-->' . "\n";
@@ -190,7 +202,7 @@ if ( !function_exists( 'thmfdn_after_header_widgets' ) ) {
 	/**
 	 * Displays the After Header widget area
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	function thmfdn_after_header_widgets() {
 
@@ -216,6 +228,8 @@ if ( !function_exists( 'thmfdn_main_open' ) ) {
 	 * Main opening
 	 *
 	 * Opens the main div and wrapper.
+	 *
+	 * @since 1.0.0
 	 */
 	function thmfdn_main_open() {
 		echo '<div id="' . apply_filters( 'thmfdn_main_id', 'main' ) . '" class="' . apply_filters( 'thmfdn_main_class', 'row' ) . '">' . "\n";
@@ -231,7 +245,7 @@ if ( !function_exists( 'thmfdn_main_open' ) ) {
  * This section runs the actions associated with each hook.
  *
  * @see http://codex.wordpress.org/Function_Reference/do_action
- * @since 1.0
+ * @since 1.0.0
  */
 
 do_action( 'thmfdn_body_top' );

@@ -900,9 +900,7 @@ by Jonathan Snook at http://smacss.com
   .site-header .widget_meta ul a,
   .site-header .widget_recent_entries ul a,
   .site-header .widget_pages ul a, .is-mobile-menu a {
-    position: relative;
-    padding: 0 1rem;
-    line-height: 2.75rem; }
+    position: relative; }
   .site-header .menu ul,
   .site-header .widget_archive ul ul,
   .site-header .widget_categories ul ul,
@@ -964,8 +962,6 @@ by Jonathan Snook at http://smacss.com
     .site-header .widget_pages ul ul, .is-mobile-menu ul {
       margin-top: 0; } }
 
-/* =Block style
--------------------------------------------------------------- */
 /* =Border style
 -------------------------------------------------------------- */
 /* =Arrows
@@ -1091,28 +1087,21 @@ by Jonathan Snook at http://smacss.com
   text-align: left;
   text-transform: uppercase;
   color: #ffffff;
-  padding: 0 1rem;
-  display: inline-block; }
+  padding: 0 1em; }
 
 /* =Mobile menu
 -------------------------------------------------------------- */
 .is-mobile-menu {
-  text-align: left;
-  background-color: #eeeeee; }
+  text-align: left; }
+  .is-mobile-menu a,
   .is-mobile-menu li {
     display: block; }
-    .is-mobile-menu li a {
-      display: block;
-      background-color: #eeeeee;
-      color: #000000; }
-      .is-mobile-menu li a:hover {
-        background-color: #dddddd; }
   .is-mobile-menu ul {
     position: relative;
     top: auto;
     margin-top: 0; }
     .is-mobile-menu ul li {
-      margin: 0 1rem; }
+      margin: 0 1em; }
     .is-mobile-menu ul ul {
       position: relative;
       left: 0; }
@@ -1350,7 +1339,8 @@ by Jonathan Snook at http://smacss.com
 .site-header .widget_meta ul:first-of-type a,
 .site-header .widget_recent_entries ul:first-of-type a,
 .site-header .widget_pages ul:first-of-type a {
-  font-size: 1rem; }
+  line-height: 2.75rem;
+  padding: 0 0.6875rem; }
 
 .site-header .menu ul,
 .site-header .widget_archive ul:first-of-type ul,
@@ -1366,14 +1356,6 @@ by Jonathan Snook at http://smacss.com
   .site-header .widget_recent_entries ul:first-of-type ul li,
   .site-header .widget_pages ul:first-of-type ul li {
     float: none; }
-
-.site-header .menu ul li a,
-.site-header .widget_archive ul:first-of-type ul li a,
-.site-header .widget_categories ul:first-of-type ul li a,
-.site-header .widget_meta ul:first-of-type ul li a,
-.site-header .widget_recent_entries ul:first-of-type ul li a,
-.site-header .widget_pages ul:first-of-type ul li a {
-  line-height: 2.75rem; }
 
 /* =Content
 -------------------------------------------------------------- */

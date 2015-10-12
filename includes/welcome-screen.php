@@ -12,7 +12,7 @@
 /**
  * Adds welcome screen to WordPress dashboard
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_welcome_page() {
 	add_theme_page( 'Welcome', 'Welcome', 'switch_themes', 'thmfdn-welcome', 'thmfdn_welcome_content' );
@@ -22,7 +22,7 @@ add_action( 'admin_menu', 'thmfdn_welcome_page' );
 /**
  * Displays welcome screen content
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_welcome_content() {
 	?>
@@ -40,9 +40,9 @@ function thmfdn_welcome_content() {
  * When the theme is first activated, this function redirects the user who
  * activated the theme to the welcome page.
  *
- * @since 1.0
+ * @since 1.0.0
  */
-function thmfdn_welcome_redirect( $plugin ) {
+function thmfdn_welcome_redirect() {
      wp_redirect( admin_url( 'themes.php?page=thmfdn-welcome' ) );
 }
 add_action( 'after_switch_theme', 'thmfdn_welcome_redirect' );
@@ -54,7 +54,7 @@ add_action( 'after_switch_theme', 'thmfdn_welcome_redirect' );
  * This function removes the page from the admin menu so it doesn't hang
  * around and clutter things up later.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_welcome_remove_menu_entry() {
     remove_submenu_page( 'themes.php', 'thmfdn-welcome' );

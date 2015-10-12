@@ -207,7 +207,7 @@
 			line-height: (($line * 2) + $unit);
 		}
 	}
-} 
+}
 
 #header .menu,
 #header .widget_archive ul:first-of-type,
@@ -221,7 +221,8 @@
 %header-menu {
 
 	a {
-		font-size: 1rem;
+		line-height: (($line * 2) + $unit);
+		padding: 0 (($line * 0.5) + $unit);
 	}
 
 	ul {
@@ -232,9 +233,6 @@
 		}
 	}
 
-	ul li a {
-		line-height: (($line * 2) + $unit);
-	}
 }
 
 .site-header .menu,

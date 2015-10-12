@@ -62,7 +62,7 @@ add_action( 'init', 'thmfdn_init' );
  * Uncommenting any of the lines below will remove that widget area from
  * the theme.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfnd_remove_widget_areas() {
 	// unregister_sidebar( 'sidebar-1' );
@@ -88,7 +88,7 @@ add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
  * - sidebar-sidebar-content (Double sidebars on the left, content on the right)
  * - sidebar-content-sidebar (First sidebar on the left, content in the center, and second sidebar on the iis_get_server_rights(server_instance, virtual_path))
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Layout class name.
  */
 function get_thmfdn_layout() {
@@ -131,7 +131,7 @@ function get_thmfdn_layout() {
  * - grid (Rows of content, multiple columns)
  * - portfolio (Rows of images, multiple columns)
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Layout class name.
  */
 function get_thmfdn_content_format( $format = '' ) {
@@ -141,6 +141,7 @@ function get_thmfdn_content_format( $format = '' ) {
 		$format = get_post_format();
 	}
 
+	// Overrides default content format for search pages.
 	if ( is_search() ) {
 		$format = 'search';
 	}
@@ -198,58 +199,3 @@ function thmfdn_thumbnail_size( $thumbnail_size ) {
 	return $thumbnail_size;
 }
 add_filter( 'thmfdn_thumbnail_size', 'thmfdn_thumbnail_size' );
-
-
-/**
- * Post meta above content
- *
- * Configures the displayed post meta. This setting is controlled by an array
- * of meta data types and the titles to use with each. Available meta data
- * types include:
- *
- * author - Author name. Uses: the_author()
- * author_website - Author name as link to author's website. Uses: the_author_link()
- * author_posts - Author name as link to author archive. Uses: the_author_posts_link()
- * categories - List of post's categories. Uses: the_category()
- * date - Post date. Uses: the_time( get_option( 'date_format' ) )
- * tags - List of post's tags. Uses: the_tags()
- *
- * @return array An array of meta/title combinations to display.
- * @since 1.0
- */
-function thmfdn_settings_single_meta_top() {
-	$meta_top_args = array(
-		'date' => ''
-	);
-
-	return $meta_top_args;
-}
-add_filter ( 'thmfdn_single_meta_top', 'thmfdn_settings_single_meta_top' );
-add_filter ( 'thmfdn_archive_meta_top', 'thmfdn_settings_single_meta_top' );
-
-/**
- * Post meta below content
- *
- * Configures the displayed post meta. This setting is controlled by an array
- * of meta data types and the titles to use with each. Available meta data
- * types include:
- *
- * author - Author name. Uses: the_author()
- * author_website - Author name as link to author's website. Uses: the_author_link()
- * author_posts - Author name as link to author archive. Uses: the_author_posts_link()
- * categories - List of post's categories. Uses: the_category()
- * date - Post date. Uses: the_time( get_option( 'date_format' ) )
- * tags - List of post's tags. Uses: the_tags()
- *
- * @return array An array of meta/title combinations to display.
- * @since 1.0
- */
-function thmfdn_settings_single_meta_bottom() {
-	$meta_bottom_args = array(
-		'tags' => ''
-	);
-
-	return $meta_bottom_args;
-}
-add_filter ( 'thmfdn_single_meta_bottom', 'thmfdn_settings_single_meta_bottom' );
-add_filter ( 'thmfdn_archive_meta_bottom', 'thmfdn_settings_single_meta_bottom' );

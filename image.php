@@ -30,4 +30,4 @@ function thmfdn_attachment_template() {
 add_action( 'thmfdn_entry_content_after', 'thmfdn_attachment_template' );
 
 // Loads the default page template.
-require_once( get_stylesheet_directory() . '/page.php' );
+locate_template( array( 'page.php' ), true );

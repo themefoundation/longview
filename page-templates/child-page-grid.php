@@ -4,7 +4,7 @@
  * Single page template with no sidebars and full width content
  *
  * @package Longview
- * @since 1.0
+ * @since 1.0.0
  */
 
 /*
@@ -12,46 +12,9 @@ Template Name: Child Page Grid
 */
 
 /**
- *****************************************************************************
- * Add actions
- *****************************************************************************
- *
- * This section adds actions to their respective action hooks.
- *
- * @see http://codex.wordpress.org/Function_Reference/add_action
- * @since 1.0
- */
-
-add_action( 'thmfdn_content_bottom', 'thmfdn_display_child_grid', 60 );
-
-/**
- *****************************************************************************
- * Add filters
- *****************************************************************************
- *
- * This section adds filters to their respective filter hooks.
- *
- * @see http://codex.wordpress.org/Function_Reference/add_filter
- * @since 1.0
- */
-
-add_filter( 'thmfdn_layout_class', 'thmfdn_child_page_grid_full_width' );
-add_filter( 'thmfdn_thumbnail_size', 'thmfdn_child_page_grid_thumbnail_size' );
-
-/**
- *****************************************************************************
- * Define actions and filters
- *****************************************************************************
- *
- * This section defines the actions and filters associated with each hook.
- *
- * @since 1.0
- */
-
-/**
  * Displays grid of child pages
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_display_child_grid() {
 
@@ -79,26 +42,29 @@ function thmfdn_display_child_grid() {
 
 	wp_reset_postdata();
 }
+add_action( 'thmfdn_content_bottom', 'thmfdn_display_child_grid', 60 );
 
 /**
  * Sets the layout class
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Layout class.
  */
 function thmfdn_child_page_grid_full_width() {
 	return 'content-full-width';
 }
+add_filter( 'thmfdn_layout_class', 'thmfdn_child_page_grid_full_width' );
 
 /**
  * Sets the thumbnail size
  *
- * @since 1.0
+ * @since 1.0.0
  * @return string Thumbnail size.
  */
 function thmfdn_child_page_grid_thumbnail_size() {
 	return 'grid';
 }
+add_filter( 'thmfdn_thumbnail_size', 'thmfdn_child_page_grid_thumbnail_size' );
 
 // Loads the default page template.
 require_once( get_stylesheet_directory() . '/page.php' );

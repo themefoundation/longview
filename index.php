@@ -2,7 +2,7 @@
 /**
  *  Index template
  *
- * @package Longview
+ * @package Index
  * @since 1.0.0
  */
 

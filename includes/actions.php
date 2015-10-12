@@ -6,11 +6,10 @@
  * @since 1.0.0
  */
 
-
 /**
  * Loads files based on theme support
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_theme_support() {
 	
@@ -28,11 +27,10 @@ function thmfdn_theme_support() {
 }
 add_action( 'init', 'thmfdn_theme_support', 20 );
 
-
 /**
  * Loads the default scripts and stylesheets
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function thmfdn_enqueue() {
 
@@ -54,7 +52,7 @@ add_action( 'wp_enqueue_scripts', 'thmfdn_enqueue' );
 /**
  * Loads stylesheet for the post editor.
  *
- * @since			1.0
+ * @since 1.0.0
  */
 function thmfdn_editor_style() {
 	add_editor_style();
