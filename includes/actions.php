@@ -43,7 +43,7 @@ function thmfdn_enqueue() {
 
 	// Loads the comment script if a single post is being displayed.
 	if ( is_singular() && comments_open() ) {
-		wp_enqueue_script( 'thmfdn_comment_reply', 'comment-reply' );
+		wp_enqueue_script( 'comment-reply' );
 	}
 
 }

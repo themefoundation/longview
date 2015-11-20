@@ -42,10 +42,6 @@ if ( !function_exists( 'thmfdn_content_open' ) ) {
 	 * Opens the .primary div column and the #content div. This theme supports
 	 * up to three columns, .primary, .secondary, and .tertiary.
 	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
 	 * @since 1.0.0
 	 */
 	function thmfdn_content_open() {
@@ -80,10 +76,6 @@ if ( !function_exists( 'thmfdn_loop_open' ) ) {
 	 *
 	 * Opens the .loop div.
 	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
 	 * @since 1.0.0
 	 */
 	function thmfdn_loop_open() {
@@ -99,10 +91,6 @@ if ( !function_exists( 'thmfdn_loop_close' ) ) {
 	 *
 	 * Closes the .loop div.
 	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
-	 *
 	 * @since 1.0.0
 	 */
 	function thmfdn_loop_close() {
@@ -114,13 +102,7 @@ if ( !function_exists( 'thmfdn_loop_close' ) ) {
 
 if ( !function_exists( 'thmfdn_pagination' ) ) {
 	/**
-	 * Content closing
-	 *
-	 * Closes the #content div.
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
+	 * Posts pagination
 	 *
 	 * @since 1.0.0
 	 */
@@ -134,10 +116,6 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
 	 * Content closing
 	 *
 	 * Closes the #content div.
-	 *
-	 * This function is repeated in the base template files (index.php,
-	 * page.php, and single.php). This duplication is the unfortunate side
-	 * effect of trying to keep everything in its natural place.
 	 *
 	 * @since 1.0.0
 	 */

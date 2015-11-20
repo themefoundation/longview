@@ -1,32 +1,37 @@
 /*
-Theme Name: Longview
+Theme Name: Hong Kong
 Theme URI: http://themefoundation.com/
-Description: The Longview theme is a minimally styles WordPress theme designed to be easily extensible.
+Description: Vertically aligned theme...
 Author: Theme Foundation
-Author URI: http://themefoundation.com/
+Author URI: http://themefoundation.com
 Version: 0.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: editor-style, threaded-comments
 */
 
-@import '../libraries/bourbon/bourbon';
-@import '../libraries/neat/neat';
-@import 'variables';
-@import 'mixins';
-@import 'placeholders';
-@import 'reset';
-@import 'cadence';
-@import 'structure';
+@import 'partials/reset';
+@import 'partials/variables';
+
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
+
+@import 'modules/mixins';
+@import 'modules/columns';
+@import 'modules/helpers';
+@import 'modules/cadence';
+
+@import 'partials/layout';
+
 @import 'mo';
-@import 'header';
-@import 'content';
-@import 'footer';
-@import 'widgets';
-@import 'elements';
-@import 'components';
-@import 'wp-components';
-@import 'plugins';
+@import 'partials/header';
+@import 'partials/content';
+@import 'partials/footer';
+@import 'partials/widgets';
+@import 'partials/elements';
+@import 'partials/components';
+@import 'partials/wp-components';
+@import 'partials/plugins';
 
 // TODO: Add styles for HTML5 form elements (noticable in comment form)
 // TODO: Fix comment styles.

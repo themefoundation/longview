@@ -1,21 +1,33 @@
 /*
-Theme Name: Longview
+Theme Name: Hong Kong
 Theme URI: http://themefoundation.com/
-Description: The Longview theme is a minimally styles WordPress theme designed to be easily extensible.
+Description: Vertically aligned theme...
 Author: Theme Foundation
-Author URI: http://themefoundation.com/
+Author URI: http://themefoundation.com
 Version: 0.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: editor-style, threaded-comments
 */
-html {
-  box-sizing: border-box; }
+/* =Reset
+-------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word; }
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit; }
+img {
+  max-width: 100%;
+  height: auto; }
+
+body {
+  overflow-y: scroll; }
+
+pre {
+  overflow-x: scroll; }
 
 /* =Bourbon/Neat
 -------------------------------------------------------------- */
@@ -27,6 +39,14 @@ html {
 -------------------------------------------------------------- */
 /* =Layout widths
 -------------------------------------------------------------- */
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
 @media (min-width: 600px) {
   .widget-columns.widget-count-2 > div,
   .gallery-columns-2 > div,
@@ -537,26 +557,6 @@ html {
   content: "";
   display: table;
   clear: both; }
-
-/* =Reset
--------------------------------------------------------------- */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word; }
-
-img {
-  max-width: 100%;
-  height: auto; }
-
-body {
-  overflow-y: scroll; }
-
-pre {
-  overflow-x: scroll; }
 
 /* =Typography
 -------------------------------------------------------------- */

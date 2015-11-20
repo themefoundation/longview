@@ -2,10 +2,10 @@
  * Styles for the WordPress editor
  */
 
-@import 'variables';
-@import 'reset';
-@import 'cadence';
-@import 'elements';
+@import 'partials/variables';
+@import 'partials/reset';
+@import 'modules/cadence';
+@import 'partials/elements';
 
 .content {
 	max-width: 650px;
