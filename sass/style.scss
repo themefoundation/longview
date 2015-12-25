@@ -1,7 +1,7 @@
 /*
-Theme Name: Hong Kong
+Theme Name: Longview
 Theme URI: http://themefoundation.com/
-Description: Vertically aligned theme...
+Description: Horizontally aligned theme...
 Author: Theme Foundation
 Author URI: http://themefoundation.com
 Version: 0.0.2
@@ -15,6 +15,7 @@ Tags: editor-style, threaded-comments
 
 @import 'vendor/bourbon/bourbon';
 @import 'vendor/neat/neat';
+@import 'vendor/mojs/mo';
 
 @import 'modules/mixins';
 @import 'modules/columns';
@@ -22,8 +23,7 @@ Tags: editor-style, threaded-comments
 @import 'modules/cadence';
 
 @import 'partials/layout';
-
-@import 'mo';
+// @import 'mo';
 @import 'partials/header';
 @import 'partials/content';
 @import 'partials/footer';

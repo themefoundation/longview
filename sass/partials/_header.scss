@@ -190,6 +190,96 @@
 
 /* =Menu
 -------------------------------------------------------------- */
+
+
+.is-hidden-menu {
+	display: none;
+}
+
+// Menu toggle button styles.
+.menu-toggle-button {
+	line-height: 2.75rem;
+	cursor: pointer;
+	text-align: left;
+	text-transform: uppercase;
+	background-color: #444;
+	color: #ffffff;
+	padding: 0 1rem;
+	display: inline-block;
+}
+
+// Dropdown arrow styles
+.header-before .menu-arrows,
+.header-after .menu-arrows {
+	@include mo-css-arrows-horizontal( 2.75rem, 2.75rem, #666666 );
+}
+
+header .menu {
+	text-align: center;
+}
+
+header .menu-arrows {
+	@include mo-css-arrows-horizontal( 2.75rem, 4.125rem, #666666 );
+
+	@media (min-width:1140px) {
+		@include mo-css-arrows-horizontal( 2.75rem, 8.25rem, #444444 );
+	}
+}
+
+// First menu
+.site-header .menu {
+	@include mo-base;
+	@include mo-css-horizontal;
+	text-align: center;
+
+	@media (min-width:900px) {
+		@include mo-css-horizontal-hover();
+	}
+
+	@media (min-width:1140px) {
+		text-align: left;
+	}
+
+	a {
+		padding: 0 1rem;
+		line-height: 2.75rem;
+	}
+}
+
+// Mobile menu
+.is-mobile-menu {
+	@include mo-base;
+	@include mo-mobile;
+
+	text-align: left;
+	background-color: #333333;
+
+	a {
+		background-color: #333333;
+		color: #ffffff;
+		line-height: 2.75rem;
+		padding: 0 1rem;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #222222;
+		}
+	}
+}
+
+// Javascript menu styles.
+.is-js-menu {
+	@include mo-js-arrows-horizontal( #444444 );
+}
+
+// Mobile menu styles.
+.is-mobile-menu {
+	@include mo-css-arrows-horizontal( 2.75rem, 2.75rem, #000 );
+	@include mo-mobile( 2.75rem, 2.75rem, #000 );
+}
+
+
+
 %inside-header-menu {
 
 	@include breakpoint-large {
