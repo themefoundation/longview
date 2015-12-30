@@ -82,3 +82,20 @@ function thmfdn_excerpt_more( $more ) {
 	return '...';
 }
 add_filter( 'excerpt_more', 'thmfdn_excerpt_more' );
+
+/**
+ * Handles arguments for the widget areas theeme support setting
+ *
+ * @since 1.0.0
+ * @see https://joshuadnelson.com/creating-custom-theme-feature-support/
+ * @param string $more Default "more" text.
+ * @return string Custom "more" text.
+ */
+function thmfdn_theme_support_widget_areas( $bool, $args, $registered ) {
+	if( isset( $args[0] ) && isset( $registered[0] ) ) {
+		return in_array( $args[0], $registered[0] );
+	} else {
+		return false;
+	}
+}
+add_filter( 'current_theme_supports-widget-areas', 'thmfdn_theme_support_widget_areas', 10, 3 );

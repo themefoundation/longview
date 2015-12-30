@@ -37,6 +37,20 @@ function thmfdn_init() {
 	);
 	add_theme_support( 'html5', $html5_support );
 
+	// Adds support for widget areas
+	$widget_areas = array(
+		'sidebar-1',
+		'sidebar-2',
+		'header-before',
+		'header-inside',
+		'header-after',
+		'footer-before',
+		'footer-inside',
+		'footer-after',
+		'404'
+	);
+	add_theme_support( 'widget-areas', $widget_areas );
+
 	// Adds installation welcome screen support.
 	// add_theme_support( 'welcome-screen' );
 
@@ -54,27 +68,7 @@ function thmfdn_init() {
 	add_image_size( 'portfolio', 500, 250, true );
 
 }
-add_action( 'init', 'thmfdn_init' );
-
-/**
- * Remove widget areas
- *
- * Uncommenting any of the lines below will remove that widget area from
- * the theme.
- *
- * @since 1.0.0
- */
-function thmfnd_remove_widget_areas() {
-	// unregister_sidebar( 'sidebar-1' );
-	// unregister_sidebar( 'sidebar-2' );
-	// unregister_sidebar( 'header-before' );
-	// unregister_sidebar( 'header-inside' );
-	// unregister_sidebar( 'header-after' );
-	// unregister_sidebar( 'footer-before' );
-	// unregister_sidebar( 'footer-inside' );
-	// unregister_sidebar( 'footer-after' );
-}
-add_action( 'widgets_init', 'thmfnd_remove_widget_areas', 11 );
+add_action( 'after_setup_theme', 'thmfdn_init' );
 
 /**
  * Sets layout defaults
