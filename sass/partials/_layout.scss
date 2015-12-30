@@ -8,6 +8,7 @@
 -------------------------------------------------------------- */
 .row > .wrap {
 	@include outer-container;
+	max-width: $max-width;
 	width: 90%;
 }
 
