@@ -39,7 +39,7 @@ function thmfdn_enqueue() {
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'mojs', get_template_directory_uri() . '/js/mo.js', 'jquery' );
-	wp_enqueue_script( 'longview', get_template_directory_uri() . '/js/longview.js', 'mojs' );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', 'mojs' );
 
 	// Loads the comment script if a single post is being displayed.
 	if ( is_singular() && comments_open() ) {
