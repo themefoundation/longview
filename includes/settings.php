@@ -67,6 +67,9 @@ function thmfdn_init() {
 	add_image_size( 'grid', 350, 200, true );
 	add_image_size( 'portfolio', 500, 250, true );
 
+	// Hide site description
+	// add_filter( 'longview_site_description', '__return_false' );
+
 }
 add_action( 'after_setup_theme', 'thmfdn_init' );
 
