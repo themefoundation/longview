@@ -160,7 +160,7 @@ if ( !function_exists( 'thmfdn_footer' ) ) {
 	 * @since 1.0.0
 	 */
 	function thmfdn_footer() {
-		if ( ! is_active_sidebar( 'footer' ) ) {
+		if ( ! is_active_sidebar( 'footer-replacement' ) ) {
 			echo apply_filters( 'site_credits', '<p class="site-credits">&copy;  <a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo('name') . '</a></p>' . "\n" );
 
 			if ( thmfdn_is_registered_sidebar( 'footer-inside' ) ) {
