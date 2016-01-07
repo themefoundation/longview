@@ -110,7 +110,7 @@ if ( !function_exists( 'thmfdn_footer_menu' ) ) {
 	function thmfdn_footer_menu() {
 
 		// Is the Inside Footer widget area currently empty?
-		if ( ! is_active_sidebar( 'footer-inside' ) ) {
+		if ( ! is_active_sidebar( 'footer-replacement' ) && ! is_active_sidebar( 'footer-inside' ) ) {
 			wp_nav_menu( array(
 				'theme_location' => 'footer_menu',
 				'container' => 'div',
@@ -123,26 +123,26 @@ if ( !function_exists( 'thmfdn_footer_menu' ) ) {
 
 if ( !function_exists( 'thmfdn_footer_widgets' ) ) {
 	/**
-	 * Displays the Inside Footer widget area
+	 * Displays the Replacement Footer widget area
 	 *
 	 * @since 1.0.0
 	 */
 	function thmfdn_footer_widgets() {
 
 		// Does the Inside Footer widget area contain any widgets?
-		if ( thmfdn_is_registered_sidebar( 'footer-inside' ) ) {
+		if ( thmfdn_is_registered_sidebar( 'footer-replacement' ) ) {
 
 			// Filters for class names.
-			$widget_count = thmfdn_widget_count('footer-inside');$widget_classes = '';
+			$widget_count = thmfdn_widget_count('footer-replacement');
 			$widget_classes = '';
 			if ( $widget_count > 0 ) {
 				$widget_classes = ' widget-columns widget-count-' . $widget_count;
 			}
-			$thmfdn_footer_inside_class = apply_filters( 'thmfdn-footer-inside-class', 'footer-inside' . $widget_classes );
+			$thmfdn_footer_class = apply_filters( 'thmfdn-footer-replacement-class', 'footer-replacement' . $widget_classes );
 			?>
 
-				<div class="<?php echo $thmfdn_footer_inside_class; ?>">
-					<?php dynamic_sidebar( 'footer-inside' ); ?>
+				<div class="<?php echo $thmfdn_footer_class; ?>">
+					<?php dynamic_sidebar( 'footer-replacement' ); ?>
 				</div><!--.footer-inside-->
 
 			<?php
@@ -160,8 +160,14 @@ if ( !function_exists( 'thmfdn_footer' ) ) {
 	 * @since 1.0.0
 	 */
 	function thmfdn_footer() {
-		if ( ! is_active_sidebar( 'footer-inside' ) ) {
+		if ( ! is_active_sidebar( 'footer' ) ) {
 			echo apply_filters( 'site_credits', '<p class="site-credits">&copy;  <a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo('name') . '</a></p>' . "\n" );
+
+			if ( thmfdn_is_registered_sidebar( 'footer-inside' ) ) {
+				echo '<div class="footer-inside-widgets">';
+				dynamic_sidebar( 'footer-inside' );
+				echo '</div>';
+			}
 		}
 	}
 }

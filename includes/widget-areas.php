@@ -61,7 +61,7 @@ function thmfdn_register_sidebars() {
 		);
 	}
 
-	// Registers the widget area in the header.
+	// Registers the widget area inside the header.
 	if( current_theme_supports( 'widget-areas', 'header-inside' ) ) {
 		register_sidebar(
 			array(
@@ -106,13 +106,13 @@ function thmfdn_register_sidebars() {
 		);
 	}
 
-	// Registers the widget area before the footer.
+	// Registers the widget area inside the default footer.
 	if( current_theme_supports( 'widget-areas', 'footer-inside' ) ) {
 		register_sidebar(
 			array(
 				'name' => __( 'Inside Footer', 'thmfdn_textdomain' ),
 				'id' => 'footer-inside',
-				'description' => __( 'Displayed in the footer area.', 'thmfdn_textdomain' ),
+				'description' => __( 'Displayed within the footer area.', 'thmfdn_textdomain' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<h3 class="widget-title">',
@@ -121,7 +121,22 @@ function thmfdn_register_sidebars() {
 		);
 	}
 
-	// Registers the widget area before the footer.
+	// Registers the widget area that replaces the default footer.
+	if( current_theme_supports( 'widget-areas', 'footer-replacement' ) ) {
+		register_sidebar(
+			array(
+				'name' => __( 'Replacement Footer', 'thmfdn_textdomain' ),
+				'id' => 'footer-replacement',
+				'description' => __( 'Displayed instead of the default footer area.', 'thmfdn_textdomain' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			)
+		);
+	}
+
+	// Registers the widget area after the footer.
 	if( current_theme_supports( 'widget-areas', 'footer-after' ) ) {
 		register_sidebar(
 			array(

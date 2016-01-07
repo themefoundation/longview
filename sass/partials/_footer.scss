@@ -23,9 +23,14 @@
 	}
 
 	.site-credits {
+		float: left;
 		line-height: ($line * 2 ) + $unit;
 		padding: 0 1rem;
 		margin-bottom: 0;
+	}
+
+	.footer-inside-widgets {
+		float: right;
 	}
 
 

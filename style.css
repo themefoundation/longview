@@ -1422,9 +1422,13 @@ header .menu-arrows ul .toggle-submenu:after {
     text-decoration: underline; }
 
 .site-footer .site-credits {
+  float: left;
   line-height: 2.75rem;
   padding: 0 1rem;
   margin-bottom: 0; }
+
+.site-footer .footer-inside-widgets {
+  float: right; }
 
 .site-footer .thmfdn-footer-menu ul {
   margin: 0; }

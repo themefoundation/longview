@@ -45,6 +45,7 @@ function thmfdn_init() {
 		'header-inside',
 		'header-after',
 		'footer-before',
+		'footer-replacement',
 		'footer-inside',
 		'footer-after',
 		'404'
