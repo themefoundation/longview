@@ -67,4 +67,4 @@ function thmfdn_child_page_grid_thumbnail_size() {
 add_filter( 'thmfdn_thumbnail_size', 'thmfdn_child_page_grid_thumbnail_size' );
 
 // Loads the default page template.
-require_once( get_stylesheet_directory() . '/page.php' );
+locate_template( array( 'page.php' ), true );
