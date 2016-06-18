@@ -22,6 +22,8 @@ add_action( 'thmfdn_content_top', 'thmfdn_content_open',  200 );
 add_action( 'thmfdn_content_top', 'thmfdn_archive_title', 300 );
 add_action( 'thmfdn_content_top', 'thmfdn_loop_open',     400 );
 
+add_action( 'thmfdn_entry', 'thmfdn_template_part' );
+
 add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close',    100 );
 add_action( 'thmfdn_content_bottom', 'thmfdn_pagination',    200 );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close', 300 );
@@ -103,6 +105,23 @@ if ( !function_exists( 'thmfdn_loop_open' ) ) {
 	}
 }
 
+if ( !function_exists( 'thmfdn_template_part' ) ) {
+	/**
+	 * Template part
+	 *
+	 * Loads the template part.
+	 *
+	 * @since 1.0.0
+	 */
+	function thmfdn_template_part() {
+		get_template_part(
+			apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ),
+			apply_filters( 'thmfdn_template_part_name', '' )
+		);
+	}
+}
+
+
 if ( !function_exists( 'thmfdn_loop_close' ) ) {
 	/**
 	 * Loop wrapper closing
@@ -179,12 +198,7 @@ if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
 		do_action( 'thmfdn_entry_before' );
-
-		get_template_part(
-			apply_filters( 'thmfdn_template_part_slug', 'template-parts/content' ),
-			apply_filters( 'thmfdn_template_part_name', '' )
-		);
-
+		do_action( 'thmfdn_entry' );
 		do_action( 'thmfdn_entry_after' );
 	}
 } else {
