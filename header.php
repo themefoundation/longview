@@ -33,19 +33,18 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_body_top', 'thmfdn_wrapper_open' );
-add_action( 'thmfdn_body_top', 'thmfdn_skip_link' );
+add_action( 'thmfdn_body_top', 'thmfdn_wrapper_open', 100 );
+add_action( 'thmfdn_body_top', 'thmfdn_skip_link',    200 );
 
 add_action( 'thmfdn_header_before', 'thmfdn_before_header_widgets' );
 
-add_action( 'thmfdn_header', 'thmfdn_header_open', 1 );
-add_action( 'thmfdn_header', 'thmfdn_header_branding', 20 );
-add_action( 'thmfdn_header', 'thmfdn_header_menu', 30 );
-add_action( 'thmfdn_header', 'thmfdn_header_widgets', 40 );
-add_action( 'thmfdn_header', 'thmfdn_header_close', 100 );
+add_action( 'thmfdn_header', 'thmfdn_header_open',     100 );
+add_action( 'thmfdn_header', 'thmfdn_header_branding', 200 );
+add_action( 'thmfdn_header', 'thmfdn_header_menu',     300 );
+add_action( 'thmfdn_header', 'thmfdn_header_widgets',  400 );
+add_action( 'thmfdn_header', 'thmfdn_header_close',    500 );
 
 add_action( 'thmfdn_header_after', 'thmfdn_after_header_widgets' );
-add_action( 'thmfdn_header_after', 'thmfdn_main_open', 100 );
 
 /**
  *****************************************************************************
@@ -220,20 +219,6 @@ if ( !function_exists( 'thmfdn_after_header_widgets' ) ) {
 
 			<?php
 		}
-	}
-}
-
-if ( !function_exists( 'thmfdn_main_open' ) ) {
-	/**
-	 * Main opening
-	 *
-	 * Opens the main div and wrapper.
-	 *
-	 * @since 1.0.0
-	 */
-	function thmfdn_main_open() {
-		echo '<div id="' . apply_filters( 'thmfdn_main_id', 'main' ) . '" class="' . apply_filters( 'thmfdn_main_class', 'row' ) . '">' . "\n";
-		echo '<div class="' . apply_filters( 'thmfdn_main_wrap_class', 'wrap' ) . '">' . "\n";
 	}
 }
 

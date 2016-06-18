@@ -17,13 +17,17 @@
  * @since 1.0.0
  */
 
-add_action( 'thmfdn_content_top', 'thmfdn_content_open', 100);
-add_action( 'thmfdn_content_top', 'thmfdn_archive_title', 200 );
-add_action( 'thmfdn_content_top', 'thmfdn_loop_open', 300 );
+add_action( 'thmfdn_content_top', 'thmfdn_main_open',     100 );
+add_action( 'thmfdn_content_top', 'thmfdn_content_open',  200 );
+add_action( 'thmfdn_content_top', 'thmfdn_archive_title', 300 );
+add_action( 'thmfdn_content_top', 'thmfdn_loop_open',     400 );
 
-add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close', 100 );
-add_action( 'thmfdn_content_bottom', 'thmfdn_pagination', 200 );
+add_action( 'thmfdn_content_bottom', 'thmfdn_loop_close',    100 );
+add_action( 'thmfdn_content_bottom', 'thmfdn_pagination',    200 );
 add_action( 'thmfdn_content_bottom', 'thmfdn_content_close', 300 );
+add_action( 'thmfdn_content_bottom', 'get_sidebar',          400 );
+add_action( 'thmfdn_content_bottom', 'thmfdn_main_close',    500 );
+
 
 /**
  *****************************************************************************
@@ -34,6 +38,20 @@ add_action( 'thmfdn_content_bottom', 'thmfdn_content_close', 300 );
  *
  * @since 1.0.0
  */
+
+if ( !function_exists( 'thmfdn_main_open' ) ) {
+	/**
+	 * Main opening
+	 *
+	 * Opens the main div and wrapper.
+	 *
+	 * @since 1.0.0
+	 */
+	function thmfdn_main_open() {
+		echo '<div id="' . apply_filters( 'thmfdn_main_id', 'main' ) . '" class="' . apply_filters( 'thmfdn_main_class', 'row' ) . '">' . "\n";
+		echo '<div class="' . apply_filters( 'thmfdn_main_wrap_class', 'wrap' ) . '">' . "\n";
+	}
+}
 
 if ( !function_exists( 'thmfdn_content_open' ) ) {
 	/**
@@ -126,6 +144,18 @@ if ( !function_exists( 'thmfdn_content_close' ) ) {
 	}
 }
 
+if ( !function_exists( 'thmfdn_main_close' ) ) {
+	/**
+	 * Main closing
+	 *
+	 * Closes the main div and wrapper.
+	 */
+	function thmfdn_main_close() {
+		echo 	'</div><!--.wrap-->' . "\n";
+		echo '</div><!--#main-->' . "\n";
+	}
+}
+
 /**
  *****************************************************************************
  * Do actions
@@ -171,5 +201,4 @@ if ( have_posts() ) {
 do_action( 'thmfdn_content_bottom' );
 do_action( 'thmfdn_content_after' );
 
-get_sidebar();
 get_footer();

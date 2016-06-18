@@ -17,7 +17,6 @@
  * @since 1.0
  */
 
-add_action( 'thmfdn_footer_before', 'thmfdn_main_close' );
 add_action( 'thmfdn_footer_before', 'thmfdn_before_footer_widgets' );
 
 add_action( 'thmfdn_footer', 'thmfdn_footer_open', 1 );
@@ -39,18 +38,6 @@ add_action( 'thmfdn_body_bottom', 'thmfdn_wrapper_close' );
  *
  * @since 1.0.0
  */
-
-if ( !function_exists( 'thmfdn_main_close' ) ) {
-	/**
-	 * Main closing
-	 *
-	 * Closes the main div and wrapper.
-	 */
-	function thmfdn_main_close() {
-		echo 	'</div><!--.wrap-->' . "\n";
-		echo '</div><!--#main-->' . "\n";
-	}
-}
 
 if ( !function_exists( 'thmfdn_before_footer_widgets' ) ) {
 	/**
